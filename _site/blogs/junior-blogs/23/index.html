@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>junior week 23</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/cpp.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <link rel="stylesheet" href="/css/blog-posts.css">
+    <script src="/js/slideshow.js"></script>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div class="yap">
+                <main class="post-container">
+    <h1>junior week mar. 5, 2026</h1>
+<h2>keyboard updates</h2>
+<p>saw a &quot;friction fit pad&quot; for the wooting 60he v2, so i decided to create something like this as well. this worked well with my screwless design, and honestly, my previous design wasn't my favorite anyway.</p>
+<p>drafted a rough idea and printed it out of PLA to test. it worked out pretty well.</p>
+<p><img src="/static/img/junior/23/pad.webp" alt="friction fit pad test"></p>
+<h6>the thin grey strip on the side.</h6>
+<video controls muted>
+    <source src="/static/vids/junior/23/friction.mov" type="video/mp4">
+</video>  
+<p>the first version was a bit thin, so i extended it to be about 5mm thick. generally, these are made out of silicone, but since i don't think we can machine or cut silicone properly in the shop, i'll probably just print it out of TPU which should have a similar effect.</p>
+<p>because of the friction fit pad and some other problems with the old case, i decided to just start the case design from scratch. i adjusted the pcb plate and did some research on potential materials before landing on polycarbonate. i chose it because it's machineable (hopefully we have the right bits) and it has a &quot;thick&quot; sound profile, which is exactly what i'm going for.</p>
+<p>after that, i decided to download the wooting 60he v2 case model, as wooting puts all of their models online. i wanted to see how the pros handled their geometry.</p>
+<p>the biggest difference was that they slanted the internal floor downwards instead of upwards, leading to less material being used and a more natural typing angle.</p>
+<p><img src="/static/img/junior/23/slant.webp" alt="wooting slant analysis"></p>
+<h6>wooting 60 he v2 slant.</h6>
+<p>compared to mine, my old version led to an &quot;incorrect&quot; typing angle and forced my pcb to be slanted just to fit in the case. this new angle fixed all of these issues, along with fixing the weird slant i had in the usb hole.</p>
+<p><img src="/static/img/junior/23/incorrect_slant.webp" alt="old slant comparison"></p>
+<h6>my old slanting mechanism.</h6>
+<p>the rest of the keyboard case was pretty much the same, but there was a problem with the usb hole again. the distance between the case exterior and the USB-C port on the kb2040 is 17.5mm—way deeper than the ~2.5mm head depth of a standard cable.</p>
+<p><img src="/static/img/junior/23/problems.webp" alt="usb clearance problems"></p>
+<p>while i could just increase the size of the hole in the case, it looks weird and i don't want a gaping hole in the back. i'm thinking of using a male-to-female USB-C header/extension and mounting it to the case. i don't see any other way to fix this while keeping the &quot;universal&quot; aspect of being able to use any USB-C cable.</p>
+<div class="navigation">
+    <a href="/blog.html" class="buttons">← back to all blogs </a>
+    <a href="/blogs/junior-blogs/22/" class="buttons"> last week's post →</a>
+</div>
+</main>
+
+<script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'light') {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        })();
+    </script>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

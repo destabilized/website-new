@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;400;700&display=swap');
+
+:root {
+    --bg: hsl(0, 0%, 5%);
+    --card-bg: hsl(0, 0%, 10%);
+    --bg-dark: hsl(0, 0%, 0%);
+    --border: hsl(217, 33%, 17%);
+    --text-main: hsl(0, 0%, 95%);
+    --text-dim: hsl(0, 0%, 70%);
+    --accent: hsl(199, 95%, 61%);
+    --nav-gap: 2rem;
+}
+
+html[data-theme="light"] {
+    --bg: hsl(0, 0%, 100%);
+    --card-bg: hsl(0, 0%, 96%);
+    --bg-dark: hsl(0, 0%, 90%);
+    --border: hsl(214, 32%, 85%);
+    --text-main: hsl(0, 0%, 10%);
+    --text-dim: hsl(0, 0%, 40%);
+    --accent: hsl(199, 85%, 45%);
+}
+
+body {
+    background: var(--bg);
+    color: var(--text-dim);
+    overflow-x: hidden;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 12pt;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 200;
+  scroll-behavior: smooth;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.yap {
+  max-width: 750px;
+  width: 100%;
+  margin-top: 7rem;
+}
+
+h1, h2 {
+  color: var(--text-main);
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 4rem;
+  margin-bottom: 2rem;
+}
+
+h2 {
+  font-weight: 500;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-weight: 200;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+a {
+  color: var(--accent);
+  transition: color 0.2s;
+}
+
+a:hover {
+  filter: brightness(1.2);
+}
+
+h6 {
+  font-size: 1.1rem;
+  font-weight: 100;
+  color: var(--text-dim);
+  margin-bottom: 1rem;
+}
+
+img, video {
+  max-width: 100%;   
+  height: auto;     
+  display: block;    
+  margin-bottom: 1.2rem; 
+  border-radius: 8px;  
+  border: 1px solid var(--border);
+  object-fit: contain; 
+}
+
+pre {
+  margin: 0;      
+  padding: 0;     
+  margin-bottom: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+
+code {
+  font-family: monospace;
+}
+
+.hljs {
+  background: var(--card-bg) !important;
+  color: var(--text-main) !important;
+  padding: 1rem !important;
+  margin: 0;     
+}
+
+.navigation {
+  display: flex;
+  flex-direction: row; 
+  justify-content: center;
+  align-items: center;
+  gap: 1rem; 
+  margin-top: 3rem;
+  width: 100%;
+}
+
+.buttons {
+  text-decoration: none;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  color: var(--text-main);
+  padding: 10px 16px;
+  border-radius: 8px;
+  text-align: center;
+  transition: all 0.2s ease;
+  width: 50%;
+  font-weight: 400;
+}
+
+#solo-button {
+  width: 100%;
+}
+
+.buttons:hover {
+  background: var(--border);
+  border-color: var(--accent);
+}
+
+.slideshow {
+  position: relative;
+  width: 100%;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.slideshow-track {
+  display: flex;
+  transition: transform 0.35s ease;
+  will-change: transform;
+}
+
+.slideshow-track img {
+  border: none;
+  min-width: 100%;
+  width: 100%;
+  margin-bottom: 0;
+  border-radius: 0;
+}
+
+.slideshow-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  border: none;
+  background: rgba(0, 0, 0, 0.45);
+  color: white;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  line-height: 1;
+  display: grid;
+  place-items: center;
+}
+
+.slideshow-btn.next {
+  right: 0.5rem;
+}
+.slideshow-btn:hover {
+  opacity: 1;
+  background: var(--border);
+}
+
+@media (max-width: 600px) {
+  .yap {
+    max-width: 100%;
+  }
+  h1 {
+    font-size: 2.5rem;
+  }
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>junior week 24</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/cpp.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <link rel="stylesheet" href="/css/blog-posts.css">
+    <script src="/js/slideshow.js"></script>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div class="yap">
+                <main class="post-container">
+    <h1>junior week mar. 12, 2026</h1>
+<h2>keyboard updates</h2>
+<p>fixed some errors before printing everything. the first problem was the friction fit pad and the pcb plate colliding.</p>
+<div class="slideshow">
+    <button class="slideshow-btn prev" type="button">‹</button>
+    <div class="slideshow-track">
+        <img src="/static/img/junior/24/problem.webp" alt="pcb plate collision problem">
+        <img src="/static/img/junior/24/fixed.webp" alt="pcb plate collision fixed">
+    </div>
+    <button class="slideshow-btn next" type="button">›</button>
+</div>
+<h6></h6>
+<p>because of this, i decreased the size of the pcb plate by a little to give it some breathing room.</p>
+<p>the next problem was a collision between the case and the friction fit pad, creating a fit that wouldn't allow the usb cable to go all the way in.</p>
+<p><img src="/static/img/junior/24/problem2.webp" alt="usb clearance problem"></p>
+<p>fixing this was a bit annoying because i tried using part-to-part design for the first time, so i had to keep jumping back and forth to create the hole in the friction fit pad. eventually got it fixed though.</p>
+<p><img src="/static/img/junior/24/fixed2.webp" alt="usb clearance fixed"></p>
+<p>with all of this fixed, i started printing the case (forgot to take a photo). it worked out fine, but i can't really test the case without the friction fit pad. the pad needs to be printed with TPU and was way too big for the shop's current 3d printers, so i'll have to figure out a workaround for this.</p>
+<p>i also did another test cut with the new pcb plate, and the laser cutter kinda didn't cut all the way through.</p>
+<p><img src="/static/img/junior/24/plate.webp" alt="laser cut plate issues"></p>
+<p>slightly annoying, but i just cut the rest of the holes (destroying it slightly in the process) and then tested the fit. it worked out well.</p>
+<p>i then started working on keycaps again, and after a lot of time thinking, i decided to just have the r2 + r1 keycaps be the exact same as the r3 keycaps for simplicity.</p>
+<p><img src="/static/img/junior/24/keys.webp" alt="keycap row comparison"></p>
+<p>i also tried printing the keycaps in a different orientation. last time the keys were printed on the top to ensure the tolerance would fit, but that created a terrible finish on the top due to the support holes.</p>
+<p><img src="/static/img/junior/24/test.webp" alt="keycap support test"></p>
+<p>manually added some more support on the hole area. hoping it works out instead so i don't have to sand as much. however, i do have a bunch that are messed up with holes and pockmarks, so i grabbed a brush and started &quot;painting&quot; a thin layer over the top with raw resin. they're currently curing, so hopefully they turn out smooth.</p>
+<p>i also tried to figure out the problem with the spacebar. i have two spacebars (both from the same model) yet they have different problems.</p>
+<div class="slideshow">
+    <button class="slideshow-btn prev" type="button">‹</button>
+    <div class="slideshow-track">
+        <img src="/static/img/junior/24/space1.webp" alt="spacebar lifting left">
+        <img src="/static/img/junior/24/space2.webp" alt="spacebar lifting right">
+    </div>
+    <button class="slideshow-btn next" type="button">›</button>
+</div>
+<h6></h6>
+<p>in the first image, the spacebar lifts on the left side. in the second image, the spacebar lifts on the right side. this creates a problem where typing on the opposite side or the middle of the spacebar will lift it up, rendering it unusable.</p>
+<p>not too sure why it happens. the Bambu Labs printer didn't have this warping issue, so maybe it's just the resin printer having trouble with longer parts? i'm gonna reprint one more spacebar. hopefully it works.</p>
+<p>also spent a lot of time looking at broken keyboards to harvest the keycaps, but realized that wouldn't work because of the shift error i mentioned like two months ago. looks like i'm sticking with the resin prints for now!</p>
+<div class="navigation">
+    <a href="/blog.html" class="buttons">← back to all blogs </a>
+    <a href="/blogs/junior-blogs/23/" class="buttons"> last week's post →</a>
+</div>
+</main>
+
+<script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'light') {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        })();
+    </script>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

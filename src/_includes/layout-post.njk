@@ -1,0 +1,16 @@
+---
+layout: base.njk
+cssFile: blog-posts.css
+---
+<main class="post-container">
+    {{ content | safe }}
+</main>
+
+<script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'light') {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        })();
+    </script>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>junior week 11</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/cpp.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <link rel="stylesheet" href="/css/blog-posts.css">
+    <script src="/js/slideshow.js"></script>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div class="yap">
+                <main class="post-container">
+    <h1>junior week nov. 10, 2025</h1>
+<p>no school tuesday again lol.</p>
+<h2>keycaps</h2>
+<p>started the week by creating the keycaps which i will have to make for the keyboard anyways. however, i didn't know that it would be this hard.</p>
+<p>first learned that different keyboards have different keycap profiles. since i'm using cherry profile (which is generally the standard), i made my keycaps based off of it.</p>
+<p><img src="/static/img/junior/11/keycap-type.webp" alt="keycap types"></p>
+<h6>all the different keycap types. there's a lot as you can see.</h6>
+<p><img src="/static/img/junior/11/keycap-layout.webp" alt="keycap layout"></p>
+<h6>cherry keycaps and size on a full keyboard.</h6>
+<p>you may have noticed that each keycap has different dimensions based on their row (the &quot;r&quot;). this meant i had to create multiple keycaps.</p>
+<p>i found a drawing for the r1 cherry profile keycaps, and with some help from <a href="https://timmy.greenlifestylelabs.com/">tim</a>, created the first keycap.</p>
+<p><img src="/static/img/junior/11/drawing.webp" alt="reference drawing"></p>
+<h6>my reference drawing. tim carried me in making this bc i didn't understand how to make this at all.</h6>
+<p>in the end, my 1x1 r1 cherry profile keycap looked like this:</p>
+<p><img src="/static/img/junior/11/r1-1x1.webp" alt="r1 keycap"></p>
+<p>with the process learned, i made a new keycap but for the 1x1 r2, estimating on the slant and height due to the difference and lack of a model.</p>
+<p><img src="/static/img/junior/11/r2-1x1.webp" alt="r2 keycap"></p>
+<h2>parts</h2>
+<p>i was originally going to finish up the keycaps before continuing, but all my 3d printed parts were done, along with all the switches, diodes, and the encoder.</p>
+<p>however, there were some problems. first of all, my tolerances on my knob were wrong, so i increased the tolerance, but forgot to extrude it all the way, leading to the knob not fitting. i then repeated it for the 3rd time, increasing both the tolerances and the thickness (so it fit better with the hole on the top case), and accidentally made the tolerances a bit big.</p>
+<p>i will be keeping the knob, as it still functions and the slight noise it makes and the easy release isn't a huge deal.</p>
+<h2>pcb</h2>
+<p>since i had all the parts, i decided to just make the pcb, as it was the only thing left. <a href="https://timmy.greenlifestylelabs.com/">tim</a> helped me a lot with teaching me how to mill a double sided pcb, and it turned out nicely.</p>
+<div class="slideshow">
+    <button class="slideshow-btn prev" type="button">‹</button>
+    <div class="slideshow-track">
+        <img src="/static/img/junior/11/pcb1-front.webp" alt="pcb front">
+        <img src="/static/img/junior/11/pcb1-back.webp" alt="pcb back">
+    </div>
+    <button class="slideshow-btn next" type="button">›</button>
+</div>
+###### front and back of the double sided pcb. my first one!
+<p>reaching this was a nightmare though. there were so many problems during the milling process, mostly because of the lack of space for the 1/32&quot; drill bit that i was using.</p>
+<p><img src="/static/img/junior/11/errors.webp" alt="milling errors"></p>
+<h6>the red parts indicate that it cannot be milled. therefore tim had to manually create the traces there...</h6>
+<p>i decided it wasn't a huge deal, as tim mentioned he could just manually cut the traces, but when i went to solder the pcb, i messed up. since i'm quite inexperienced with soldering, and the pads for the via are quite small, i ended up burning one of the pads and breaking a trace.</p>
+<p><img src="/static/img/junior/11/fucked.webp" alt="soldering fail"></p>
+<h6>i am not showing the back. the back is an absolute nightmare.</h6>
+<p>so i created a new pcb using my newfound knowledge. first, i fixed my pcb design so that i could mill everything without any errors. this took quite a while due to the limited space on the pcb. after over 10 iterations of moving traces and via locations, the pcb ended up looking like this:</p>
+<p><img src="/static/img/junior/11/fixed.webp" alt="fixed pcb design"></p>
+<h6>those two red lines at the very bottom were a nightmare. i had to move it literal 0.001 mills or else the top trace would be too close to the pad.</h6>
+<p>with no errors, i decided to mill my pcb. however, the holes were slightly offset from the pads, but it ended up working. to not waste materials, i decided to employ <a href="https://www.mileshilliard.com/">miles</a> to help me solder the vias and the kb2040 (the hardest components).</p>
+<div class="slideshow">
+    <button class="slideshow-btn prev" type="button">‹</button>
+    <div class="slideshow-track">
+        <img src="/static/img/junior/11/pcb2-top.webp" alt="pcb top solder">
+        <img src="/static/img/junior/11/pcb2-via's.webp" alt="pcb vias solder">
+    </div>
+    <button class="slideshow-btn next" type="button">›</button>
+</div>
+<h6>beautiful solder job. yes i'm glazing.</h6>
+<p>we did have a problem where the solder from the vias &quot;inside&quot; the kb2040 caused it to not sit perfectly flat on the smd pads. to counteract this, i thought of using 90-degree headers for some height and to make soldering it a bit easier.</p>
+<p>i'm going to try and solder one of the smd diodes (they are legit microscopic) and see how it turns out. hopefully, if i can get the keycaps printed and finish soldering all of this, i just have to edit my code for diodes and the encoder, and i'll be done with this project!</p>
+<div class="navigation">
+    <a href="/blog.html" class="buttons">← back to all blogs </a>
+    <a href="/blogs/junior-blogs/10/" class="buttons"> last week's post →</a>
+</div>
+</main>
+
+<script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'light') {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        })();
+    </script>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>junior week 12</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/cpp.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <link rel="stylesheet" href="/css/blog-posts.css">
+    <script src="/js/slideshow.js"></script>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div class="yap">
+                <main class="post-container">
+    <h1>junior week nov. 20th, 2025</h1>
+<h2>diodes</h2>
+<p>started by soldering the diodes. <a href="https://www.mileshilliard.com/">miles</a> showed me how to use solder paste and the air gun to solder the diodes due to their size.</p>
+<p>furthermore, i decided to use my first pcb (the broken board) as a way to practice my soldering. since i had a bunch of extra diodes, i soldered them all on the broken board and probed them to ensure they were working.</p>
+<p><img src="/static/img/junior/12/test-board.webp" alt="test board"></p>
+<h6>only shorted one of the diodes.</h6>
+<p>with this done, i started to solder them onto the main board.
+<img src="/static/img/junior/12/diodes.webp" alt="main board diodes"></p>
+<h2>encoder</h2>
+<p>after finishing the diodes, i decided to solder the encoder next. however, i ran into a problem when doing so. i accidentally soldered it backwards (it should be on the side opposite to the kb2040).</p>
+<p><img src="/static/img/junior/12/accident.webp" alt="encoder accident"></p>
+<p>yet again, <a href="https://www.mileshilliard.com/">miles</a> saved me by showing me how to use solder wick to remove the solder, and resoldered it.</p>
+<h2>switches</h2>
+<p>with everything else done, the switches were the final thing i needed to solder. we had a problem though; the switches laid flush, and we needed to solder both sides of one of the pads for each switch.</p>
+<p><a href="https://www.mileshilliard.com/">miles</a> and <a href="https://timmy.greenlifestylelabs.com/">tim</a> both helped try and figure it out, until mr. christy pointed out we had vias. tim showed me how vias worked, and i started soldering all the switches.</p>
+<p>however, on the final one, i accidentally pulled the pad on the pcb, causing me to be unable to solder the final switch properly. <a href="https://timmy.greenlifestylelabs.com/">tim</a> figured out a solution and fixed my board.</p>
+<div class="slideshow">
+    <button class="slideshow-btn prev" type="button">‹</button>
+    <div class="slideshow-track">
+        <img src="/static/img/junior/12/full-front.webp" alt="pcb front full">
+        <img src="/static/img/junior/12/full-back.webp" alt="pcb back full">
+    </div>
+    <button class="slideshow-btn next" type="button">›</button>
+</div>
+###### front and back of the double sided pcb. my first one!
+<h2>while i was soldering, i also started printing the r1 1x1 keycaps which i would be using.</h2>
+<p><img src="/static/img/junior/12/keycap.webp" alt="keycap print"></p>
+<p>i tried two orientations: one at an angle, and the other where it was printed on the top. i ended up printing it on an angle, as it didn't ruin the surface of the keycap and taking out the small support wasn't too hard.</p>
+<h2>testing</h2>
+<p>with everything done, i tried testing out the macropad, just for it to not work. i wasn't sure why this was happening, so i decided to probe everything to figure out what was wrong.</p>
+<p>while probing, however, i couldn't find any issues. upon closer inspection, i realized that one of the via's (column 2, digital pin 4) pad was broken. furthermore, row 2 (digital pin 8) also had a problem with its own via.</p>
+<p>me and <a href="https://www.mileshilliard.com/">miles</a> decided to just have the pcb made professionally, but wait until i started the keyboard's pcb so we could get them both at once (and pay less for shipping). mr. christy was fine with this, but said i should try and recreate it on a breadboard to ensure that my pcb is correct.</p>
+<p><img src="/static/img/junior/12/breadboard.webp" alt="breadboard test"></p>
+<h6>my amazing recreation.</h6>
+<p>the switches ended up working, but the rotary encoder wasn't working for some reason. i'm going to have to figure out what's wrong and adjust my pcb if it's a wiring issue with the encoder.</p>
+<p>when i get the encoder working, i can start the keyboard project and hopefully revisit the macropad with a professionally made pcb that results in no errors.</p>
+<div class="navigation">
+    <a href="/blog.html" class="buttons">← back to all blogs </a>
+    <a href="/blogs/junior-blogs/11/" class="buttons"> last week's post →</a>
+</div>
+</main>
+
+<script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'light') {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        })();
+    </script>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

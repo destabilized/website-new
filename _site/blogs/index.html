@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my blog.</title>
+    <script src="/js/home.js"></script>
+    <script src="/js/posts.js"></script>
+    <link rel="stylesheet" href="/css/blog-home.css">
+</head>
+<body>
+    <main class="grid-container">
+    <header class="top-bar">
+        <nav class="main-nav">
+            <a href="/home">home</a>
+            <a href="/projects">projects</a>
+            <a href="/blogs">blog</a>
+            <a href="/contact">contact</a>
+        </nav>
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark mode">
+            <span class="theme-icon">🌙</span>
+        </button>
+    </header>
+
+    <section class="search-section">
+        <div class="search-container">
+            <input type="text" placeholder="search smth..." class="search-input">
+            <button class="clear-btn">
+                <span class="clear-txt">clear</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-delete ml-2 size-4"><path d="M10 5a2 2 0 0 0-1.344.519l-6.328 5.74a1 1 0 0 0 0 1.481l6.328 5.741A2 2 0 0 0 10 19h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2z"></path><path d="m12 9 6 6"></path><path d="m18 9-6 6"></path></svg>
+            </button>
+        </div>
+
+        <div class="search-filters">
+            <div class="filter-right">
+                <div class="clear-btn" id="sort">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-down h-4 w-4 text-muted-foreground"><path d="m21 16-4 4-4-4"></path><path d="M17 20V4"></path><path d="m3 8 4-4 4 4"></path><path d="M7 4v16"></path></svg>
+                    <span class="clear-txt">sort: </span>
+                </div>
+                <select class="sort-select">
+                    <option value="newest">newest</option>
+                    <option value="oldest">oldest</option>
+                </select>
+            </div>
+        </div>
+    </section>
+
+    <section id="posts-container" class="posts-list"></section>
+    </main>
+</body>
+</html>

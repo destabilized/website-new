@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>junior week 20</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/cpp.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <link rel="stylesheet" href="/css/blog-posts.css">
+    <script src="/js/slideshow.js"></script>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div class="yap">
+                <main class="post-container">
+    <h1>junior week feb. 5, 2026</h1>
+<p>slow progress on the keycap.</p>
+<p>(hopefully) fixed the left enter key. still waiting on the 3d printer to test it before resin printing. while cleaning the key up, i got these errors by accident (due to just deleting faces that were messed up).</p>
+<div class="slideshow">
+    <button class="slideshow-btn prev" type="button">‹</button>
+    <div class="slideshow-track">
+        <img src="/static/img/junior/20/error.webp" alt="3d modeling error 1">
+        <img src="/static/img/junior/20/error2.webp" alt="3d modeling error 2">
+    </div>
+    <button class="slideshow-btn next" type="button">›</button>
+</div>
+<h6></h6>
+<p>fixed it up, and that's all i did with the keyboard this week.</p>
+<h2>p118 charger</h2>
+<p>so my dad has this ryobi p118 charger that's broken so i decided to take a look and poke around.</p>
+<p><img src="https://i.ebayimg.com/images/g/OLEAAOSweZZg-uFt/s-l1600.png" alt="ryobi p118 charger"></p>
+<p>didn't really find much info, but miles explained how the battery charger works. <strong>Note to self:</strong> be way more careful with live circuits—took a 120v AC shock while probing, which is definitely not the goal.</p>
+<h2>reflow oven</h2>
+<p>forgot to take photos opps.</p>
+<p>anyways mr. christy wanted me to look at the reflow oven because it takes an extremely long time to boot / wouldn't boot at times. we tried a few things and nothing worked. eventually mr. christy told me to write an adafruit forum post addressing the problem, and we found the solution like that.</p>
+<p>turns out it was a random problem due to interferences with I2C between 3.3v and 5v because we didn't cut the 5v connector.</p>
+<p><img src="/static/img/junior/20/goat.webp" alt="adafruit forum goat"></p>
+<p>haven't cut the connector yet, but testing the boot time without the sensor and then reconnecting it seems to work perfectly fine, so that was definitely the problem.</p>
+<h2>tablet</h2>
+<p>my friend adam lewis has this samsung tablet that isn't holding charge, so i decided to try and take a look at it. initial idea was to just open it up and double check all the connections, so that's what i did.</p>
+<p><img src="/static/img/junior/20/ipad.webp" alt="opening the tablet"></p>
+<p>however, even after doing so it didn't work. (sorry adam). not too sure what the problem is—could be a dead cell or the charging port itself—but yeah.</p>
+<p>gotta lock back in next week for the keyboard. hopefully the 3d printer will be up and euan doesn't hog it.</p>
+<div class="navigation">
+    <a href="/blog.html" class="buttons">← back to all blogs </a>
+    <a href="/blogs/junior-blogs/19/" class="buttons"> last week's post →</a>
+</div>
+</main>
+
+<script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'light') {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        })();
+    </script>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

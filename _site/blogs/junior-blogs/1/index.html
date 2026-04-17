@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>junior week 1</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/cpp.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <link rel="stylesheet" href="/css/blog-posts.css">
+    <script src="/js/slideshow.js"></script>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div class="yap">
+                <main class="post-container">
+    <h1>junior week 9/2 - 9/5</h1>
+<p>start of my junior year, so we had to help around the shop with some tasks such as counting and putting away new inventory.</p>
+<p>after finishing that, i finally started my first (mini) project this year, adding a 7-segment display onto a sign that we have in the shop.</p>
+<p><img src="/static/img/junior/1/sign.webp" alt="sign"></p>
+<p>we've had this sign for a while, and miles, jonas, and i have been manually updating how many days without an accident.</p>
+<p>rather than doing that, we decided to just cut out the white hole and see if there was a 7-segment display we could put in there, and then it would update itself.</p>
+<p>i haven't gotten much done yet due to the weird nature of this 7-segment display (as you have to manually turn on / off each &quot;line&quot; on the number along with being unable to display more than one digit at once.)</p>
+<h6>see diagram below</h6>
+<p><img src="/static/img/junior/1/diagram.webp" alt="diagram"></p>
+<p>this is all i have so far as a result</p>
+<pre><code class="language-cpp">// refer to miles' schematic that he made real (a, b, c, d, e, f, g)
+static constexpr uint8_t num_arr [10][7] = 
+  {
+    {1, 1, 1, 1, 1, 1, 0}, // 0
+    {0, 1, 1, 0, 0, 0, 0}, // 1
+    {1, 1, 0, 1, 1, 0, 1}, // 2
+    {1, 1, 1, 1, 0, 0, 1}, // 3
+    {0, 1, 1, 0, 0, 1, 1}, // 4
+    {1, 0, 1, 1, 0, 1, 1}, // 5
+    {1, 0, 1, 1, 1, 1, 1}, // 6
+    {1, 1, 1, 0, 0, 0, 0}, // 7
+    {1, 1, 1, 1, 1, 1, 1}, // 8 
+    {1, 1, 1, 0, 0, 1, 1} // 9
+  };
+
+void setup() {
+  Serial.begin(9600);
+}
+</code></pre>
+<p>the lack of progress was mainly due to having to reimage computers due to the new year.</p>
+<p>while all the computers were reimaged, the laptops weren't. mr. christy wanted me to reimage the p52's that we had, so i started with that.</p>
+<p>after finishing this, one of the sophomore's computer's, oscar kept booting into bios rather than windows.</p>
+<div class="slideshow">
+  <button class="slideshow-btn prev" type="button">‹</button>
+    <div class="slideshow-track">
+      <img src="/static/img/junior/1/broken.webp">
+      <img src="/static/img/junior/1/fixed.webp">
+    </div>
+  <button class="slideshow-btn next" type="button">›</button>
+</div>
+<p>i thought this was a corrupted ssd, so we decided to reimage the computer, and it was fixed temporarily.</p>
+<p>however, when he restarted his computer it went straight back to the bios screen, so i figured it was something else (such as an outdated bios version, faulty cmos battery, etc.)</p>
+<p>i decided to reimage the computer again, and while doing so, i noticed that his windows partition was only 100mb, way lower than the normal 60gb windows image.</p>
+<p>because of this, i assumed there was something corrupting the files on the ssd, so i decided to run a scan to check for corrupted files.</p>
+<div class="slideshow">
+  <button class="slideshow-btn prev" type="button">‹</button>
+    <div class="slideshow-track">
+      <img src="/static/img/junior/1/scan.webp">
+      <img src="/static/img/junior/1/scan_log.webp">
+    </div>
+  <button class="slideshow-btn next" type="button">›</button>
+</div>
+<p>after a quick sfc /scannow, it did in fact find and repair some of the corrupted files. it turns out that the driver files were corrupted, and ended up deleting the data on the ssd.</p>
+<p>with this fixed, i tried restarting the computer multiple times to ensure that it worked each time, and the computer seems to be fixed.</p>
+<div class="navigation">
+  <a href="/blog.html" class="buttons">← back to all blogs </a>
+  <a href="/soph/week_19.html" class="buttons"> last year's post →</a>
+</div>
+</main>
+
+<script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'light') {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        })();
+    </script>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>junior week 7</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/cpp.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <link rel="stylesheet" href="/css/blog-posts.css">
+    <script src="/js/slideshow.js"></script>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div class="yap">
+                <main class="post-container">
+    <h1>junior week oct. 16th, 2025</h1>
+<p>had monday off, so shorter post this time.</p>
+<h2>the task</h2>
+<p>on tuesday, mr.christy told us that he had a job for me, <a href="https://www.mileshilliard.com/">miles</a>, and <a href="https://jonaswirz.wordpress.com/">jonas</a>. that job was fixing the printer that graphic design had.</p>
+<p><img src="https://i.ebayimg.com/images/g/Z9EAAOSwZcNhJBjU/s-l1200.jpg" alt="roland printer"></p>
+<h6>this is what it looks like. it's a roland soljet pro iii xc-540</h6>
+<p>the problem was that the printer was broken. it has been since june of 2025.</p>
+<p>so we decided to go up and talk to mr. spagnola to figure out the issue.</p>
+<h2>issue</h2>
+<p>there were two issues which we identified:</p>
+<ol>
+<li>the fact that the printer wouldn't connect to the computer via ethernet cable</li>
+<li>if it did, it would disconnect mid print, and leave an unfinished print</li>
+</ol>
+<p><img src="/static/img/junior/7/problem.webp" alt="printer error"></p>
+<h2>our &quot;solutions&quot;</h2>
+<p>we figured out that the ip that was on the computer didn't match the ip on the printer.</p>
+<p>this was because the ethernet port wasn't flashing anything when connected, indicating that the printer wasn't recieving anything.</p>
+<p>we didn't know how to adjust the printer's ip to fix this however, until miles accidently found it while clicking around in the menu. with this, we set the first three segments of the ip address to match the one on the computer, and set the final one as something slightly higher in case anything else already had that ip.</p>
+<p><img src="/static/img/junior/7/ip_fix.webp" alt="ip fix"></p>
+<p>thanks to this, we were able to connect to the printer, so we started a test print to see if we could replicate the problem.</p>
+<p>as a result, we got the exact same error (refer back to the photo with the problem. the print above the first one was the print we did after we got the printer reconnected.)</p>
+<p>i spent a bunch of time looking through a plethora of forms to see if i could find anyone with similar issues, and i did.</p>
+<p>i found an instance where someone's printer (similar model, but slightly different) had a problem in which they fixed with a firmware update, which contained a ethernet driver update.</p>
+<p>i then spent some time looking for the firmware, just to find that the printer model was already up to date. i did however find an ethernet driver, which i installed by accessing the printer's ip port.</p>
+<p>with this all done, i tried another test print and found out that the printer was still disconnecting randomly, but this time it would still send a signal and recieve signals from the printer.</p>
+<p><img src="/static/img/junior/7/dc_but_sending.webp" alt="disconnected but sending data"></p>
+<h6>you can see that the printer status is &quot;not connected&quot; yet it was still recieving and sending data. i didn't take a video but trust me.</h6>
+<p>still, since both devices were recieving signal, the bed was still heating up, and it started printing.</p>
+<p>however, it just didn't print. it would forever say &quot;processing&quot; and never start.</p>
+<p>i decided to see if i could find any logs, but couldn't find anything. i looked at the computers log instead, and found a potential issue.</p>
+<p>it turned out that windows security was blocking something. while it was a shot in the dark, i decided to turn it off.</p>
+<p>i started another print, and these were the results:</p>
+<video controls>
+    <source src="/static/vids/junior/7/final.mp4" type="video/mp4">
+</video>
+<h6>techincally this wasn't the first video i took. this was the second. i forgot to record the first.</h6>
+<p>it worked... i wasn't expecting it to whatsoever. however, there were still some issues.</p>
+<p>first and foremost, the print came out deformed slightly. not too sure why this happened, but i made another iteration (the one you see in the video) and got a similar result.</p>
+<p><img src="/static/img/junior/7/slightly_off.webp" alt="deformed print"></p>
+<h6>i'll have to refer to mr. spagnola to see if he has any ideas, but this is what it looks like.</h6>
+<p>the second problem was that the printer was still &quot;disconnected&quot; despite continuing to send and recieve data. after discussing with miles and mr.spagnola, we believed it could be a software issue, or a overheating issue.</p>
+<p>for now though, the printer works (to some extent), but you have to always restart the printer before another print, which means waiting the extremely long time for the heater to heat up.</p>
+<p>probably gonna keep working on this because a new motherboard costs $2,000, and i don't think anyone wants to pay that much.</p>
+<p>also worked on macropad a bit. updates on that next week.</p>
+<div class="navigation">
+    <a href="/blog.html" class="buttons">← back to all blogs </a>
+    <a href="/blogs/junior-blogs/6/" class="buttons"> last week's post →</a>
+</div>
+</main>
+
+<script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'light') {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        })();
+    </script>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

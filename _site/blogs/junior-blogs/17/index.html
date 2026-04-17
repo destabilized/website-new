@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>junior week 17</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/cpp.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <link rel="stylesheet" href="/css/blog-posts.css">
+    <script src="/js/slideshow.js"></script>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div class="yap">
+                <main class="post-container">
+    <h1>junior week jan. 15, 2026</h1>
+<div class="slideshow">
+    <button class="slideshow-btn prev" type="button">‹</button>
+    <div class="slideshow-track">
+        <img src="/static/img/junior/17/resin.webp" alt="failed resin prints">
+        <img src="/static/img/junior/17/clusterfuck.webp" alt="resin printing mess">
+    </div>
+    <button class="slideshow-btn next" type="button">›</button>
+</div>
+<h6>same resin printer btw</h6>
+<p>so the batch of switches i made got absolutely destroyed. exact same orientation as my first resin print, with this print even having a new fill of resin added and still all got screwed.</p>
+<p>i then tested an orientation on the flat plane of the keycap, and got similar, horrible results. maybe there was something i did wrong, but seeing how i changed nothing from my first print leads me to believe that i wasn't at fault.</p>
+<p>eventually, mr. l told me to just print it on the top of the keycap and just sand it down due to how easy resin is when sanded. i ended up doing that, and the end results turned out amazingly.</p>
+<div class="slideshow">
+    <button class="slideshow-btn prev" type="button">‹</button>
+    <div class="slideshow-track">
+        <img src="/static/img/junior/17/r3-bot.webp" alt="resin keycap bottom">
+        <img src="/static/img/junior/17/r3-top.webp" alt="resin keycap top">
+    </div>
+    <button class="slideshow-btn next" type="button">›</button>
+</div>
+<h6>final results</h6>
+<p>going forward, i'm going to just print the rest like that and just sand it down. also, the r3 and r2 keycaps seem to be pretty accurate to the original size.</p>
+<p><img src="/static/img/junior/17/two.webp" alt="r3 and r2 keycap"></p>
+<h6>r3 and r2 keycap together</h6>
+<h2>pcb updates</h2>
+<p>i decided to remove the kb2040 and test if adding a diode would fix the problem with the escape key. i spent way too long removing the kb2040 and then <a href="https://www.mileshilliard.com/">miles</a> helped me wire up the final diode, supergluing it in place.</p>
+<div class="slideshow">
+    <button class="slideshow-btn prev" type="button">‹</button>
+    <div class="slideshow-track">
+        <img src="/static/img/junior/17/fix.webp" alt="diode fix 1">
+        <img src="/static/img/junior/17/fix2.webp" alt="diode fix 2">
+    </div>
+    <button class="slideshow-btn next" type="button">›</button>
+</div>
+<p>plugging it back in and testing, the escape (and grave key [which is used when you click fn + esc]) ended up working.</p>
+<p><img src="/static/img/junior/17/esc_working.webp" alt="escape key working"></p>
+<h2>case updates</h2>
+<p><a href="https://timmy.greenlifestylelabs.com/">tim</a> guided me through part of the process of creating my case, leading to this:</p>
+<p><img src="/static/img/junior/17/case.webp" alt="case design"></p>
+<p>using a spring screw (if that's what they're called) to adjust the pcb (by tightening the screw, the case clamps less on the pcb. by loosening it, the clamp will tighten on the pcb).</p>
+<div class="slideshow">
+    <button class="slideshow-btn prev" type="button">‹</button>
+    <div class="slideshow-track">
+        <img src="/static/img/junior/17/case2.webp" alt="case angle 1">
+        <img src="/static/img/junior/17/case3.webp" alt="case angle 2">
+    </div>
+    <button class="slideshow-btn next" type="button">›</button>
+</div>
+<h6>more angles</h6>
+<div class="navigation">
+    <a href="/blog.html" class="buttons">← back to all blogs </a>
+    <a href="/blogs/junior-blogs/16/" class="buttons"> last week's post →</a>
+</div>
+</main>
+
+<script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'light') {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        })();
+    </script>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

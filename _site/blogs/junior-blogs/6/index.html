@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>junior week 6</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/cpp.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <link rel="stylesheet" href="/css/blog-posts.css">
+    <script src="/js/slideshow.js"></script>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div class="yap">
+                <main class="post-container">
+    <h1>junior week oct. 9th, 2025</h1>
+<p>i didn't wanna make a full scale keyboard, so i decided to start with a macropad to learn some of the basics before moving onto the keyboard.</p>
+<h2>library</h2>
+<p>started by finding all the components for my pcb, using cherrymx switches (as they are the norm) along with diodes, an encoder, and the kb2040.</p>
+<p><img src="/static/img/junior/6/library.webp" alt="library components"></p>
+<p>after this, i started working on the schematic.</p>
+<h2>schematic</h2>
+<p>i learned from a video that you could just use labels to wire up things in the schematic instead of actually wiring them, so i did that to make my schematic neater.</p>
+<p><img src="/static/img/junior/6/schem.webp" alt="schematic"></p>
+<p>the pcb will utilize a 2x4 matrix to allow for a total of 6 pins to be used on the kb2040 rather than 8 total pins. while this isn't a huge improvement, it's good practice for when i need to scale up when making the actual keyboard.</p>
+<p>with this done, i moved onto wiring it all up.</p>
+<h2>pcb</h2>
+<p>due to how keyboards work, i needed to make a double sided pcb. this is because switches are placed above the pcb, while diodes are generally placed under the pcb to hide them. additionally, i decided to place the kb2040 under the pcb to hide it.</p>
+<p><img src="/static/img/junior/6/pcb.webp" alt="pcb layout"></p>
+<p>i also adjusted the packages for the pads on the switches and the encoder so our pcb mill wouldn't struggle when cutting it out.</p>
+<p>as a result, however, the pads on the holes for the switches now touch one of the plastic holes for the switches. i'm not sure if this is an issue, but i'll have to check.</p>
+<h2>3d pcb</h2>
+<p>with this all done, this is what the pcb looked like:</p>
+<div class="slideshow">
+    <button class="slideshow-btn prev" type="button">‹</button>
+    <div class="slideshow-track">
+        <img src="/static/img/junior/6/front.webp" alt="front side of the pcb">
+        <img src="/static/img/junior/6/bottom.webp" alt="bottom side of the pcb">
+    </div>
+    <button class="slideshow-btn next" type="button">›</button>
+</div>
+<p>i still need to add the 3d model, as i plan on building the chasis based on the pcb, so knowing where everything lies will be useful. additionally, i plan on creating custom keycaps, so i'll have to take the dimensions of the switches anyways.</p>
+<p>moving on, i should be able to start ordering the switches and diodes soon, but i'm going to start on a base after importing all the 3d models of the pcb.</p>
+<div class="navigation">
+    <a href="/blog.html" class="buttons">← back to all blogs </a>
+    <a href="/blogs/junior-blogs/5/" class="buttons"> last week's post →</a>
+</div>
+</main>
+
+<script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'light') {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        })();
+    </script>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

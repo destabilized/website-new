@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>andrew huang - portfolio</title>
+    <link rel="stylesheet" href="/css/home.css">
+</head>
+<body>
+    <main class="grid-container">
+    <header class="top-bar">
+        <nav class="main-nav">
+            <a href="/home">home</a>
+            <a href="/projects">projects</a>
+            <a href="/blogs">blog</a>
+            <a href="/contact">contact</a>
+        </nav>
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark mode">
+            <span class="theme-icon">🌙</span>
+        </button>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h1>hi andrew here. </h1>
+            <p class="subtitle">17yo robotics and engineering student from america 🇺🇸</p>
+            <p>i create a bunch of random projects. pls hire me i need a job so i have smth else for college apps</p>
+            
+            <div class="hero-btns">
+                <a target="_blank" href="/resume.pdf">
+                    <button class="resume-btn">
+                        <span class="resume-txt">resume</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-down"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path><path d="M14 2v4a2 2 0 0 0 2 2h4"></path><path d="M12 18v-6"></path><path d="m9 15 3 3 3-3"></path></svg>
+                    </button>
+                </a>
+
+                <a target="_blank" href="https://github.com/destabilized">
+                    <button class="icons">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+                    </button>
+                </a>
+
+                <a target="_blank" href="mailto:az42hu@gmail.com">
+                    <button class="icons">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+                    </button>
+                </a>
+            </div>
+        </div>
+
+        <div class="hero-visual">
+            <img src="/static/assets/filler.png" alt="me" class="single-profile-img">
+        </div>
+
+    </section>
+
+        <div class="toggle-bar">
+            <button class="toggle-btn active" data-target="education">Education</button>
+            <button class="toggle-btn" data-target="work">Work</button>
+        </div>
+
+        <section id="education" class="timeline content-section">
+            <div class="timeline-item">
+                <div class="logo">
+                    <img src="/static/assets/.webp" class="org-logo" alt="">
+                </div>
+                
+                <div class="details">
+                    <div class="item-header">
+                        <h3>college stuff (colleges you defo wanna be here)</h3>
+                    </div>
+
+                    <div class="item-header">
+                        <h5>student at *your college here*</h5> 
+                        <span class="date">2027 - 2031?</span>
+                    </div>
+                    
+                    <ul class="achievements">
+                        <li>things</li>
+                        <li>things no2 anyways you should defo have me as a student at your college. think of how much bragging rights you would have</li>
+                    </ul>
+                </div>
+
+                <div class="logo">
+                    <img src="/static/assets/medford.webp" class="org-logo" alt="mhs logo">
+                </div>
+                
+                <div class="details">
+                    <div class="item-header">
+                        <h3>Medford Vocational Technical Highschool</h3>
+                    </div>
+
+                    <div class="item-header">
+                        <h5>student currently</h5> 
+                        <span class="date">2023 - 2027 (expected graduation)</span>
+                    </div>
+                    
+                    <ul class="achievements">
+                        <li>vocational shop - robotics & engineering</li>
+                        <li>coursework in cad, electronics, and programming</li>
+                    </ul>
+
+                    <div class="project-links">
+                        <a href="/projects" class="mini-btn">
+                            check out my projects :3
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="work" class="timeline content-section hidden">
+            <div class="timeline-item">
+                <div class="logo">
+                    <img src="/static/assets/.webp" class="org-logo" alt="">
+                </div>
+                
+                <div class="details">
+                    <div class="item-header">
+                        <h3>work (this could be you)</h3>
+                    </div>
+
+                    <div class="item-header">
+                        <h5>job title at *your company here*</h5> 
+                        <span class="date">20xx - 20xx</span>
+                    </div>
+                    
+                    <ul class="achievements">
+                        <li>umm you should hire me i need a job</li>
+                        <li>pls i'll do anything no cap</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-title">
+            <h2>featured projects</h2>
+            <a href="/projects" class="view-more-link">
+                <span class="view-more">view more</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right size-5"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+            </a>
+        </div>
+        <section class="projects-grid">
+            <article class="project-card">
+                <div class="card-thumb">
+                    <span>image of sumobot</span>
+                </div>
+                <div class="card-content">
+                    <div class="item-header">
+                        <h3>sumobot</h3>
+                        <span class="date">2025</span>
+                    </div>
+                    <p>
+                        a sumobot built by me, 
+                        <a class="view-more" href="https://www.mileshilliard.com/" target="_blank" rel="noopener noreferrer">miles</a>, 
+                        and <a class="view-more" href="https://jonaswirz.wordpress.com/" target="_blank" rel="noopener noreferrer">jonas</a>. 
+                        instead of using ir sensors, we took a mechanical approach with roller lever limit switches to tell when the bot was "out" of the arena.
+                    </p>
+                    <div class="tags">
+                        <span>arduino</span><span>fusion 360</span><span>tactile sensing</span><span>autonomous robots</span>
+                    </div>
+                </div>
+            </article>
+            <article class="project-card">
+                <div class="card-thumb"></div>
+                <div class="card-content">
+                    <div class="item-header">
+                        <h3>lightbox</h3>
+                        <span class="date">2025</span>
+                    </div>
+                    <p>a lightbox built by me using an attiny84 and a temperature sensor to change the color (changing the shades of blue based on how hot / cold it is) </p>
+                    <div class="tags">
+                        <span>fusion360</span><span>ardunio</span><span>microcontrollers</span><span>temperature sensors</span><span>lasercutting</span><span>inkscape</span>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <div class="section-title">
+            <h2>recent posts</h2>
+            <a href="/blogs" class="view-more-link">
+                <span class="view-more">view more</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right size-5"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+            </a>
+        </div>
+
+        <section class="posts-list"></section>
+    </main>
+
+    <script src="/js/posts.js"></script> 
+    <script src="/js/home.js"></script>
+</body>
+</body>
+</html>

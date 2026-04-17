@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>junior week 5</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/cpp.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <link rel="stylesheet" href="/css/blog-posts.css">
+    <script src="/js/slideshow.js"></script>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div class="yap">
+                <main class="post-container">
+    <h1>junior week 9/29 - 10/2</h1>
+<p>hopefully gonna be done with this project in a week, then i'll be working on a keyboard.</p>
+<h2>pcb</h2>
+<p>creating a pcb generally isn't that hard, but i couldn't figure out an orientation in which all the wires could be perfectly connected.</p>
+<p><img src="/static/img/junior/5/wtf.webp" alt="pcb fail"></p>
+<h6>one of my fails where i tried to use 20mills for the thickness. drc rules didn't like that.</h6>
+<p>i spent a lot of time working on possible arrangements until i ended up with 3 air wires, the least i think i can go to.</p>
+<p>miles recommended that i just create my own traces and pads rather than trying to force myself to wire everything, so that is what i'll be doing.</p>
+<p>in the end, the pcb document looked like this:
+<img src="/static/img/junior/5/actual_end.webp" alt="pcb layout"></p>
+<h2>cardboard pcb</h2>
+<p>a few weeks ago, mr. christy was talking about creating a pcb out of cardboard with the lasercutter to ensure everything fits.</p>
+<p>since i wasn't using a footprint and symbol for my seven seg and arranged holes based on the distance which i measured, i decided that was a good idea.</p>
+<p>this is what my first pcb printout looked like:
+<img src="/static/img/junior/5/error.webp" alt="cardboard error"></p>
+<p>while it was on top of the metromini, i didn't mind too much. however, there was a chance that a little pressure would cause the seven segment to click the &quot;reset&quot; button on the metromini, which would reset the timer—which is not ideal.</p>
+<p>i shifted the location of the headers, and reprinted. this worked out a lot better.
+<img src="/static/img/junior/5/final.webp" alt="cardboard final"></p>
+<h2>hole</h2>
+<p>before making the pcb, i wanted to test the pcb and everything inside the sign, to ensure everything worked correctly.</p>
+<p>with some help from miles teaching me and mr. l, i dremelled a hole in the sign.</p>
+<p><img src="/static/img/junior/5/hole.webp" alt="dremel hole"></p>
+<h6>also broke a blade when doing this. oops...</h6>
+<p>the hole was a bit small, so the pins were bent slightly. this meant that the distance for the holes on the original pcb wouldn't work, so i made another cardboard one after fixing it.</p>
+<p>also added electrical tape so the wires don't short themselves.</p>
+<p><strong>final product looked like this:</strong></p>
+<div class="slideshow">
+    <button class="slideshow-btn prev" type="button">‹</button>
+    <div class="slideshow-track">
+        <img src="/static/img/junior/5/sign.webp" alt="sign front">
+        <img src="/static/img/junior/5/back_sign.webp" alt="sign back">
+    </div>
+    <button class="slideshow-btn next" type="button">›</button>
+</div>
+<h2>actual pcb</h2>
+<p>printed it, and it worked out fine.</p>
+<div class="slideshow">
+    <button class="slideshow-btn prev" type="button">‹</button>
+    <div class="slideshow-track">
+        <img src="/static/img/junior/5/pcb_front.webp" alt="pcb front">
+        <img src="/static/img/junior/5/pcb_back.webp" alt="pcb back">
+    </div>
+    <button class="slideshow-btn next" type="button">›</button>
+</div>
+<p>just have to solder it now, and create a bigger button for reseting this. should be done by next week. hopefully the pcb works as intended and i don't burn traces while trying to create my own trace.</p>
+<div class="navigation">
+    <a href="/blog.html" class="buttons">← back to all blogs </a>
+    <a href="/blogs/junior-blogs/4/" class="buttons"> last week's post →</a>
+</div>
+</main>
+
+<script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'light') {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        })();
+    </script>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

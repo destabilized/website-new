@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>junior week 2</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/cpp.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <link rel="stylesheet" href="/css/blog-posts.css">
+    <script src="/js/slideshow.js"></script>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div class="yap">
+                <main class="post-container">
+    <h1>junior week 9/8 - 9/12</h1>
+<p>started the week by making my code for the seven segment display, starting with just two digits at first.</p>
+<h2>code changes</h2>
+<pre><code class="language-cpp">// refer to miles' schematic that he made real (a, b, c, d, e, f, g)
+static constexpr uint8_t num_arr[10][7] = {
+  { 1, 1, 1, 1, 1, 1, 0 },  // 0
+  { 0, 1, 1, 0, 0, 0, 0 },  // 1
+  { 1, 1, 0, 1, 1, 0, 1 },  // 2
+  { 1, 1, 1, 1, 0, 0, 1 },  // 3
+  { 0, 1, 1, 0, 0, 1, 1 },  // 4
+  { 1, 0, 1, 1, 0, 1, 1 },  // 5
+  { 1, 0, 1, 1, 1, 1, 1 },  // 6
+  { 1, 1, 1, 0, 0, 0, 0 },  // 7
+  { 1, 1, 1, 1, 1, 1, 1 },  // 8
+  { 1, 1, 1, 0, 0, 1, 1 }   // 9
+};
+
+// pins for the making numbers (a, b, c, d, e, f, g)
+const int numPins[7] = { 2, 3, 4, 5, 6, 7, 8 };
+
+// pins for each digit (thousands, hundreds, tens, ones)
+const int digitPins[4] = { 10, 11, 12, 13 };
+
+int last_update = 0;
+const int update_freq = 1000;
+
+int num1, num2, num3, num4;
+
+void setup() {
+  for (uint8_t i = 0; i &lt; 7; i++) {
+    pinMode(numPins[i], OUTPUT);
+  }
+
+  for (uint8_t i = 0; i &lt; 4; i++) {
+    pinMode(digitPins[i], OUTPUT);
+  }
+}
+
+void loop() {
+  if ((millis() - last_update) &gt; update_freq) {
+    last_update = millis();
+    num4++;
+
+    if (num4 &gt; 9) {
+      num3++;
+      num4 = 0;
+    }
+
+    if (num3 &gt; 9) {
+      num2++;
+      num3 = 0;
+    }
+
+    if (num2 &gt; 9) {
+      num1++;
+      num2 = 0;
+    }
+
+    if (num1 &gt; 9) {
+      num1 = 0;
+      num2 = 0;
+      num3 = 0;
+      num4 = 0;
+    }
+  }
+
+  digitalWrite(digitPins[2], LOW);
+  digitalWrite(digitPins[3], HIGH);
+
+  for (uint8_t i = 0; i &lt; 7; i++) {
+    digitalWrite(numPins[i], num_arr[num4][i]);
+  }
+
+  delay(10);
+
+  digitalWrite(digitPins[3], LOW);
+  digitalWrite(digitPins[2], HIGH);
+
+  for (uint8_t i = 0; i &lt; 7; i++) {
+    digitalWrite(numPins[i], num_arr[num3][i]);
+  }
+
+  delay(10);
+}
+</code></pre>
+<p>this was the first draft of my code, where it would change the number every second.</p>
+<p>however, i quickly realized that after the number reached 33, it wouldn't update after every second, but update almost instantly. (overflow error)</p>
+<video controls>
+    <source src="/static/vids/junior/2/error.mp4" type="video/mp4">
+</video>
+<p>this was because i was using int's, so i quickly changed last_update and update_freq to use unsigned longs instead.</p>
+<p>in the code above, i fixed the erorr, and also decresaed the amount of delay so it wouldn't flicker as much.</p>
+<p>i also added all four digits. as a result however, all the digits became very dim since every value was set to display zero, even if the digit wasn't being utilized yet</p>
+<p>to fix this, i decided to add a list for having it display nothing</p>
+<pre><code class="language-cpp">static constexpr uint8_t num_arr[11][7] = {
+  { 1, 1, 1, 1, 1, 1, 0 },  // 0
+  { 0, 1, 1, 0, 0, 0, 0 },  // 1
+  { 1, 1, 0, 1, 1, 0, 1 },  // 2
+  { 1, 1, 1, 1, 0, 0, 1 },  // 3
+  { 0, 1, 1, 0, 0, 1, 1 },  // 4
+  { 1, 0, 1, 1, 0, 1, 1 },  // 5
+  { 1, 0, 1, 1, 1, 1, 1 },  // 6
+  { 1, 1, 1, 0, 0, 0, 0 },  // 7
+  { 1, 1, 1, 1, 1, 1, 1 },  // 8
+  { 1, 1, 1, 0, 0, 1, 1 },  // 9
+  { 0, 0, 0, 0, 0, 0, 0 }   // nothing
+};
+
+// turning on ones place
+  digitalWrite(digitPins[0], LOW);
+  digitalWrite(digitPins[1], LOW);
+  digitalWrite(digitPins[2], LOW);
+  digitalWrite(digitPins[3], HIGH);
+
+  for (uint8_t i = 0; i &lt; 7; i++) {
+    digitalWrite(numPins[i], num_arr[num4][i]);
+  }
+  delay(5);
+
+  // turning on tens place
+  if (num3 &gt; 0 || num2 &gt; 0 || num1 &gt; 0) {
+    digitalWrite(digitPins[0], LOW);
+    digitalWrite(digitPins[1], LOW);
+    digitalWrite(digitPins[2], HIGH);
+    digitalWrite(digitPins[3], LOW);
+
+    for (uint8_t i = 0; i &lt; 7; i++) {
+      digitalWrite(numPins[i], num_arr[num3][i]);
+    }
+    delay(5);
+  }
+
+  // turning on hundreds place
+  if (num2 &gt; 0 || num1 &gt; 0) {
+    digitalWrite(digitPins[0], LOW);
+    digitalWrite(digitPins[1], HIGH);
+    digitalWrite(digitPins[2], LOW);
+    digitalWrite(digitPins[3], LOW);
+
+    for (uint8_t i = 0; i &lt; 7; i++) {
+      digitalWrite(numPins[i], num_arr[num2][i]);
+    }
+    delay(5);
+  }
+
+  // turning on thousands place
+  if (num1 &gt; 0) {
+    digitalWrite(digitPins[0], HIGH);
+    digitalWrite(digitPins[1], LOW);
+    digitalWrite(digitPins[2], LOW);
+    digitalWrite(digitPins[3], LOW);
+
+    for (uint8_t i = 0; i &lt; 7; i++) {
+      digitalWrite(numPins[i], num_arr[num1][i]);
+    }
+    delay(5);
+  }
+</code></pre>
+<h2>restarting</h2>
+<p>mr. christy sugguested i use a driver, and miles has been suggesting i use wifi to sync the time, so i essentially restarted.</p>
+<p>i found one of these 74hc4511 drivers that works with common cathode seven segment displays, so i spent some time wiring it up
+<img src="https://www.nyerekatech.com/wp-content/uploads/2025/06/74hc-decoder-800x800.webp"></p>
+<p>with some help from <a href="https://ameblo.jp/fc2miha/entry-12833772767.html">this japanese website</a>, i got the wiring working along with some basic code to test the seven segment display powered by the motor driver</p>
+<p><img src="/static/img/junior/2/full.webp" alt="diagram">
+the number don't really work right now, but now i at least know that the driver is working with the seven segment display.</p>
+<p>i'll have to make new code to control each number, but i also decided to add a rtc to my project</p>
+<h2>rtc addition</h2>
+<p>i figured that a counter would be useless during the weekends, so technically the sign would be inaccurate.</p>
+<p>to fix this, i decided that connecting it to wifi was needed for the time and the day of the week.
+<img src="https://cdn-shop.adafruit.com/970x728/3295-07.jpg">
+i got a simple time library installed on it, and edited the code to print out the time after every hour.</p>
+<p>i just have to connect the time library with the seven segment display to update and stop the counter during the appropriate times.</p>
+<div class="navigation">
+    <a href="/blog.html" class="buttons">← back to all blogs </a>
+    <a href="/blogs/junior-blogs/1/" class="buttons"> last week's post →</a>
+</div>
+</main>
+
+<script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'light') {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        })();
+    </script>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
