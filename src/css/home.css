@@ -16,6 +16,7 @@
     --text-main: hsl(222, 47%, 11%);
     --text-dim: hsl(215, 16%, 47%);
     --accent: hsl(199, 89%, 48%);
+    --bg-dark: hsl(0, 0%, 100%);
 }
 
 body {
@@ -410,6 +411,15 @@ body {
 .card-thumb {
     height: 160px;
     background: var(--border);
+    overflow: hidden; 
+}
+
+.card-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; 
+    display: block;
+    background-color: var(--bg-dark);
 }
 
 .card-content {
@@ -431,12 +441,47 @@ body {
     border: 1px solid var(--border);
 }
 
+.contact-footer {
+    grid-column: span 12;
+    margin-top: 6rem;
+    padding-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    border-top: 1px solid var(--border); 
+}
+
+.footer-socials {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer-socials a {
+    color: var(--text-dim);
+    transition: color 0.2s;
+}
+
+.footer-socials a:hover {
+    color: var(--text-main);
+}
+
+
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
 @media (max-width: 700px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    .contact-footer {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+    }
     .hero { flex-direction: column; gap: 1.5rem; }
     .hero-visual { order: -1; }
     .projects-grid { grid-template-columns: 1fr; }

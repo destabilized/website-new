@@ -316,6 +316,32 @@ body {
     font-style: italic;
 }
 
+.contact-footer {
+    grid-column: span 12;
+    margin-top: 6rem;
+    padding-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    border-top: 1px solid var(--border); 
+}
+
+.footer-socials {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer-socials a {
+    color: var(--text-dim);
+    transition: color 0.2s;
+}
+
+.footer-socials a:hover {
+    color: var(--text-main);
+}
+
 @media (max-width: 650px) {
     .grid-container {
         padding: 1.5rem 1rem;
