@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sophomore week 7</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/cpp.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <link rel="stylesheet" href="/css/blog-posts.css">
+    <script src="/js/slideshow.js"></script>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div class="yap">
+                <main class="post-container">
+    <h1>soph week 2/24 - 2/28</h1>
+<p>i got inspiration from optimum youtube videos, where he creates a custom mod for the viper v2 pro mouse.</p>
+<p>i decided to try something similar with the targus amu660, taking its internals and designing a “zerømouse”-inspired shell for it.</p>
+<h2>3d model of the pcb</h2>
+<p>i began by creating a basic 3d model of the pcb to serve as the foundation for the shell and other components. in the image below, i’ve only modeled the left and right mouse buttons, along with the parts needed for the scroll wheel.</p>
+<p><img src="/static/img/soph/7/pcb.webp" alt="pcb"></p>
+<h6>just the basic shape so i know the dimensions.</h6>
+<p>after this, i could start working on the shell.</p>
+<h2>shell</h2>
+<div class="slideshow">
+    <button class="slideshow-btn prev" type="button">‹</button>
+    <div class="slideshow-track">
+        <img src="/static/img/soph/7/front.webp" alt="front view of mouse shell model">
+        <img src="/static/img/soph/7/back.webp" alt="back view of mouse shell model">
+    </div>
+    <button class="slideshow-btn next" type="button">›</button>
+</div>
+<p>this is the initial shell design, modeled after the zerømouse. i still need to add the “wings” to the shell, as there’s currently no place to rest your fingers comfortably.</p>
+<h2>3d printed shell</h2>
+<p><img src="/static/img/soph/7/3d.webp" alt="3d"></p>
+<p>this was just a test print, so it’s not a huge deal, but there were some issues.</p>
+<p>i printed this on the fusion3, and for some reason, it randomly filled in one side where it wasn’t supposed to.</p>
+<p>additionally, i noticed that the sensor area only had one layer, which i’ll need to fix by adjusting the shell thickness. i think that’s the reason behind the problem.</p>
+<p>the stands for the pcb mounting holes are also misaligned. this is mostly because i’m not great at using calipers for precise measurements. i’ll need to tweak the hole sizes and reduce the diameter of the cylinders, as they don’t fit into the pcb holes properly.</p>
+<p><img src="/static/img/soph/7/together.webp" alt="together"></p>
+<div class="navigation">
+    <a href="/blogs" class="buttons">← back to all blogs </a>
+    <a href="/blogs/soph-blogs/6/" class="buttons"> last week post →</a>
+</div>
+</main>
+
+<script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'light') {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        })();
+    </script>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

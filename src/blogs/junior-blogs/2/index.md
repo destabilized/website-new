@@ -199,6 +199,6 @@ i got a simple time library installed on it, and edited the code to print out th
 i just have to connect the time library with the seven segment display to update and stop the counter during the appropriate times.
 
 <div class="navigation">
-    <a href="/blog.html" class="buttons">← back to all blogs </a>
+    <a href="/blogs" class="buttons">← back to all blogs </a>
     <a href="/blogs/junior-blogs/1/" class="buttons"> last week's post →</a>
 </div>

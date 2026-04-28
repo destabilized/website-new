@@ -65,6 +65,6 @@ since i plan on the final keycaps being made in resin, i decided to resin print 
 it's not gonna be done today as it still needs to be washed and everything. however, i'm looking forward to seeing how my first ever resin print comes out.
 
 <div class="navigation">
-    <a href="/blog.html" class="buttons">← back to all blogs </a>
+    <a href="/blogs" class="buttons">← back to all blogs </a>
     <a href="/blogs/junior-blogs/13/" class="buttons"> last week's post →</a>
 </div>

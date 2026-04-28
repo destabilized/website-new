@@ -64,6 +64,6 @@ the switches ended up working, but the rotary encoder wasn't working for some re
 when i get the encoder working, i can start the keyboard project and hopefully revisit the macropad with a professionally made pcb that results in no errors.
 
 <div class="navigation">
-    <a href="/blog.html" class="buttons">← back to all blogs </a>
+    <a href="/blogs" class="buttons">← back to all blogs </a>
     <a href="/blogs/junior-blogs/11/" class="buttons"> last week's post →</a>
 </div>

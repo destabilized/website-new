@@ -67,6 +67,6 @@ overall, though, it was an extremely productive half-week. here are the final re
 hopefully machine shop stuff next week!
 
 <div class="navigation">
-    <a href="/blog.html" class="buttons">← back to all blogs </a>
+    <a href="/blogs" class="buttons">← back to all blogs </a>
     <a href="/blogs/junior-blogs/21/" class="buttons"> last week's post →</a>
 </div>

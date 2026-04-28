@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sophomore week 5</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/cpp.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <link rel="stylesheet" href="/css/blog-posts.css">
+    <script src="/js/slideshow.js"></script>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div class="yap">
+                <main class="post-container">
+    <h1>soph week 2/3 - 2/7</h1>
+<p>should finish my lightbox by next week. just a few more things to do.</p>
+<h2>schematic</h2>
+<p><img src="/static/img/soph/5/schem.webp" alt="schem"></p>
+<p>just a simple schematic. while preparing to mill my pcb, mr. christy suggested that using power and ground symbols would help clean up my schematic. i also ran into some issues during the milling process because i used incorrect components, as i hadn’t taken the time to set up an electronic library.</p>
+<h2>pcb errors</h2>
+<p><img src="/static/img/soph/5/error_1.webp" alt="error_1"></p>
+<p>the image above shows my pcb with several errors. the primary issue was that the traces were too thick, leaving insufficient clearance between components. although i could have enlarged the pcb to resolve these problems, i preferred the compact design and opted to reduce the trace width to 35mils instead of 50mils.</p>
+<p><img src="/static/img/soph/5/error_2.webp" alt="error_2"></p>
+<p>after addressing those errors, five new ones appeared. these were caused by using the wrong components, as i hadn’t properly managed my electronic library (as mentioned earlier). once i fixed this, all errors were resolved, and the pcb was ready for milling.</p>
+<div class="slideshow">
+    <button class="slideshow-btn prev" type="button">‹</button>
+    <div class="slideshow-track">
+        <img src="/static/img/soph/5/no_errors.webp" alt="pcb layout with no errors">
+        <img src="/static/img/soph/5/3dpcb.webp" alt="3d view of the pcb">
+    </div>
+    <button class="slideshow-btn next" type="button">›</button>
+</div>
+<p>once the pcb was milled, most of my time was spent crimping the power and ground wires and replacing the neopixel with a lightstrip. i also designed a power mechanism to supply energy to the board. unfortunately, there were no aux connectors available, so adding an aux power option wasn’t possible.</p>
+<p><img src="/static/img/soph/5/finished.webp" alt="finished"></p>
+<p>after milling my pcb, i spent most of my time crimping the power and ground wires together, while also swapping the neopixel to a lightstrip. following this, i created a power mechanism in order to power up my board. sadly, there were no aux connectors, so making an aux connector to power my board wouldn’t have been possible.</p>
+<h2>acrylic piece</h2>
+<p><img src="/static/img/soph/5/piece.webp" alt="piece"></p>
+<p>with the pcb complete, the final steps are to 3d print the box and finish the acrylic piece. i’ll start printing the box soon, as i can work on the acrylic piece simultaneously. by the end of next week, everything should be ready for assembly.</p>
+<div class="navigation">
+    <a href="/blogs" class="buttons">← back to all blogs </a>
+    <a href="/blogs/soph-blogs/4/" class="buttons"> last week post →</a>
+</div>
+</main>
+
+<script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'light') {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        })();
+    </script>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

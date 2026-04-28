@@ -37,6 +37,6 @@ umm yeah so tim decided to help me fix this by just adjusting the location of th
 currently looks like this, but i'm doing some very illegal engineering methods to fix and clean it up. i'll provide an after photo next post.
 
 <div class="navigation">
-    <a href="/blog.html" class="buttons">← back to all blogs </a>
+    <a href="/blogs" class="buttons">← back to all blogs </a>
     <a href="/blogs/junior-blogs/18/" class="buttons"> last week's post →</a>
 </div>

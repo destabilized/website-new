@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sophomore week 3</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/cpp.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <link rel="stylesheet" href="/css/blog-posts.css">
+    <script src="/js/slideshow.js"></script>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div class="yap">
+                <main class="post-container">
+    <h1>soph week 1/13 - 1/17</h1>
+<p>finally figured out how all the bugs work, and fixed them.</p>
+<p>another week of the lightbox project, where i spent monday finalizing my code, before working purely on my box design.</p>
+<h2>box design</h2>
+<p>i started this week by restarting my entire box, as i previously didn’t have my box cenetered around the origin, and i was building it on the wrong axis. additionally, the dimensions were all messed up, as i was using a wrong scale. upon fixing all my mistakes, i started adding in all of the different type of connection ports on the mac mini. these ports won’t have any functionality besides one, which will be used for powering the lightbox.</p>
+<p><img src="/static/img/soph/3/3d.webp" alt="3d"></p>
+<p>after finishing, i decided to consult my friend jonas for some help with creating standoffs, which will be used to mount my pcb on my box.</p>
+<p>on my previous blog posts, i mentioned how i wanted to somehow make the acrylic design as a face of the box. however, there would be lots of problems revolving around orienting the neopixel in the way where it could stay secure, and still be able directly below the acrylic piece. therefore, unless i find a new solution, i will be moving forward from this idea, and use the top face to hold my acrylic piece.</p>
+<h2>code + bug fixes</h2>
+<p>i decided to finally take a close look into my code to figure out some of my bugs, and i found them</p>
+<pre><code class="language-cpp">#include &lt;OneWire.h&gt;
+#include &lt;DallasTemperature.h&gt;
+#include &lt;WS2812.h&gt;
+
+#define one_wire_bus 2
+#define led_pin 10
+#define numpixels 8
+
+OneWire oneWire(one_wire_bus);
+DallasTemperature sensor (&amp;oneWire);
+
+WS2812 LED(nnumpixels);
+
+cRGB value;
+
+#define freezing 0
+#define cold 1
+#define warm 2
+#define warmer 3
+#define burning 4
+
+void setup() {
+    LED.setOutput(led_pin);
+    // Serial.begin(9600) will break the burnloader when uncommented
+    sensor.begin();
+}
+
+int get_temp() {
+    sensor.requestTemperatures();
+    float c = sensor.getTempCByIndex(0);
+    float f = c * 9 / 5 + 32;
+    return f;
+}
+
+int get_temp_range(float_temp) {
+    if (temp &lt;=20) return freezing;
+    if (temp &gt; 20 &amp;&amp; temp &lt;= 40) return cold;
+    if (temp &gt; 40 &amp;&amp; temp &lt;= 60) return warm;
+    if (temp &gt; 60 &amp;&amp; temp &lt;= 80) return warmer;
+    return burning;
+}
+</code></pre>
+<h6>for some reason software serial didn't work. i tried okay</h6>
+<p>previously, i stated how my temperature sensor was floating, yet worked one time upon changing the led_pin to 10.</p>
+<p>this wasn’t the problem, but rather me messing things up.</p>
+<p>i accidently swapped onewire with the led_pin, causing my neopixel to be connected to my onewire, and my led_pin to be connected to my temperature sensor.</p>
+<p>eventually, i got it fixed, and was able to troubleshoot my code properly, which ended up working as i expected.</p>
+<p>the second bug i fixed was the bug with attiny’s randomly not responding.</p>
+<p>the problem this time was that since the attiny doesn’t have serial support, and software serial wasn’t working for me, i kept relying on the metro mini to use the serial, to debug my code. in doing so, i probably ended up corrupting the bootloader of the attiny84’s, which caused them to not respond.</p>
+<p>thankfully, this was an easy, but tedious fix, as i would have to swap both the metro mini and the attiny. fortunately, no permanent was done to either the attiny84, or the metro mini (assuming you don’t use both of them together), so they will be able to be reused for future projects.</p>
+<div class="navigation">
+    <a href="/blogs" class="buttons">← back to all blogs </a>
+    <a href="/blogs/soph-blogs/2/" class="buttons"> last week post →</a>
+</div>
+</main>
+
+<script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'light') {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        })();
+    </script>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

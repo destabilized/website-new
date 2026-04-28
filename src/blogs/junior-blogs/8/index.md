@@ -65,6 +65,6 @@ overall, this is what it looks like currently:
 probably gonna spend next week working on a project for my ap lang class, so will most likely revisit in two weeks.
 
 <div class="navigation">
-    <a href="/blog.html" class="buttons">← back to all blogs </a>
+    <a href="/blogs" class="buttons">← back to all blogs </a>
     <a href="/blogs/junior-blogs/7/" class="buttons"> last week's post →</a>
 </div>

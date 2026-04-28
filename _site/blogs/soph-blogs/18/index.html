@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sophomore week 18</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/cpp.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <link rel="stylesheet" href="/css/blog-posts.css">
+    <script src="/js/slideshow.js"></script>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div class="yap">
+                <main class="post-container">
+    <h1>soph week 6/2-6/6</h1>
+<p>got most of my things transfered from my previous linux installation into mint so i could finally start working on things again.</p>
+<p>i have an idea of what i want to do junior and senior year, so i wanted to finish the zeromouse soon.</p>
+<p>errors occured though, and with the limited time due to eventual half days, finals, and other tests, this week was slightly shorter for me.</p>
+<h2>trigger</h2>
+<p>so, as you can recall from my blog post, the dimensions were a bit off.</p>
+<p><img src="/static/img/soph/18/left_old.webp" alt="left_old"></p>
+<p>fixing this issue fixed my problem, and i decided to try a new mechanism to attach the pcb to the stands.</p>
+<p>first, i wanted to test the print to make sure that my idea could be printed without supports.</p>
+<p><img src="/static/img/soph/18/broken.webp" alt="broken"></p>
+<p>while printing, someone told me that my print for some reason got evicted off of the build plate, and stopped printing halfway.</p>
+<p>so, some friends suggested that i use brim, and after some supervision, it turned out quite well.</p>
+<div class="slideshow">
+    <button class="slideshow-btn prev" type="button">‹</button>
+    <div class="slideshow-track">
+        <img src="/static/img/soph/18/new1.webp" alt="successful trigger print view 1">
+        <img src="/static/img/soph/18/new2.webp" alt="successful trigger print view 2">
+    </div>
+    <button class="slideshow-btn next" type="button">›</button>
+</div>
+<h2>new idea</h2>
+<p>rather than making a massive shell, i wanted to try a new approach and extend the bottom of the triggers to try and avoid making a huge shell.</p>
+<p><img src="/static/img/soph/18/idea.webp" alt="idea"></p>
+<h6>this is from optimum’s new zeromouse blade, i kinda wanna do something like this</h6>
+<p>however, i will still have to create some sort of base for the sensor (as this is a cheap mouse).</p>
+<p>in the end, the mouse looked like this:</p>
+<p><img src="/static/img/soph/18/LEFT.webp" alt="LEFT"></p>
+<p>however, printing this will be a problem, as there will be overhang that i probably cannot avoid.</p>
+<p>now that the left trigger was done, a simple mirror would allow me to finish the right trigger right?</p>
+<p>well, the pcb is weird, and the hole on each side is different, so i had to edit the bottom part of the right side a bit.</p>
+<div class="slideshow">
+    <button class="slideshow-btn prev" type="button">‹</button>
+    <div class="slideshow-track">
+        <img src="/static/img/soph/18/right_problems.webp" alt="pcb alignment issues on right side">
+        <img src="/static/img/soph/18/fixed_right.webp" alt="fixed right trigger design">
+    </div>
+    <button class="slideshow-btn next" type="button">›</button>
+</div>
+<p>now that my triggers are done, i can start extending and making the “shell” for the mouse. additionally, i still need to figure out a minimalistic way to add the sensor holder and a way to print the mouse.</p>
+<div class="navigation">
+    <a href="/blogs" class="buttons">← back to all blogs </a>
+    <a href="/blogs/soph-blogs/17/" class="buttons"> last week post →</a>
+</div>
+</main>
+
+<script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'light') {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        })();
+    </script>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

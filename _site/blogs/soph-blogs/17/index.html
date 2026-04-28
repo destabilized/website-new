@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sophomore week 17</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/cpp.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <link rel="stylesheet" href="/css/blog-posts.css">
+    <script src="/js/slideshow.js"></script>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div class="yap">
+                <main class="post-container">
+    <h1>soph week 5/26 - 5/30</h1>
+<p>we were given an extra week to work on the sumobot, but we didn’t want to continue working on our sumobot seeing that we already did decently.</p>
+<p>as a result, i decided to revisit my zeromouse project as i want to finish it before the end of the school year.</p>
+<p>seniors are leaving, so i had to transfer everything to an actual computer. currently trying to install linux mint with lots of problems lol.</p>
+<h2>trigger updates</h2>
+<p>if you recall from my previous blog post, the left side of my triggers were pretty messed up as both sides had different geometries.</p>
+<p>i tried using a sweep to redo this design, but i figured out that you can’t sweep with two rails.</p>
+<p>so i asked help from <a href="https://timmy.greenlifestylelabs.com/" target="_blank" rel="noopener noreferrer">tim</a> who suggested that i should loft part of it, then extrude the rest of the sides outwards to get the same size and geometry.</p>
+<p><img src="/static/img/soph/17/left_trigger_left.webp" alt="left_trigger_left"></p>
+<h6>left side of the mouse trigger</h6>
+<p>this ended up working perfectly, and fixed the problems with my mouse trigger that i had previously.</p>
+<p><img src="/static/img/soph/17/left_trigger_right.webp" alt="left_trigger_right"></p>
+<h6>right side of the mouse trigger</h6>
+<p>in the end, my triggers were almost a one-to-one copy of the <a href="https://www.printables.com/model/979182-lightweight-zeromouse-inspired-logitech-mx-mouse-m" target="_blank" rel="noopener noreferrer"> original.</a></p>
+<p>after fixing the general shape, i had to create the “stand” for the mouse to mount onto the shell.</p>
+<p><img src="/static/img/soph/17/stand.webp" alt="stand"></p>
+<p>had some problems with this one as well, but thanks to tim again, i got the stand to work. this may be adjusted slightly to fit my shell design, but it’s looking promising so far.</p>
+<h2>clicking mechanism + problems</h2>
+<p>the final thing i had to do before testing out the print was making a clicking mechanism. had some problems creating the ramp and the clicker? (what do i call this) as it was a curved surface, so i wasn’t able to directly make a sketch and extrude outwards.</p>
+<p><img src="/static/img/soph/17/pressing.webp" alt="pressing"></p>
+<p>with all of this done, i can now mirror it to create the right trigger when it’s done. a problem was present however.</p>
+<p><img src="/static/img/soph/17/problem.webp" alt="problem"></p>
+<p>as seen in the image, the scroll wheel stand was too tall for the trigger so i’ll have to adjust the clicking thingy’s length and the length of the stand so that the trigger doesn’t get in the way. additionally, i may have to move the position of the clicker further upwards so the scroll wheel isn’t in a weird place again.</p>
+<div class="navigation">
+    <a href="/blogs" class="buttons">← back to all blogs </a>
+    <a href="/blogs/soph-blogs/16/" class="buttons"> last week post →</a>
+</div>
+</main>
+
+<script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'light') {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        })();
+    </script>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

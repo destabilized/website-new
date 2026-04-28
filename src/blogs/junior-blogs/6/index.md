@@ -54,6 +54,6 @@ moving on, i should be able to start ordering the switches and diodes soon, but 
 
 
 <div class="navigation">
-    <a href="/blog.html" class="buttons">← back to all blogs </a>
+    <a href="/blogs" class="buttons">← back to all blogs </a>
     <a href="/blogs/junior-blogs/5/" class="buttons"> last week's post →</a>
 </div>

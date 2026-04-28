@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sophomore week 4</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/cpp.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <link rel="stylesheet" href="/css/blog-posts.css">
+    <script src="/js/slideshow.js"></script>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div class="yap">
+                <main class="post-container">
+    <h1>soph week 1/20 - 1/24</h1>
+<p>slightly shorter week due to mlk day, so i focused more on double checking everything rather than starting something new.</p>
+<h2>box design (completed?)</h2>
+<p>i started this week with creating the lid for my box, which utilizes friction-fit, eliminating the need to use screws to keep the aesthetics clean.</p>
+<p><img src="/static/img/soph/4/lid.webp" alt="lid"></p>
+<p>additionally, i designed a separate compartment to house my neopixel. i previously had the component connected with my lid, but that would lead to overhang when printing. by creating it as a new component, i will have to print them separately, and combine them together.</p>
+<p><img src="/static/img/soph/4/np.webp" alt="np"></p>
+<p>in order to connect the two parts, i plan to use glue. overall, the box looks pretty clean, with no screws and an easy way to fix the box if error’s were to occur.</p>
+<p><img src="/static/img/soph/4/both.webp" alt="both"></p>
+<p>i believe that at this point, i’m done with my lightbox. i will have to check wil mr.l about any potential errors before trying to print out the box. once confirmed, i will move onto creating my acrylic design, which will most likely feature a derpy pokemon design.</p>
+<div class="slideshow">
+    <button class="slideshow-btn prev" type="button">‹</button>
+    <div class="slideshow-track">
+        <img src="/static/img/soph/4/full.webp" alt="full view of lightbox model">
+        <img src="/static/img/soph/4/diff_view.webp" alt="different angle of lightbox model">
+    </div>
+    <button class="slideshow-btn next" type="button">›</button>
+</div>
+<p>while finishing the box, a problem occured when making the lid, as the male headers on my pcb were too long and entering in the housing for the neopixel. to counteract this, i decided to scale my design by 0.75 instead of 0.5, leading to a slightly larger box.</p>
+<p>i’m pretty happy with how the model is turning out, as cad isn’t my strong suit. there are some things that i don’t like, such as having a massive hole for power and not having the fan’s on the bottom of the mac mini, as i’m not sure how to make it, and not sure if it’s possible to print it.</p>
+<p>to deal with the massive hole, me and my friend miles have discussed potentially using an auxiliary cable for power to make the design more realistic, and remove that massive hole for power.</p>
+<div class="navigation">
+    <a href="/blogs" class="buttons">← back to all blogs </a>
+    <a href="/blogs/soph-blogs/3/" class="buttons"> last week post →</a>
+</div>
+</main>
+
+<script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'light') {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        })();
+    </script>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

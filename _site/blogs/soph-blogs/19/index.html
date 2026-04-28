@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sophomore week 19</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/cpp.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <link rel="stylesheet" href="/css/blog-posts.css">
+    <script src="/js/slideshow.js"></script>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div class="yap">
+                <main class="post-container">
+    <h1>soph week 6/9-6/13</h1>
+<p>needed a break from my zeromouse project, so i decided to help mr. christy reimage some of the computers with windows 11, as fusion is cutting support for win10. as a result, all the computers needed to be updated to win11 before the end of the school year.</p>
+<h2>overheating issue</h2>
+<p>while mr. christy was looking in the bios to change the boot priority order, both me and miles noticed that the cpu was idling at 90+ degrees celsius, temperature that it should only reach when under full loads. along with this, there were also numerous errors saying that the cpu was overheating.</p>
+<p><img src="/static/img/soph/19/overheating.webp" alt="overheating"></p>
+<h6>the error that we got telling us that the cpu was overheating</h6>
+<p>as a result, we assumed that the cpu wasn’t getting proper cooling, so me and miles decided to open up the computer and looked for the problem. instantly, we noticed that the cpu cooler wasn’t making direct contact with the cpu, but just in case, we also decided to repaste the cpu.</p>
+<p><img src="/static/img/soph/19/inside.webp" alt="inside"></p>
+<h6>the cpu fan came off way to easily since it wasn’t properly “screwed” in.</h6>
+<p>so after some repasting and correctly screwing the fan back in (also why don’t intel cooler fans just use screws, that stupid mechanism took so long to work with), the temperatures were looking way better than before.</p>
+<div class="slideshow">
+    <button class="slideshow-btn prev" type="button">‹</button>
+    <div class="slideshow-track">
+        <img src="/static/img/soph/19/inside_fixed.webp" alt="pc interior with cooler fixed">
+        <img src="/static/img/soph/19/temps_fixed.webp" alt="bios screen showing lower temperatures">
+    </div>
+    <button class="slideshow-btn next" type="button">›</button>
+</div>
+<h2>post screen</h2>
+<p>mr. christy also mentioned that he wanted to see the post information so he didn’t have to guess which key it was to enter the bios, so i enabled that.</p>
+<p>however, msi motherboards boot too quickly that you can’t read any of the post screen information. even with a delay in the boot time, it wasn’t enough to read the information listed.</p>
+<video controls>
+    <source src="/static/vids/soph/19/post.mp4" type="video/mp4">
+</video>
+<p>additionally, for some reason having post enabled would also lock the screen resolution to 1024x768, which wasn’t ideal. because of this, both mr. christy and i decided it wasn’t worth enabling post information.</p>
+<h2>windows 11 installation</h2>
+<p>the windows 11 installation went pretty smoothly, with the only problem being the lack of graphics drivers, so i had to install those.</p>
+<p><img src="/static/img/soph/19/problems.webp" alt="problems"></p>
+<p>a quick driver installation and the second monitor got a display.</p>
+<p><img src="/static/img/soph/19/fixed.webp" alt="fixed"></p>
+<h2>my computer issues</h2>
+<p>i originally didn’t want to install win11 yet as i wanted to keep my linux partition, but my computer had a few issues.</p>
+<p>on thursday, i wanted to get a bit more done on my zeromouse, but when i tried to open fusion, this happened:</p>
+<p><img src="/static/img/soph/19/bsod.webp" alt="bsod"></p>
+<p>this would continue happening only on fusion for some reason, but because of this, i decided i was going to reimage my computer after finishing my blog post on linux.</p>
+<p>however, when i booted into linux, i had similar problems. the screen would be janky, and it seemed like it wanted to freeze at time. because of this, i decided to cut power and just let the computer sit without power for a bit, and turned it on a bit after. however, when i tried to boot into linux again, i got this message.</p>
+<p>my c drive is probably (definitely) corrupted, so i tried installing win11 on it, but it also didn’t work (kept saying the image on the usb was corrupted)</p>
+<p>so now i’m just stuck with a broken computer, and my website is a mess. gotta fix a lot of things.</p>
+<p><img src="/static/img/soph/19/me.webp" alt="me"></p>
+<div class="navigation">
+    <a href="/blogs" class="buttons">← back to all blogs </a>
+    <a href="/blogs/soph-blogs/18/" class="buttons"> last week post →</a>
+</div>
+</main>
+
+<script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'light') {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        })();
+    </script>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

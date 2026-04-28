@@ -89,6 +89,6 @@ we did have a problem where the solder from the vias "inside" the kb2040 caused 
 i'm going to try and solder one of the smd diodes (they are legit microscopic) and see how it turns out. hopefully, if i can get the keycaps printed and finish soldering all of this, i just have to edit my code for diodes and the encoder, and i'll be done with this project!
 
 <div class="navigation">
-    <a href="/blog.html" class="buttons">← back to all blogs </a>
+    <a href="/blogs" class="buttons">← back to all blogs </a>
     <a href="/blogs/junior-blogs/10/" class="buttons"> last week's post →</a>
 </div>

@@ -32,6 +32,6 @@ overall, this week was just a long, frustrating lesson in how much post-processi
 ###### next week is gonna be all sanding with this batch...
 
 <div class="navigation">
-    <a href="/blog.html" class="buttons">← back to all blogs </a>
+    <a href="/blogs" class="buttons">← back to all blogs </a>
     <a href="/blogs/junior-blogs/17/" class="buttons"> last week's post →</a>
 </div>

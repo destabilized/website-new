@@ -62,6 +62,6 @@ next week, i'm going to change how i approach the friction pad design. once i fi
 bai.
 
 <div class="navigation">
-    <a href="/blog.html" class="buttons">← back to all blogs </a>
+    <a href="/blogs" class="buttons">← back to all blogs </a>
     <a href="/blogs/junior-blogs/25/" class="buttons"> last week's post →</a>
 </div>

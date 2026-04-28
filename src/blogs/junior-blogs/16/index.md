@@ -121,6 +121,6 @@ as the video shows, all keys worked except for grave "~" and escape, which are m
 now that the pcb is mostly done, the only things left are keycaps and the case. i need to resin print the keys, finish the case design, and buy the foam and extra switches.
 
 <div class="navigation">
-    <a href="/blog.html" class="buttons">← back to all blogs </a>
+    <a href="/blogs" class="buttons">← back to all blogs </a>
     <a href="/blogs/junior-blogs/15/" class="buttons"> last week's post →</a>
 </div>

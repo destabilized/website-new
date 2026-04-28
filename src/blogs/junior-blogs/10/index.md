@@ -105,6 +105,6 @@ nemo "$TARGET_DIR" &
 i still have room for one macro left. hopefully next week i'll figure that out, and have the 3d printer available to start printing my parts. also mr. christy ordered the parts, so i'll have to start milling the pcb soon.
 
 <div class="navigation">
-    <a href="/blog.html" class="buttons">← back to all blogs </a>
+    <a href="/blogs" class="buttons">← back to all blogs </a>
     <a href="/blogs/junior-blogs/9/" class="buttons"> last week's post →</a>
 </div>

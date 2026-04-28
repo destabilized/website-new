@@ -41,6 +41,6 @@ the rest of the keyboard case was pretty much the same, but there was a problem 
 while i could just increase the size of the hole in the case, it looks weird and i don't want a gaping hole in the back. i'm thinking of using a male-to-female USB-C header/extension and mounting it to the case. i don't see any other way to fix this while keeping the "universal" aspect of being able to use any USB-C cable.
 
 <div class="navigation">
-    <a href="/blog.html" class="buttons">← back to all blogs </a>
+    <a href="/blogs" class="buttons">← back to all blogs </a>
     <a href="/blogs/junior-blogs/22/" class="buttons"> last week's post →</a>
 </div>

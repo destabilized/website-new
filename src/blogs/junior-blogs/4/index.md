@@ -43,6 +43,6 @@ for now however, i want to continue with my seven seg display project, and get t
 
 
 <div class="navigation">
-    <a href="/blog.html" class="buttons">← back to all blogs </a>
+    <a href="/blogs" class="buttons">← back to all blogs </a>
     <a href="/blogs/junior-blogs/3/" class="buttons"> last week's post →</a>
 </div>

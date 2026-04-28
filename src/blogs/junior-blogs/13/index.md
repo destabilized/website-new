@@ -75,6 +75,6 @@ with this all done, i put all the new footprints in the library and stole the sy
 next week i'll add the new stabilized footprints to the schematic and remake the entire pcb. i also printed the rest of the keycaps, and i'm stealing [miles'](https://www.mileshilliard.com/) keyboard to test them
 
 <div class="navigation">
-                <a href="../../blog.html" class="buttons">← back to all blogs </a>
-                <a href="week_12.html" class="buttons"> last week's post →</a>
-            </div>
+    <a href="/blogs" class="buttons">← back to all blogs </a>
+    <a href="/blogs/junior-blogs/12/" class="buttons"> last week's post →</a>
+</div>

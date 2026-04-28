@@ -71,6 +71,6 @@ with all of this done, i moved onto the only thing left—making the actual case
 ###### current progress. i have no clue what i'm doing ;-;
 
 <div class="navigation">
-    <a href="/blog.html" class="buttons">← back to all blogs </a>
+    <a href="/blogs" class="buttons">← back to all blogs </a>
     <a href="/blogs/junior-blogs/26/" class="buttons"> last week's post →</a>
 </div>

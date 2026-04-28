@@ -54,6 +54,6 @@ here is the current progress on the keyboard assembly:
 it actually sounds pretty nice with the polycarbonate plate. potential audio file in the next blog post?
 
 <div class="navigation">
-    <a href="/blog.html" class="buttons">← back to all blogs </a>
+    <a href="/blogs" class="buttons">← back to all blogs </a>
     <a href="/blogs/junior-blogs/24/" class="buttons"> last week's post →</a>
 </div>

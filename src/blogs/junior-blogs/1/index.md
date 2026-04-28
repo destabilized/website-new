@@ -81,6 +81,6 @@ after a quick sfc /scannow, it did in fact find and repair some of the corrupted
 with this fixed, i tried restarting the computer multiple times to ensure that it worked each time, and the computer seems to be fixed.
 
 <div class="navigation">
-  <a href="/blog.html" class="buttons">← back to all blogs </a>
-  <a href="/soph/week_19.html" class="buttons"> last year's post →</a>
+  <a href="/blogs" class="buttons">← back to all blogs </a>
+  <a href="/blogs/soph-blogs/19" class="buttons"> last year's post →</a>
 </div>

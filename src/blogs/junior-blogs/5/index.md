@@ -76,6 +76,6 @@ just have to solder it now, and create a bigger button for reseting this. should
 
 
 <div class="navigation">
-    <a href="/blog.html" class="buttons">← back to all blogs </a>
+    <a href="/blogs" class="buttons">← back to all blogs </a>
     <a href="/blogs/junior-blogs/4/" class="buttons"> last week's post →</a>
 </div>

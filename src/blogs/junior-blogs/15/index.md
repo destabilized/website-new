@@ -63,6 +63,6 @@ foam is important, but i thought we could use some random kind of foam. turns ou
 as of now, i need to work on the mounting mechanism for my pcb, and see if my idea is too farfetched for it to work.
 
 <div class="navigation">
-    <a href="/blog.html" class="buttons">← back to all blogs </a>
+    <a href="/blogs" class="buttons">← back to all blogs </a>
     <a href="/blogs/junior-blogs/14/" class="buttons"> last week's post →</a>
 </div>

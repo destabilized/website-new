@@ -68,6 +68,6 @@ not too sure why it happens. the Bambu Labs printer didn't have this warping iss
 also spent a lot of time looking at broken keyboards to harvest the keycaps, but realized that wouldn't work because of the shift error i mentioned like two months ago. looks like i'm sticking with the resin prints for now!
 
 <div class="navigation">
-    <a href="/blog.html" class="buttons">← back to all blogs </a>
+    <a href="/blogs" class="buttons">← back to all blogs </a>
     <a href="/blogs/junior-blogs/23/" class="buttons"> last week's post →</a>
 </div>

@@ -75,6 +75,6 @@ using a spring screw (if that's what they're called) to adjust the pcb (by tight
 ###### more angles
 
 <div class="navigation">
-    <a href="/blog.html" class="buttons">← back to all blogs </a>
+    <a href="/blogs" class="buttons">← back to all blogs </a>
     <a href="/blogs/junior-blogs/16/" class="buttons"> last week's post →</a>
 </div>

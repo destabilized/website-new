@@ -248,6 +248,6 @@ i got some basic wiring done, but haven't started wiring anything yet.
 close to finishing. should be done by next week
 
 <div class="navigation">
-    <a href="/blog.html" class="buttons">← back to all blogs </a>
+    <a href="/blogs" class="buttons">← back to all blogs </a>
     <a href="/blogs/junior-blogs/2/" class="buttons"> last week's post →</a>
 </div>

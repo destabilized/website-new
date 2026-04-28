@@ -84,6 +84,6 @@ probably gonna keep working on this because a new motherboard costs $2,000, and 
 also worked on macropad a bit. updates on that next week.
 
 <div class="navigation">
-    <a href="/blog.html" class="buttons">← back to all blogs </a>
+    <a href="/blogs" class="buttons">← back to all blogs </a>
     <a href="/blogs/junior-blogs/6/" class="buttons"> last week's post →</a>
 </div>

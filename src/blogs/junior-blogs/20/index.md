@@ -53,6 +53,6 @@ however, even after doing so it didn't work. (sorry adam). not too sure what the
 gotta lock back in next week for the keyboard. hopefully the 3d printer will be up and euan doesn't hog it.
 
 <div class="navigation">
-    <a href="/blog.html" class="buttons">← back to all blogs </a>
+    <a href="/blogs" class="buttons">← back to all blogs </a>
     <a href="/blogs/junior-blogs/19/" class="buttons"> last week's post →</a>
 </div>

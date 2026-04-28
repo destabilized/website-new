@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sophomore week 2</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/cpp.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <link rel="stylesheet" href="/css/blog-posts.css">
+    <script src="/js/slideshow.js"></script>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div class="yap">
+                <main class="post-container">
+    <h1>soph week 1/2 - 1/10</h1>
+<p>new years, same bugs.</p>
+<p>due to the new years, i decided to just incorperate the 2 days we had on the 2nd, and the 3rd to this post.</p>
+<p>i started this week by focusing on the pcb design for my lightbox, and got guidance from my friend miles on how to create the pcb.</p>
+<h2>2d pcb</h2>
+<p><img src="/static/img/soph/2/pcb.webp" alt="pcb"></p>
+<h6>shown above is the 2d model of my pcb, where i tried to make it as compact as possible, in the effort to create as small of a board as possible. i may redesign the board to use a type-c connector for power to better fit my design</h6>
+<h2>schematic of the board</h2>
+<p><img src="/static/img/soph/2/schem.webp" alt="schem"></p>
+<p>with the board design, unless i decide to make new improvements, i’m ready to pcb mill upon finishing my lightbox.</p>
+<h2>box design</h2>
+<p>i decided to try and 3d print my box, using the acrylic piece as a face of my box. originally, i was going to try and make it as compact as possible, but i found more interest trying to 3d model a mac mini design by scratch, and replace the top apple logo with my acrylic piece.</p>
+<p><img src="/static/img/soph/2/3d_model.webp" alt="3d_model"></p>
+<p>the box still has lots of work to be done, as i want to try and incorporate all the features of the mac mini, including usb ports, ethernet port, and the bottom fan part. throughout the process of creating this box, i spent time talking with mr.l about overhang, and how to counteract any problems with it.</p>
+<h2>code bugs</h2>
+<p><img src="/static/img/soph/2/code.webp" alt="code"></p>
+<p>like last post, the negative number (-196) shows that the temperature sensor is still floating. it was working the previous days of the week, until when i had to finish up the software of my program. the previous problem was due to my “led_pin” being set at 9, as even though it was wired up correctly, it caused an issue somehow which lead to the temperature sensor continuously printing -196.</p>
+<p>besides that bug, i finalized the code for the lightbox (assuming this works). i decided to use a switch statement which changes the severity of a blue color depending on the temperature in the room, mapped with a range (0-20, 20-40, 40-60, 60-80, 80+)</p>
+<p>however, more bugs continue, with the attiny84 randomly deciding to not respond, leading to me having to swap out the metro-mini that i’m using as the master.</p>
+<div class="navigation">
+    <a href="/blogs" class="buttons">← back to all blogs </a>
+    <a href="/blogs/soph-blogs/1/" class="buttons"> last week post →</a>
+</div>
+</main>
+
+<script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'light') {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        })();
+    </script>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

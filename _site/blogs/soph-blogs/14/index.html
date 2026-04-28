@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sophomore week 14</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/cpp.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <link rel="stylesheet" href="/css/blog-posts.css">
+    <script src="/js/slideshow.js"></script>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div class="yap">
+                <main class="post-container">
+    <h1>soph week 4/28 - 5/2</h1>
+<p>missed monday, limited work this week.</p>
+<h2>wings</h2>
+<p>after testing the 3d printed wings, the gap between them felt awkward, so i merged them into a single piece.</p>
+<div class="slideshow">
+    <button class="slideshow-btn prev" type="button">‹</button>
+    <div class="slideshow-track">
+        <img src="/static/img/soph/14/full_3d.webp" alt="original split wings design">
+        <img src="/static/img/soph/14/shell_new.webp" alt="new merged wings design">
+    </div>
+    <button class="slideshow-btn next" type="button">›</button>
+</div>
+<h6>original wings (left) vs new merged design (right)</h6>
+<p>also reintroduced trigger stands with larger pegs for better durability. added small rectangular blockers to the pcb stands to prevent movement - these should lock the pcb in place while allowing removal.</p>
+<p>test prints of the updated shell and triggers:</p>
+<div class="slideshow">
+    <button class="slideshow-btn prev" type="button">‹</button>
+    <div class="slideshow-track">
+        <img src="/static/img/soph/14/prints.webp" alt="test prints of shell and triggers">
+        <img src="/static/img/soph/14/shellwithpcb.webp" alt="pcb fitted into the shell">
+    </div>
+    <button class="slideshow-btn next" type="button">›</button>
+</div>
+<h2>trigger adjustments</h2>
+<p><img src="/static/img/soph/14/triggers.webp" alt="triggers"></p>
+<p>fixed the length miscalculation (eyeballed ~2mm {which is still too small}) from last print (though forgot to implement before printing). also modified the angle to reduce overhang, which slightly decreased the button surface area.</p>
+<p>had to relocate the stands to accommodate these changes - hopefully this doesn’t cause issues later.</p>
+<h2>solder fail</h2>
+<div class="slideshow">
+    <button class="slideshow-btn prev" type="button">‹</button>
+    <div class="slideshow-track">
+        <img src="/static/img/soph/14/soulderback.webp" alt="back of pcb after soldering attempt">
+        <img src="/static/img/soph/14/soulderfront.webp" alt="front of pcb after soldering attempt">
+    </div>
+    <button class="slideshow-btn next" type="button">›</button>
+</div>
+<p>tried resoldering the pcb for sensor testing. and well, it failed.</p>
+<p>thankfully <a href="https://www.mileshilliard.com/" target="_blank" rel="noopener noreferrer"> miles</a> offered to help with resoldering. hoping the pcb isn’t permanently damaged. (thank you so much)</p>
+<h2>errors to fix?</h2>
+<p>in order to add the stands to stabilize the pcb, i had to increase the length of the original stands a lot, resulting in the led potentially being too high and not hitting the sensor block.</p>
+<p>this is gonna be something i have to check over when i get a working usb wire (hopefully my board still works) which may take a bit.</p>
+<p>additionally i’m hoping that the mouse triggers and shell with the stands are able to print without any blemishes or major imperfections.</p>
+<p>besides putting it all together and testing, i’m slowly creeping closer to finishing this project.</p>
+<div class="navigation">
+    <a href="/blogs" class="buttons">← back to all blogs </a>
+    <a href="/blogs/soph-blogs/13/" class="buttons"> last week post →</a>
+</div>
+</main>
+
+<script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'light') {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        })();
+    </script>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

@@ -61,6 +61,6 @@ finally done, so i started creating a "case." it's just gonna be a pcb plate + a
 gotta lock back in next week for the keyboard. got some nice progress on a new project tho.
 
 <div class="navigation">
-    <a href="/blog.html" class="buttons">← back to all blogs </a>
+    <a href="/blogs" class="buttons">← back to all blogs </a>
     <a href="/blogs/junior-blogs/20/" class="buttons"> last week's post →</a>
 </div>

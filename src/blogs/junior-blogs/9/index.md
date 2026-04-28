@@ -47,6 +47,6 @@ i'm planning on filling the "bomb" with a bunch of bang snaps, which make a smal
 gonna have to wait until monday to get the print along with the snap pops. i've been working on my macropad while i wait (updates next week?).
 
 <div class="navigation">
-    <a href="/blog.html" class="buttons">← back to all blogs </a>
-    <a href="/junior-blogs/8/week_8.html" class="buttons"> last week's post →</a>
+    <a href="/blogs" class="buttons">← back to all blogs </a>
+    <a href="/blogs/junior-blogs/8/" class="buttons"> last week's post →</a>
 </div>
