@@ -1,13 +1,20 @@
 {
-  "name": "test",
+  "name": "andrew huang | portfolio",
   "version": "1.0.0",
-  "description": "",
+  "description": "dev portfolio",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npx @11ty/eleventy",
+    "start": "npx @11ty/eleventy --serve",
+    "debug": "DEBUG=Eleventy* npx @11ty/eleventy"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": "andrew huang",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.5"
+  },
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  }
 }
-
