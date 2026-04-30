@@ -495,3 +495,7 @@ body {
     .post-meta { justify-items: start; text-align: left; grid-template-columns: repeat(3, auto); gap: 1rem; }
     .top-bar { gap: 1rem; flex-wrap: wrap; }
 }
+
+@media (max-width: 400px) {
+    .main-nav { gap: 1rem;}
+}

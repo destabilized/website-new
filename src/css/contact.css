@@ -89,6 +89,40 @@ input:focus, textarea:focus {
     color: var(--text-main);
 }
 
+.theme-toggle-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    color: var(--text-main);
+    font-size: 1.2rem;
+    transition: transform 0.2s ease;
+}
+
+.theme-toggle-btn .moon-icon {
+    display: none;
+}
+
+.theme-toggle-btn .sun-icon {
+    display: block;
+}
+
+[data-theme="light"] .theme-toggle-btn .sun-icon {
+    display: none;
+}
+
+[data-theme="light"] .theme-toggle-btn .moon-icon {
+    display: block;
+    color: var(--text-main);
+}
+
+.theme-toggle-btn:hover {
+    transform: scale(1.1);
+}
+
 @media (max-width: 600px) {
     .form-row {
         grid-template-columns: 1fr;
@@ -98,4 +132,8 @@ input:focus, textarea:focus {
         gap: 1.5rem;
         text-align: center;
     }
+}
+
+@media (max-width: 400px) {
+    .main-nav { gap: 1rem; }
 }

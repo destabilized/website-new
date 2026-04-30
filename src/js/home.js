@@ -65,6 +65,8 @@ document.addEventListener('DOMContentLoaded', () => {
             postContainer.appendChild(article);
         });
     }
+
+    
 });
 
 /**

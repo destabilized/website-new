@@ -262,7 +262,7 @@ body {
     font-size: 1.2rem;
 }
 
-.item-header h5 {
+.item-header h4 {
     margin-top: 0.25rem;
     color: var(--text-dim);
     font-weight: 500;
@@ -420,8 +420,14 @@ body {
     object-fit: contain; 
     display: block;
     background-color: var(--bg-dark);
+    aspect-ratio: 280 / 216; 
 }
 
+.single-profile-img {
+    width: 200px;
+    height: 200px;
+    aspect-ratio: 1 / 1;
+}
 .card-content {
     padding: 1.2rem;
 }
@@ -488,4 +494,8 @@ body {
     .post-item { grid-template-columns: 1fr; }
     .post-meta { justify-items: start; text-align: left; grid-template-columns: repeat(3, auto); gap: 1rem; }
     .top-bar { gap: 1rem; flex-wrap: wrap; }
+}
+
+@media (max-width: 400px) {
+    .main-nav { gap: 1rem;}
 }

@@ -281,11 +281,7 @@ input:focus, textarea:focus {
         grid-template-columns: 1fr;
     }
     
-    .top-bar {
-        flex-direction: column;
-        gap: 1.5rem;
-        align-items: flex-start;
-    }
+    .top-bar { gap: 1rem; flex-wrap: wrap; }
 
     .contact-footer {
         flex-direction: column;
@@ -314,4 +310,8 @@ input:focus, textarea:focus {
         gap: 1.5rem;
         text-align: center;
     }
+}
+
+@media (max-width: 400px) {
+    .main-nav { gap: 1rem;}
 }

@@ -1,10 +1,17 @@
 const posts = [
   {
+    title: "junior week 4/27 - 5/1",
+    date: "apr. 30th, 2026",
+    preview: "new 3d printer omg but little work done bc mfs be hogging that shit smh",
+    href: "/blogs/junior-blogs/30",
+    tags: ["keyboard", "website", "html/css", "silicone molding"]
+  },
+  {
     title: "junior week 4/13 - 4/17",
     date: "apr. 16th, 2026",
     preview: "website changes eventually bc i don't like my current website. ",
     href: "/blogs/junior-blogs/29",
-    tags: ["keyboard", "website", "html/css"]
+    tags: ["keyboard", "website", "html/css", "silicone molding"]
   },
   {
     title: "junior week 3/30 - 4/10",
