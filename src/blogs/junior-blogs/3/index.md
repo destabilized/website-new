@@ -122,7 +122,7 @@ i figured that there was something slowing the seven segment down, so i shifted 
 i also commented out the displays, and used an example library to test the seven segment again
 
 <video controls muted>
-    <source src="/static/vids/junior/3/7seg-test.mp4" type="video/mp4">
+    <source src="/static/vids/junior/3/7seg-test.webm" type="video/webm">
 </video>
 
 ## rtc stuff
@@ -236,7 +236,7 @@ void loop() {
 full code linked above. there is a problem where it updates every hour, rather than every 60 minutes (but i really don't care it's basically the same) (git repo soon)
 
 <video controls muted>
-    <source src="/static/vids/junior/3/reset.mp4" type="video/mp4">
+    <source src="/static/vids/junior/3/reset.webm" type="video/webm">
 </video>
 
 ## schematic

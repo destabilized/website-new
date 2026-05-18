@@ -97,7 +97,7 @@ this was the first draft of my code, where it would change the number every seco
 however, i quickly realized that after the number reached 33, it wouldn't update after every second, but update almost instantly. (overflow error)
 
 <video controls>
-    <source src="/static/vids/junior/2/error.mp4" type="video/mp4">
+    <source src="/static/vids/junior/2/error.webm">
 </video>
 
 this was because i was using int's, so i quickly changed last_update and update_freq to use unsigned longs instead.

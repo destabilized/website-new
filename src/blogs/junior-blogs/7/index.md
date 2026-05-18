@@ -62,7 +62,7 @@ it turned out that windows security was blocking something. while it was a shot 
 i started another print, and these were the results:
 
 <video controls>
-    <source src="/static/vids/junior/7/final.mp4" type="video/mp4">
+    <source src="/static/vids/junior/7/final.webm" type="video/webm">
 </video>
 
 ###### techincally this wasn't the first video i took. this was the second. i forgot to record the first.

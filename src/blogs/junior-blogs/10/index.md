@@ -59,12 +59,12 @@ after trying to figure out how to chain keystrokes, i finally figured out settin
 
 ## terminal:
 <video controls>
-    <source src="/static/vids/junior/10/opening_terminal.mp4" type="video/mp4">
+    <source src="/static/vids/junior/10/opening_terminal.webm" type="video/webm">
 </video>
 
 ## git commands:
 <video controls>
-    <source src="/static/vids/junior/10/git_stuff.mp4" type="video/mp4">
+    <source src="/static/vids/junior/10/git_stuff.webm" type="video/webm">
 </video>
 
 ## shutdown:
@@ -74,7 +74,7 @@ after trying to figure out how to chain keystrokes, i finally figured out settin
 
 ## folder maker:
 <video controls>
-    <source src="/static/vids/junior/10/foldermaker.mp4" type="video/mp4">
+    <source src="/static/vids/junior/10/foldermaker.webm" type="video/webm">
 </video>
 
 ###### required a custom bash file because circuitpython doesn't support counter variables (so i couldn't have it increment when i press the button to change the number).

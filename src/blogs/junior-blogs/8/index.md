@@ -10,7 +10,7 @@ title: "junior week 8"
 so i got it to somewhat work. it's still disconnecting (not sure why still) but i got it to print without it messing up.
 
 <video controls>
-    <source src="/static/vids/junior/8/printing.mp4" type="video/mp4">
+    <source src="/static/vids/junior/8/printing.webm" type="video/webm">
 </video>
 ###### full print video
 
