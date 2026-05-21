@@ -3,7 +3,7 @@ layout: layout-post.njk
 title: "junior week 31/32"
 ---
 
-# junior week apr. 15, 2026
+# junior week may. 15, 2026
 
 went mia after one day at school last week, so i'm just going to include what i did that day onto this post 
 
