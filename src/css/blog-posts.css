@@ -21,13 +21,6 @@ html[data-theme="light"] {
     --accent: hsl(199, 85%, 45%);
 }
 
-body {
-    background: var(--bg);
-    color: var(--text-dim);
-    overflow-x: hidden;
-    transition: background 0.3s ease, color 0.3s ease;
-}
-
 * {
   margin: 0;
   padding: 0;
