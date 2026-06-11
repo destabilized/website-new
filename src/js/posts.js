@@ -1,5 +1,12 @@
 const posts = [
   {
+    title: "junior week 6/1 - 6/12",
+    date: "jun. 11th, 2026",
+    preview: "ending the keyboard, new project, and finishing up the laptops",
+    href: "/blogs/junior-blogs/35+36",
+    tags: ["shop-tasks", "keyboard", "trademark"]
+  },
+  {
     title: "junior week 5/26 - 5/29",
     date: "may 28th, 2026",
     preview: "end of the year cleanup and stuff",

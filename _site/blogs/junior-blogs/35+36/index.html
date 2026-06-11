@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>junior week 35/36</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/cpp.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <link rel="stylesheet" href="/css/blog-posts.css">
+    <script src="/js/slideshow.js"></script>
+    <script>
+        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+
+    <script> 
+         window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); }; 
+    </script> 
+    <script defer src="/_vercel/speed-insights/script.js"></script>
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        })();
+    </script>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <header class="top-bar">
+                <nav class="main-nav">
+                    <a href="/">home</a>
+                    <a href="/projects">projects</a>
+                    <a href="/blogs">blog</a>
+                    <a href="/contact">contact</a>
+                </nav>
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark mode">
+                    <span class="theme-icon">🌙</span>
+                </button>
+            </header>
+            <div class="yap">
+                <main class="post-container">
+    <h1>junior week jun. 12, 2026</h1>
+<p>school is about to end and i didn't make a blog post last week, so here we go.</p>
+<h2>laptops</h2>
+<p>fixed a bunch of the laptops and now they all work.</p>
+<p><img src="/static/img/junior/35+36/computers.webp" alt="the laptops"></p>
+<h2>keyboard (end?)</h2>
+<p>becuase the stock was too big to fit on our vice and adam was using the cnc machine, i went up to metal fab and faced it on metal fab's manual mill.</p>
+<p>mr. moulis helped a lot with setting up the mill and showing me how to use their mill.</p>
+<div class="slideshow">
+    <button class="slideshow-btn prev" type="button">‹</button>
+    <div class="slideshow-track">
+        <img src="/static/img/junior/35+36/facing.webp" alt="facing the stock">
+        <img src="/static/img/junior/35+36/facing2.webp" alt="facing the stock">
+        <img src="/static/img/junior/35+36/machining.webp" alt="facing the stock">
+    </div>
+    <button class="slideshow-btn next" type="button">›</button>
+</div>
+<video controls muted>
+    <source src="/static/vids/junior/35+36/facing.webm" type="video/mp4" alt="video of facing hte stock">
+</video>  
+<p>with this all done, i went back to our shop and set the dimensions of the fully faced stock.</p>
+<p>in the meanwhile, adam also told me to adjust the adaptive clearing processies to be shorter, as the original one would take too long to be done in one day, and starting it the next day would have thet machine effectively &quot;clear&quot; parts that was already cleared.</p>
+<p>with this all done, i was planning on machining the case when adam was done with the cnc machine, so i started osha 10 in the meanwhile.</p>
+<p>before i was about to start, however, mr. christy didn't want me to do this anymore because it was a waste of stock.</p>
+<p>while he suggested alternative methods to creating the case, i didn't like any of them so i'm ultimately quitting here.</p>
+<h2>next project?</h2>
+<p>i saw a youtube video of raze's boombot from valorant made in real life, so i took some inspiration and decided to look into other abilities from valorant to make.</p>
+<p>i ended up deciding on making chamber's trademark, which is a stationary trip which explodes upon detecting people.</p>
+<p><img src="https://img1.yeggi.com/images-3d-model/526/4549881_valorant-chamber-trap-by-skaizz" alt="chamber trap"></p>
+<p>i plan on making a &quot;camera&quot; which will do something when it detects people. not quiet sure what i want it to do, but i want to add something to this enclosure to make it functional.</p>
+<div class="navigation">
+    <a href="/blogs" class="buttons">← back to all blogs </a>
+    <a href="/blogs/junior-blogs/34/" class="buttons"> last week's post →</a>
+</div>
+<br>
+<br>
+<br>
+<h6 style="font-size: 5px"> fuck you mr. christy for not letting me do this </h6>
+</main>
+            </div>
+        </div>
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const themeBtn = document.getElementById('theme-toggle');
+            const themeIcon = themeBtn.querySelector('.theme-icon');
+            const currentTheme = localStorage.getItem('theme') || 'dark';
+
+            themeIcon.textContent = currentTheme === 'light' ? '☀️' : '🌙';
+
+            themeBtn.addEventListener('click', () => {
+                let theme = document.documentElement.getAttribute('data-theme');
+                if (theme === 'dark') {
+                    document.documentElement.setAttribute('data-theme', 'light');
+                    localStorage.setItem('theme', 'light');
+                    themeIcon.textContent = '☀️';
+                } else {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                    localStorage.setItem('theme', 'dark');
+                    themeIcon.textContent = '🌙';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
