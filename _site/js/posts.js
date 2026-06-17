@@ -1,4 +1,11 @@
 const posts = [
+    {
+    title: "junior week 6/15 - 6/18",
+    date: "jun. 17th, 2026",
+    preview: "trademark project + some other things",
+    href: "/blogs/junior-blogs/37",
+    tags: ["trademark", "osha", "shop-tasks", "3d modeling"]
+  },
   {
     title: "junior week 6/1 - 6/12",
     date: "jun. 11th, 2026",

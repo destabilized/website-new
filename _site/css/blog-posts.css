@@ -143,8 +143,11 @@ h6 {
 
 img, video {
   max-width: 100%;   
+  max-height: 500px;
   height: auto;     
   display: block;    
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 1.2rem; 
   border-radius: 8px;  
   border: 1px solid var(--border);
@@ -221,8 +224,17 @@ code {
   border: none;
   min-width: 100%;
   width: 100%;
+  height: 480px;
+  object-fit: contain;
+  background-color: var(--bg-dark);
   margin-bottom: 0;
   border-radius: 0;
+}
+
+@media (max-width: 600px) {
+  .slideshow-track img {
+    height: 300px;
+  }
 }
 
 .slideshow-btn {
