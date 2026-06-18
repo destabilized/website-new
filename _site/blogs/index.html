@@ -282,10 +282,65 @@ body {
     background: hsla(0, 0%, 100%, 0.05);
     border: 1px solid var(--border);
     color: var(--text-dim);
-    padding: 4px 10px;
+    padding: 5px 12px;
     border-radius: 6px;
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     font-weight: 500;
+    white-space: nowrap;
+}
+
+.extra-tags-wrapper {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+
+.extra-tags-tooltip {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-6px);
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    padding: 0.5rem;
+    border-radius: 8px;
+    display: flex;
+    gap: 0.25rem;
+    z-index: 100;
+    pointer-events: none;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+}
+
+.extra-tags-tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: var(--border) transparent transparent transparent;
+}
+
+.extra-tags-tooltip::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-1px);
+    border-width: 5px;
+    border-style: solid;
+    border-color: var(--card-bg) transparent transparent transparent;
+    z-index: 1;
+}
+
+.extra-tags-wrapper:hover .extra-tags-tooltip {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
 }
 
 .post-metadata-right {

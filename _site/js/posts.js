@@ -1,5 +1,12 @@
 const posts = [
-    {
+  {
+    title: "junior year recap",
+    date: "jun. 18th, 2026",
+    preview: "recap of all my projects, failures, it repairs, and milestones from my junior year!",
+    href: "/blogs/junior-blogs/recap",
+    tags: ["recap", "keyboard", "7-seg", "printer", "shop-tasks", "3d modeling"]
+  },
+  {
     title: "junior week 6/15 - 6/18",
     date: "jun. 17th, 2026",
     preview: "trademark project + some other things",
@@ -423,6 +430,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const visibleTags = allTags.slice(0, 3);
             const extraTagsCount = allTags.length - 3;
+            const extraTags = allTags.slice(3);
 
             return `
             <article class="post-card">
@@ -433,7 +441,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     <p class="post-preview">${post.preview}</p>
                     <div class="post-tags">
                         ${visibleTags.map(tag => `<span class="tag">${tag}</span>`).join('')}
-                        ${extraTagsCount > 0 ? `<span class="tag extra">+${extraTagsCount}</span>` : ''}
+                        ${extraTagsCount > 0 ? `
+                        <div class="extra-tags-wrapper">
+                            <span class="tag extra">+${extraTagsCount}</span>
+                            <div class="extra-tags-tooltip">
+                                ${extraTags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                            </div>
+                        </div>
+                        ` : ''}
                     </div>
                 </div>
                 
