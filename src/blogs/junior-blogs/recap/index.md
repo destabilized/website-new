@@ -54,7 +54,7 @@ i started with a 2x4 macropad to learn the workflow and write macros for termina
 </div>
 
 <video controls muted>
-    <source src="/static/vids/junior/35+36/facing.webm" type="video/mp4">
+    <source src="/static/vids/junior/35+36/facing.webm" type="video/webm">
     video of facing the stock on manual mill
 </video>
 

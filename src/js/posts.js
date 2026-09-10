@@ -1,4 +1,11 @@
-const posts = [
+window.blogPosts = [
+  {
+    title: "senior week 9/8 - 9/11",
+    date: "sep. 10th, 2026",
+    preview: "first week of senior year",
+    href: "/blogs/senior-blogs/1",
+    tags: ["shop-tasks", "task leaderboard"]
+  },
   {
     title: "junior year recap",
     date: "jun. 18th, 2026",
@@ -51,7 +58,7 @@ const posts = [
   {
     title: "junior week 4/13 - 4/17",
     date: "apr. 16th, 2026",
-    preview: "website changes eventually bc i don't like my current website. ",
+    preview: "website changes eventually bc i don't like my current website.",
     href: "/blogs/junior-blogs/29",
     tags: ["keyboard", "website", "html/css", "silicone molding"]
   },
@@ -123,7 +130,7 @@ const posts = [
     date: "jan. 22nd, 2026",
     preview: "rant abt how much i hate sanding",
     href: "/blogs/junior-blogs/18",
-    tags: ["keyboard", "resin printing","sanding"]
+    tags: ["keyboard", "resin printing", "sanding"]
   },
   {
     title: "junior week 1/12 - 1/16",
@@ -378,115 +385,3 @@ const posts = [
     tags: ["lightbox"]
   }
 ];
-
-document.addEventListener('DOMContentLoaded', () => {
-    const container = document.getElementById('posts-container');
-    const searchInput = document.querySelector('.search-input');
-    const clearBtn = document.querySelector('.clear-btn');
-    const sortSelect = document.querySelector('.sort-select');
-
-    // --- Helper Functions ---
-
-    // Generates a consistent number based on the title string
-    const calculateReadTime = (text) => {
-        const wordsPerMinute = 200;
-        const words = text.split(/\s+/).length;
-        return Math.ceil(words / wordsPerMinute) + 2; // +2 for "base" read time
-    };
-
-    // --- Core Logic ---
-
-    const renderPosts = (filterText = '', sortBy = 'newest') => {
-        if (!container) return;
-
-        // 1. Filter
-        let filtered = posts.filter(post => {
-            const searchStr = filterText.toLowerCase();
-            return post.title.toLowerCase().includes(searchStr) || 
-                   post.preview.toLowerCase().includes(searchStr) ||
-                   post.tags.some(tag => tag.toLowerCase().includes(searchStr));
-        });
-
-        // 2. Sort (assuming date format "month day, year")
-        filtered.sort((a, b) => {
-            const dateA = new Date(a.date.replace('th,', '').replace('st,', '').replace('rd,', '').replace('nd,', ''));
-            const dateB = new Date(b.date.replace('th,', '').replace('st,', '').replace('rd,', '').replace('nd,', ''));
-            return sortBy === 'newest' ? dateB - dateA : dateA - dateB;
-        });
-
-        // 3. Render
-        if (filtered.length === 0) {
-            container.innerHTML = `<p class="no-results">No posts found matching "${filterText}"</p>`;
-            return;
-        }
-
-        container.innerHTML = filtered.map(post => {
-            const readTime = calculateReadTime(post.preview);
-            
-            // Standardize tags
-            const allTags = post.tags.length === 1 && post.tags[0].includes(',') 
-                ? post.tags[0].split(',').map(t => t.trim()) 
-                : post.tags;
-
-            const visibleTags = allTags.slice(0, 3);
-            const extraTagsCount = allTags.length - 3;
-            const extraTags = allTags.slice(3);
-
-            return `
-            <article class="post-card">
-                <div class="post-content-left">
-                    <a href="${post.href}" class="post-title">
-                        <h3>${post.title}</h3>
-                    </a>
-                    <p class="post-preview">${post.preview}</p>
-                    <div class="post-tags">
-                        ${visibleTags.map(tag => `<span class="tag">${tag}</span>`).join('')}
-                        ${extraTagsCount > 0 ? `
-                        <div class="extra-tags-wrapper">
-                            <span class="tag extra">+${extraTagsCount}</span>
-                            <div class="extra-tags-tooltip">
-                                ${extraTags.map(tag => `<span class="tag">${tag}</span>`).join('')}
-                            </div>
-                        </div>
-                        ` : ''}
-                    </div>
-                </div>
-                
-                <div class="post-metadata-right">
-                    <div class="meta-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                        <span>${post.date}</span>
-                    </div>
-                    <div class="meta-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                        <span>${readTime} min read</span>
-                    </div>
-                </div>
-            </article>
-            `;
-        }).join('');
-    };
-
-    searchInput.addEventListener('input', (e) => {
-        renderPosts(e.target.value, sortSelect.value);
-    });
-
-    sortSelect.addEventListener('change', (e) => {
-        renderPosts(searchInput.value, e.target.value);
-    });
-
-    clearBtn.addEventListener('click', () => {
-        searchInput.value = '';
-        renderPosts('', sortSelect.value);
-    });
-
-    // Initial load
-    renderPosts();
-});
-
-window.addEventListener('pageshow', () => {
-    const sortSelect = document.querySelector('.sort-select');
-    if (sortSelect) {
-        sortSelect.value = 'newest';
-    }
-});

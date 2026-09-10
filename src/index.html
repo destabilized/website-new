@@ -1,566 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>andrew huang - portfolio</title>
-    <script defer src="/_vercel/insights/script.js"></script>
-    <script defer src="/_vercel/speed-insights/script.js"></script>
-    <script>
-        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-        window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
-    </script>
-
-    <style>
-:root {
-    --bg: hsl(0, 0%, 5%);
-    --card-bg: hsl(0, 0%, 10%);
-    --bg-dark: hsl(0, 0%, 0%);
-    --border: hsl(217, 33%, 17%);
-    --text-main: hsl(0, 0%, 95%);
-    --text-dim: hsl(0, 0%, 70%);
-    --accent: hsl(199, 95%, 61%);
-    --nav-gap: 2rem;
-}
-
-[data-theme="light"] {
-    --bg: hsl(0, 0%, 100%);
-    --card-bg: hsl(210, 40%, 98%);
-    --border: hsl(214, 32%, 91%);
-    --text-main: hsl(222, 47%, 11%);
-    --text-dim: hsl(215, 16%, 47%);
-    --accent: hsl(199, 89%, 48%);
-    --bg-dark: hsl(0, 0%, 100%);
-}
-
-body {
-    background-color: var(--bg);
-    color: var(--text-main);
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    margin: 0;
-    transition: background 0.3s ease, color 0.3s ease;
-}
-
-.view-more-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px; 
-    text-decoration: none;
-    transition: gap 0.2s ease;
-}
-
-.view-more {
-    color: var(--text-main);
-    font-size: 1rem;
-    letter-spacing: 1px;
-    text-transform: lowercase;
-}
-
-.view-more-link svg {
-    width: 18px;
-    height: 18px;
-    color: var(--text-main);
-}
-
-.view-more-link:hover {
-    gap: 12px;
-}
-
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    max-width: 850px;
-    margin: 0 auto;
-    padding: 3rem 1.5rem;
-    gap: 1.5rem;
-}
-
-.top-bar {
-    grid-column: span 12;
-    display: flex;
-    justify-content: space-between; 
-    align-items: center;          
-    width: 100%;
-}
-
-.main-nav {
-    display: flex;
-    gap: var(--nav-gap);
-}
-
-.main-nav a {
-    color: var(--text-dim);
-    text-decoration: none;
-    font-size: 0.95rem;
-    font-weight: 500;
-}
-
-.main-nav a:hover {
-    color: var(--text-main);
-}
-
-.theme-toggle-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 5px;
-    display: flex;
-    align-items: center; 
-    justify-content: center;
-    color: var(--text-main);
-    font-size: 1.2rem;
-    transition: transform 0.2s ease;
-}
-
-.theme-toggle-btn:hover {
-    transform: scale(1.1);
-}
-
-.hero {
-    grid-column: span 12;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 2.5rem;
-    margin: 2rem 0;
-}
-
-.hero-btns {
-    display: flex;
-    align-items: center;
-    gap: .5rem;
-    margin-top: 1.5rem;
-}
-
-.resume-btn,  .icons {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    color: var(--text-main);
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-.resume-btn {
-    padding: 8px 16px;
-    gap: 8px;
-    font-weight: 600;
-}
-
-.icons {
-    background: transparent;
-    border: none;
-    box-shadow: none;
-    width: 42px;
-    height: 42px;
-    padding: 0;
-    color: var(--text-dim); 
-}
-
-.icons svg {
-    width: 20px;
-    height: 20px;
-}
-
-.resume-btn:hover, .icons:hover {
-    transform: translateY(-2px);
-    background: transparent; 
-}
-
-.hero-text {
-    flex: 1;
-}
-
-.hero-text h1 {
-    font-size: 2.5rem;
-    margin: 0 0 0.5rem 0;
-}
-
-.subtitle {
-    color: var(--text-dim);
-    font-weight: 600;
-    margin-bottom: 1rem;
-}
-
-.single-profile-img {
-    width: 200px;
-    height: 200px;
-    border-radius: 12px;
-    object-fit: cover;
-    transform: rotate(2deg);
-    border: 1px solid var(--border);
-}
-
-.resume-txt {
-    font-size: 1rem;
-}
-
-.toggle-bar {
-    grid-column: span 12;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    background: var(--card-bg); 
-    border: 1px solid var(--border);
-    padding: 4px;
-    border-radius: 8px;
-    margin: 1rem 0;
-}
-
-.toggle-btn {
-    background: transparent;
-    border: none;
-    color: var(--text-dim); 
-    padding: 12px;
-    cursor: pointer;
-    border-radius: 6px;
-    font-weight: 500;
-    transition: all 0.2s ease;
-}
-
-.toggle-btn.active {
-    background: var(--bg); 
-    color: var(--text-main);
-    border: 1px solid var(--border);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.toggle-btn:not(.active):hover {
-    color: var(--text-main);
-    background: hsla(0, 0%, 100%, 0.05); 
-}
-
-.content-section {
-    grid-column: span 12;
-    animation: fadeIn 0.4s ease-out;
-}
-
-.hidden {
-    display: none !important;
-}
-
-.timeline-item {
-    display: grid;
-    grid-template-columns: 40px 1fr;
-    gap: 1.5rem;
-    margin-bottom: 2rem;
-}
-
-.org-logo {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%; 
-    object-fit: cover; 
-    display: block;
-}
-
-.logo {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-}
-.item-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    width: 100%;
-}
-
-.item-header h3 {
-    margin: 0;
-    font-size: 1.2rem;
-}
-
-.item-header h4 {
-    margin-top: 0.25rem;
-    color: var(--text-dim);
-    font-weight: 500;
-}
-
-.achievements {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 16px 0;
-}
-
-.achievements li {
-    font-size: 0.9rem;
-    position: relative;
-    padding-left: 1.2rem;
-    margin-bottom: 4px;
-}
-
-.achievements li::before {
-    content: "•";
-    position: absolute;
-    left: 0;
-    color: var(--text-dim);
-}
-
-.project-links {
-    display: flex;
-    gap: 8px;
-}
-
-.mini-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background-color: var(--text-main);
-    color: var(--bg);
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    text-decoration: none;
-}
-
-
-.date {
-    color: var(--text-dim);
-    font-size: 0.85rem;
-}
-
-.posts-list {
-    grid-column: span 12;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.post-item {
-    border: 1px solid var(--border);
-    padding: 1.5rem;
-    border-radius: 12px;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 2rem;
-    align-items: start;
-    background-color: var(--card-bg);
-}
-
-.post-header h3 {
-    font-size: 1.2rem;
-    margin: 0 0 0.5rem 0;
-}
-
-.post-item p {
-    color: var(--text-dim);
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-}
-
-.post-meta {
-    margin-top: 1rem;
-    padding-top: 1rem;
-    border: none;
-}
-
-.meta-info {
-    display: flex;
-    gap: 15px;
-    align-items: center;
-    color: var(--text-dim);
-    font-size: 0.85rem;
-}
-
-.meta-item {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.dynamic-meta {
-    display: flex;
-    gap: 15px;
-}
-
-.meta-item svg {
-    width: 14px;
-    height: 14px;
-    opacity: 0.7;
-}
-
-.dynamic-meta {
-    display: flex;
-    gap: 15px;
-}
-
-.post-item {
-    transition: transform 0.2s ease, border-color 0.2s ease;
-}
-
-.post-item:hover {
-    transform: translateY(-2px);
-}
-
-.section-title {
-    grid-column: span 12;
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    margin-top: 3rem;
-}
-
-.projects-grid {
-    grid-column: span 12;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-}
-
-.project-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    overflow: hidden;
-}
-
-.card-thumb {
-    height: 160px;
-    background: var(--border);
-    overflow: hidden; 
-}
-
-.card-thumb img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain; 
-    display: block;
-    background-color: var(--bg-dark);
-    aspect-ratio: 280 / 216; 
-}
-
-.single-profile-img {
-    width: 200px;
-    height: 200px;
-    aspect-ratio: 1 / 1;
-}
-.card-content {
-    padding: 1.2rem;
-}
-
-.tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-}
-
-.tags span {
-    font-size: 0.75rem;
-    background: var(--card-bg);
-    padding: 4px 10px;
-    border-radius: 6px;
-    color: var(--text-dim);
-    border: 1px solid var(--border);
-}
-
-.contact-footer {
-    grid-column: span 12;
-    margin-top: 6rem;
-    padding-top: 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: var(--text-dim);
-    font-size: 0.9rem;
-    border-top: 1px solid var(--border); 
-}
-
-.footer-socials {
-    display: flex;
-    gap: 1.5rem;
-}
-
-.footer-socials a {
-    color: var(--text-dim);
-    transition: color 0.2s;
-}
-
-.footer-socials a:hover {
-    color: var(--text-main);
-}
-
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@media (max-width: 700px) {
-    .form-row {
-        grid-template-columns: 1fr;
-    }
-    .contact-footer {
-        flex-direction: column;
-        gap: 1.5rem;
-        text-align: center;
-    }
-    .hero { flex-direction: column; gap: 1.5rem; }
-    .hero-visual { order: -1; }
-    .projects-grid { grid-template-columns: 1fr; }
-    .post-item { grid-template-columns: 1fr; }
-    .post-meta { justify-items: start; text-align: left; grid-template-columns: repeat(3, auto); gap: 1rem; }
-    .top-bar { gap: 1rem; flex-wrap: wrap; }
-}
-
-@media (max-width: 400px) {
-    .main-nav { gap: 1rem;}
-}
-    </style>
-    <link rel="canonical" href="https://www.andrewhuang.cc/" />
-    <link rel="preload" as="image" href="/static/img/assets/filler.png">
-</head>
-<body>
-    <main class="grid-container">
-    <header class="top-bar">
-        <nav class="main-nav">
-            <a href="/">home</a>
-            <a href="/projects">projects</a>
-            <a href="/blogs">blog</a>
-            <a href="/contact">contact</a>
-        </nav>
-        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark mode">
-            <span class="theme-icon">🌙</span>
-        </button>
-    </header>
+---
+layout: page-base.njk
+title: andrew huang - portfolio
+cssFile: home.css
+jsFile: null
+---
+<main class="grid-container" id="main-content">
+    {% include "nav.njk" %}
 
     <section class="hero">
         <div class="hero-text">
-            <h1>hi. </h1>
+            <h1>hi.</h1>
             <p class="subtitle">17yo robotics and engineering student from america 🇺🇸</p>
             <p>i create a bunch of random projects. pls hire me i need a job so i have smth else for college apps</p>
-            
+
             <div class="hero-btns">
-                <a target="_blank" href="/static/resume.pdf">
-                    <button class="resume-btn">
-                        <span class="resume-txt">resume</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-down"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path><path d="M14 2v4a2 2 0 0 0 2 2h4"></path><path d="M12 18v-6"></path><path d="m9 15 3 3 3-3"></path></svg>
-                    </button>
+                <a href="/static/resume.pdf" target="_blank" rel="noopener noreferrer" class="resume-btn">
+                    <span class="resume-txt">resume</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path><path d="M14 2v4a2 2 0 0 0 2 2h4"></path><path d="M12 18v-6"></path><path d="m9 15 3 3 3-3"></path></svg>
                 </a>
 
-                <a target="_blank" href="https://github.com/destabilized" aria-label="my github">
-                    <button class="icons" alt="github">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
-                    </button>
-                </a>
-                
-                <a target="_blank" href="https://www.linkedin.com/in/andrew-huang-52547637a/" aria-label="my linkedin">
-                    <button class="icons" alt="linkedin">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-                    </button>
+                <a href="https://github.com/destabilized" target="_blank" rel="noopener noreferrer" aria-label="my github" class="icon-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
                 </a>
 
-                <a target="_blank" href="mailto:az42hu@gmail.com" aria-label="my gmail">
-                    <button class="icons" alt="gmail" >
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
-                    </button>
+                <a href="https://www.linkedin.com/in/andrew-huang-52547637a/" target="_blank" rel="noopener noreferrer" aria-label="my linkedin" class="icon-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                </a>
+
+                <a href="mailto:az42hu@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="my gmail" class="icon-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
                 </a>
             </div>
         </div>
@@ -568,157 +36,126 @@ body {
         <div class="hero-visual">
             <img src="/static/assets/filler.png" alt="me" class="single-profile-img" fetchpriority="high">
         </div>
-
     </section>
 
-        <div class="toggle-bar">
-            <button class="toggle-btn active" data-target="education">education</button>
-            <button class="toggle-btn" data-target="work">work</button>
+    <div class="toggle-bar">
+        <button class="toggle-btn active" data-target="education">education</button>
+        <button class="toggle-btn" data-target="work">work</button>
+    </div>
+
+    <section id="education" class="timeline content-section">
+        <div class="timeline-item">
+            <div class="logo">
+                <img src="/static/assets/medford.webp" class="org-logo" alt="mhs logo">
+            </div>
+
+            <div class="details">
+                <div class="item-header">
+                    <h3>Medford Vocational Technical Highschool</h3>
+                </div>
+
+                <div class="item-header">
+                    <h4>student currently</h4>
+                    <span class="date">2023 - 2027 (expected graduation)</span>
+                </div>
+
+                <ul class="achievements">
+                    <li>vocational shop - robotics & engineering</li>
+                    <li>coursework in cad, electronics, and programming</li>
+                </ul>
+
+                <div class="project-links">
+                    <a href="/projects" class="mini-btn">
+                        check out my projects :3
+                    </a>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <section id="education" class="timeline content-section">
-            <div class="timeline-item">
-                <div class="logo">
-                    <img src="/static/assets/.webp" class="org-logo" alt="">
-                </div>
-                
-                <div class="details">
-                    <div class="item-header">
-                        <h3>college stuff (colleges you defo wanna be here)</h3>
-                    </div>
-
-                    <div class="item-header">
-                        <h4>student at *your college here*</h4> 
-                        <span class="date">2027 - 2031?</span>
-                    </div>
-                    
-                    <ul class="achievements">
-                        <li>things</li>
-                        <li>things no2 anyways you should defo have me as a student at your college. think of how much bragging rights you would have</li>
-                    </ul>
-                </div>
-
-                <div class="logo">
-                    <img src="/static/assets/medford.webp" class="org-logo" alt="mhs logo">
-                </div>
-                
-                <div class="details">
-                    <div class="item-header">
-                        <h3>Medford Vocational Technical Highschool</h3>
-                    </div>
-
-                    <div class="item-header">
-                        <h4>student currently</h4> 
-                        <span class="date">2023 - 2027 (expected graduation)</span>
-                    </div>
-                    
-                    <ul class="achievements">
-                        <li>vocational shop - robotics & engineering</li>
-                        <li>coursework in cad, electronics, and programming</li>
-                    </ul>
-
-                    <div class="project-links">
-                        <a href="/projects" class="mini-btn">
-                            check out my projects :3
-                        </a>
-                    </div>
-                </div>
+    <section id="work" class="timeline content-section hidden">
+        <div class="timeline-item">
+            <div class="logo">
+                <img src="/static/assets/medford.webp" class="org-logo" alt="">
             </div>
-        </section>
 
-        <section id="work" class="timeline content-section hidden">
-            <div class="timeline-item">
-                <div class="logo">
-                    <img src="/static/assets/.webp" class="org-logo" alt="">
+            <div class="details">
+                <div class="item-header">
+                    <h3>work (this could be you)</h3>
                 </div>
-                
-                <div class="details">
-                    <div class="item-header">
-                        <h3>work (this could be you)</h3>
-                    </div>
 
-                    <div class="item-header">
-                        <h4>job title at *your company here*</h4> 
-                        <span class="date">20xx - 20xx</span>
-                    </div>
-                    
-                    <ul class="achievements">
-                        <li>umm you should hire me i need a job</li>
-                        <li>pls i'll do anything no cap</li>
-                    </ul>
+                <div class="item-header">
+                    <h4>job title at *your company here*</h4>
+                    <span class="date">20xx - 20xx</span>
                 </div>
+
+                <ul class="achievements">
+                    <li>umm you should hire me i need a job</li>
+                    <li>pls i'll do anything no cap</li>
+                </ul>
             </div>
-        </section>
-
-        <div class="section-title">
-            <h2>featured projects</h2>
-            <a href="/projects" class="view-more-link">
-                <span class="view-more">view more</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right size-5"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-            </a>
         </div>
-        <section class="projects-grid">
-            <article class="project-card">
-                <div class="card-thumb">
-                    <img src="/static/img/projects/sumobot.webp" alt="sumobot project">
-                </div>
-                <div class="card-content">
-                    <div class="item-header">
-                        <h3>sumobot</h3>
-                        <span class="date">2025</span>
-                    </div>
-                    <p>
-                        a sumobot built by me, 
-                        <a class="view-more" href="https://www.mileshilliard.com/" target="_blank" rel="noopener noreferrer">miles</a>, 
-                        and <a class="view-more" href="https://jonaswirz.wordpress.com/" target="_blank" rel="noopener noreferrer">jonas</a>. 
-                        instead of using ir sensors, we took a mechanical approach with roller lever limit switches to tell when the bot was "out" of the arena.
-                    </p>
-                    <div class="tags">
-                        <span>arduino</span><span>fusion 360</span><span>tactile sensing</span><span>autonomous robots</span>
-                    </div>
-                </div>
-            </article>
-            <article class="project-card">
-                <div class="card-thumb">
-                    <img src="/static/img/projects/lightbox.webp" alt="lightbox project">
-                </div>
-                <div class="card-content">
-                    <div class="item-header">
-                        <h3>lightbox</h3>
-                        <span class="date">2025</span>
-                    </div>
-                    <p>a lightbox built by me using an attiny84 and a temperature sensor to change the color (changing the shades of blue based on how hot / cold it is) </p>
-                    <div class="tags">
-                        <span>fusion360</span><span>ardunio</span><span>microcontrollers</span><span>temperature sensors</span><span>lasercutting</span><span>inkscape</span>
-                    </div>
-                </div>
-            </article>
-        </section>
+    </section>
 
-        <div class="section-title">
-            <h2>recent posts</h2>
-            <a href="/blogs" class="view-more-link">
-                <span class="view-more">view more</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right size-5"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-            </a>
-        </div>
+    <div class="section-title">
+        <h2>featured projects</h2>
+        <a href="/projects" class="view-more-link">
+            <span class="view-more">view more</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+        </a>
+    </div>
 
-        <section class="posts-list"></section>
-
-        <footer class="contact-footer">
-            <div class="footer-left">
-                <span>© 2026 andrewhuang.cc</span>
+    <section class="projects-grid">
+        <article class="project-card">
+            <div class="card-thumb">
+                <img src="/static/img/projects/sumobot.webp" alt="sumobot project">
             </div>
-            <div class="footer-socials">
-                <a href="https://www.linkedin.com/in/andrew-huang-52547637a/" target="_blank" aria-label="LinkedIn Profile"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
-                <a href="https://github.com/destabilized" target="_blank" aria-label="GitHub Profile"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg></a>
-                <a target="_blank" href="mailto:az42hu@gmail.com" aria-label="Email Andrew"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg></a>
+            <div class="card-content">
+                <div class="item-header">
+                    <h3>sumobot</h3>
+                    <span class="date">2025</span>
+                </div>
+                <p class="description">
+                    a sumobot built by me,
+                    <a class="view-more" href="https://www.mileshilliard.com/" target="_blank" rel="noopener noreferrer">miles</a>,
+                    and <a class="view-more" href="https://jonaswirz.wordpress.com/" target="_blank" rel="noopener noreferrer">jonas</a>.
+                    instead of using ir sensors, we took a mechanical approach with roller lever limit switches to tell when the bot was "out" of the arena.
+                </p>
+                <div class="tags">
+                    <span>arduino</span><span>fusion 360</span><span>tactile sensing</span><span>autonomous robots</span>
+                </div>
             </div>
-        </footer>
-    </main>
+        </article>
 
-    <script src="/js/posts.js" defer></script> 
-    <script src="/js/home.js" defer></script>
+        <article class="project-card">
+            <div class="card-thumb">
+                <img src="/static/img/projects/lightbox.webp" alt="lightbox project">
+            </div>
+            <div class="card-content">
+                <div class="item-header">
+                    <h3>lightbox</h3>
+                    <span class="date">2025</span>
+                </div>
+                <p class="description">a lightbox built by me using an attiny84 and a temperature sensor to change the color (changing the shades of blue based on how hot / cold it is)</p>
+                <div class="tags">
+                    <span>fusion360</span><span>arduino</span><span>microcontrollers</span><span>temperature sensors</span><span>lasercutting</span><span>inkscape</span>
+                </div>
+            </div>
+        </article>
+    </section>
 
-</body>
-</html>
+    <div class="section-title">
+        <h2>recent posts</h2>
+        <a href="/blogs" class="view-more-link">
+            <span class="view-more">view more</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+        </a>
+    </div>
+
+    <section class="posts-list"></section>
+
+    {% include "footer.njk" %}
+</main>
+
+<script defer src="/js/posts.js"></script>
+<script defer src="/js/home.js"></script>

@@ -29,7 +29,7 @@ mr. moulis helped a lot with setting up the mill and showing me how to use their
 </div>
 
 <video controls muted>
-    <source src="/static/vids/junior/35+36/facing.webm" type="video/mp4" alt="video of facing hte stock">
+    <source src="/static/vids/junior/35+36/facing.webm" type="video/webm" alt="video of facing hte stock">
 </video>  
 
 with this all done, i went back to our shop and set the dimensions of the fully faced stock.

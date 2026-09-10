@@ -58,7 +58,7 @@ gonna have to consult with mr.l about specific tools as for some reason i don't 
 ###### full cam operation 
 
 <video controls muted>
-    <source src="/static/vids/junior/31+32/cam.webm" type="video/mp4">
+    <source src="/static/vids/junior/31+32/cam.webm" type="video/webm">
 </video>  
 
 <div class="navigation">
