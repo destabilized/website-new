@@ -1,0 +1,65 @@
+---
+layout: page-base.njk
+title: task-leaderboard — andrew huang
+description: a live, fully static task leaderboard for the mvths robotics shop that scores tasks from a google sheet in the browser.
+cssFile: project-detail.css
+jsFile: null
+---
+<main class="detail-container" id="main-content">
+    {% include "nav.njk" %}
+
+    <div class="detail-hero">
+        <img fetchpriority="high" src="/static/img/projects/expansion.webp" alt="home page of task-leaderboard">
+    </div>
+
+    <div class="detail-meta">
+        <h1>task-leaderboard</h1>
+        <span class="date">2025</span>
+    </div>
+
+    <div class="detail-tags">
+        <span>html/css/js</span><span>google sheets</span><span>csv extracting</span>
+    </div>
+
+    <div class="detail-body">
+        <p>
+            a live task leaderboard for the mvths robotics shop. completed tasks are tracked in a google sheet, scored by complexity, speed, and grade level, and displayed in everyone's browser in real time. it's a
+            <a href="https://destabilized.github.io/task-leaderboard/" target="_blank" rel="noopener noreferrer">fully static site</a>
+            with no server — the browser fetches the published sheet csv, computes all scores client-side, and re-polls every few seconds.
+        </p>
+
+        <h2>how scoring works</h2>
+        <ul>
+            <li><strong>complexity</strong> — task name matched against keyword tiers for 1, 3, or 5 base points</li>
+            <li><strong>speed</strong> — finished within a short window gets a bonus; over the lead time gets a per-day penalty</li>
+            <li><strong>grade bonus</strong> — gr 10 +0.2, gr 11 +0.1, gr 12 +0.0 (additive)</li>
+            <li><strong>floor</strong> — a task can never score below 0.5 points</li>
+        </ul>
+        <p>
+            business days skip weekends and the school calendar stored in <code>EXCLUDED_DAYS</code>. scoring rules are plain objects at the top of <code>scoring.js</code>, so they can be tuned without touching the ui.
+        </p>
+
+        <h2>features</h2>
+        <ul>
+            <li>live updates — polls the published sheet every 5 seconds</li>
+            <li>rankings sorted by total points or completed tasks</li>
+            <li>filters for timeframe (24h / 5d / 30d / all time), grade, and name search</li>
+            <li>per-student breakdown — expand any row to see every task with dates and score details</li>
+            <li>justify sir L's exclusion — assigned work is scored only for students</li>
+            <li>mobile friendly with tap-to-expand</li>
+        </ul>
+
+        <h2>tech stack</h2>
+        <p>
+            vanilla js + css, no build step, no dependencies. google sheets published csv export for data, and 5-second client-side polling instead of a backend.
+        </p>
+    </div>
+
+    <div class="detail-actions">
+        <a href="/projects" class="btn-primary">← back to projects</a>
+        <a href="https://destabilized.github.io/task-leaderboard/" target="_blank" rel="noopener noreferrer" class="btn-secondary">live demo</a>
+        <a href="https://github.com/destabilized/task-leaderboard" target="_blank" rel="noopener noreferrer" class="btn-secondary">source</a>
+    </div>
+
+    {% include "footer.njk" %}
+</main>

@@ -1,0 +1,56 @@
+---
+layout: page-base.njk
+title: sumobot — andrew huang
+description: a mechanical sumobot built with roller lever limit switches, designed for autonomous arena competition.
+cssFile: project-detail.css
+jsFile: null
+---
+<main class="detail-container" id="main-content">
+    {% include "nav.njk" %}
+
+    <div class="detail-hero">
+        <img src="/static/img/projects/sumobot.webp" alt="sumobot" fetchpriority="high">
+    </div>
+
+    <div class="detail-meta">
+        <h1>sumobot</h1>
+        <span class="date">2025</span>
+    </div>
+
+    <div class="detail-tags">
+        <span>arduino</span><span>fusion 360</span><span>tactile sensing</span><span>autonomous robots</span>
+    </div>
+
+    <div class="detail-body">
+        <p>
+            a sumobot built by me,
+            <a href="https://www.mileshilliard.com/" target="_blank" rel="noopener noreferrer">miles</a>,
+            and <a href="https://jonaswirz.wordpress.com/" target="_blank" rel="noopener noreferrer">jonas</a>.
+        </p>
+
+        <h2>how it works</h2>
+        <p>
+            instead of using ir sensors to detect the arena edge, we took a mechanical approach with roller lever limit switches mounted under the chassis. when a roller drops off the edge, the switch triggers and the bot reverses. this gives a physical, reliable signal without any sensor calibration.
+        </p>
+
+        <h2>design</h2>
+        <ul>
+            <li>chassis designed in fusion 360 and 3d printed</li>
+            <li>driven by two dc motors with direct drive to the wheels</li>
+            <li>front wedge to get under opponents</li>
+            <li>limit switches wired to an arduino for edge detection</li>
+        </ul>
+
+        <h2>results</h2>
+        <p>
+            the bot performed well in class competitions. the mechanical edge detection proved reliable and gave us a consistent strategy without needing to tune sensor thresholds.
+        </p>
+    </div>
+
+    <div class="detail-actions">
+        <a href="/projects" class="btn-primary">← back to projects</a>
+        <a href="https://github.com/destabilized" target="_blank" rel="noopener noreferrer" class="btn-secondary">source</a>
+    </div>
+
+    {% include "footer.njk" %}
+</main>

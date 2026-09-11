@@ -1,0 +1,53 @@
+---
+layout: page-base.njk
+title: lightbox — andrew huang
+description: a temperature-reactive lightbox using an attiny84 microcontroller and temperature sensor.
+cssFile: project-detail.css
+jsFile: null
+---
+<main class="detail-container" id="main-content">
+    {% include "nav.njk" %}
+
+    <div class="detail-hero">
+        <img src="/static/img/projects/lightbox.webp" alt="lightbox" fetchpriority="high">
+    </div>
+
+    <div class="detail-meta">
+        <h1>lightbox</h1>
+        <span class="date">2025</span>
+    </div>
+
+    <div class="detail-tags">
+        <span>fusion360</span><span>arduino</span><span>microcontrollers</span><span>temperature sensors</span><span>lasercutting</span><span>inkscape</span>
+    </div>
+
+    <div class="detail-body">
+        <p>
+            a lightbox that changes color based on temperature. it uses an attiny84 microcontroller reading a temperature sensor to shift the led between shades of blue — colder temperatures produce a deeper blue, while warmer temperatures shift toward lighter tones.
+        </p>
+
+        <h2>how it works</h2>
+        <p>
+            the attiny84 reads the temperature sensor on a timer and maps the value to an rgb color. the color smoothly transitions as the temperature changes, so the lightbox gives a subtle visual cue of the room temperature at a glance.
+        </p>
+
+        <h2>design</h2>
+        <ul>
+            <li>case designed in fusion 360 and laser cut from acrylic</li>
+            <li>led array driven by the attiny84 via pwm</li>
+            <li>temperature sensor for continuous reading</li>
+            <li>front panel artwork created in inkscape</li>
+        </ul>
+
+        <h2>tech details</h2>
+        <p>
+            the attiny84 was programmed via arduino ide. the code maps the sensor's analog reading to a color range, applying a simple smoothing filter to avoid abrupt shifts. the whole circuit runs off a small usb power supply.
+        </p>
+    </div>
+
+    <div class="detail-actions">
+        <a href="/projects" class="btn-primary">← back to projects</a>
+    </div>
+
+    {% include "footer.njk" %}
+</main>

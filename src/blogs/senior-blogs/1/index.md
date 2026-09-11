@@ -41,6 +41,8 @@ for the full list of details about this website, please visit the github repo <a
 
 furthermore, mr. christy brought up the idea of potentially putting this on a physical screen and displaying it in our shop. not too sure how to do that yet (maybe an older monitor or something? idk?) but that's probably gonna be what i'm doing before returning to my trademark project.
 
+<a href="https://destabilized.github.io/task-leaderboard/" target="_blank"> here's the website! </a>
+
 <div class="navigation">
     <a href="/blogs" class="buttons">← back to all blogs </a>
     <a href="/blogs/junior-blogs/37/" class="buttons"> last years post →</a>

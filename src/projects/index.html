@@ -1,7 +1,7 @@
 ---
 layout: page-base.njk
 title: my projects.
-description: andrew huang's projects - a custom 60% keyboard, sumobot, and lightbox.
+description: andrew huang's projects - a task leaderboard, custom 60% keyboard, sumobot, and lightbox.
 cssFile: projects.css
 jsFile: null
 ---
@@ -34,6 +34,29 @@ jsFile: null
 
         <article class="project-card">
             <div class="card-thumb">
+                <img fetchpriority="high" src="/static/img/projects/expansion.webp" alt="home page of task-leaderboard">
+            </div>
+            <div class="card-content">
+                <div class="title-row">
+                    <h3>task-leaderboard</h3>
+                    <span class="date">2025</span>
+                </div>
+                <p class="description">
+                    a live task leaderboard for the mvths robotics shop that scores completed tasks from a google sheet
+                    and displays rankings in real time — fully static, no server, scores computed in the browser.
+                </p>
+                <div class="tags">
+                    <span>html/css/js</span><span>google sheets</span><span>csv extracting</span>
+                </div>
+                <div class="card-actions">
+                    <a href="/projects/task-leaderboard" class="btn-primary">details</a>
+                    <a href="https://destabilized.github.io/task-leaderboard/" target="_blank" rel="noopener noreferrer" class="btn-secondary">live demo</a>
+                </div>
+            </div>
+        </article>
+
+        <article class="project-card">
+            <div class="card-thumb">
                 <img fetchpriority="high" src="/static/img/projects/sumobot.webp" alt="sumobot">
             </div>
             <div class="card-content">
@@ -51,8 +74,8 @@ jsFile: null
                     <span>arduino</span><span>fusion 360</span><span>tactile sensing</span><span>autonomous robots</span>
                 </div>
                 <div class="card-actions">
-                    <a href="#" class="btn-primary">details</a>
-                    <a href="https://github.com/destabilized" target="_blank" rel="noopener noreferrer" class="btn-secondary">source</a>
+                    <a href="/projects/sumobot" class="btn-primary">details</a>
+
                 </div>
             </div>
         </article>
@@ -71,7 +94,7 @@ jsFile: null
                     <span>fusion360</span><span>arduino</span><span>microcontrollers</span><span>temperature sensors</span><span>lasercutting</span><span>inkscape</span>
                 </div>
                 <div class="card-actions">
-                    <a href="#" class="btn-primary">details</a>
+                    <a href="/projects/lightbox" class="btn-primary">details</a>
                 </div>
             </div>
         </article>

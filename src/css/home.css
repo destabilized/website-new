@@ -223,6 +223,10 @@
     font-size: 0.85rem;
 }
 
+.contact-footer {
+    grid-column: span 12;
+}
+
 .posts-list {
     grid-column: span 12;
     display: flex;
