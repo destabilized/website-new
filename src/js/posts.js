@@ -1,4 +1,11 @@
 window.blogPosts = [
+    {
+    title: "senior week 9/15 - 9/18",
+    date: "sep. 17th, 2026",
+    preview: "fixing the sunk robotics website bc miles and ibrahim suck at actual coding",
+    href: "/blogs/senior-blogs/2",
+    tags: ["trademark", "website", "html/css", "sunk-robotics"]
+  },
   {
     title: "senior week 9/8 - 9/11",
     date: "sep. 10th, 2026",
