@@ -175,6 +175,72 @@ code {
   margin: 0;     
 }
 
+/* The linked highlight.js theme (github-dark) hardcodes a dark token palette,
+   but .hljs above forces the background to var(--card-bg). In light mode that
+   leaves pale tokens on a near-white background (~1.5:1, unreadable), so
+   re-map the token colors for light mode. !important is required to beat
+   compound selectors like `.hljs-meta .hljs-keyword` in the linked theme. */
+[data-theme="light"] .hljs-keyword,
+[data-theme="light"] .hljs-doctag,
+[data-theme="light"] .hljs-type,
+[data-theme="light"] .hljs-meta .hljs-keyword,
+[data-theme="light"] .hljs-template-tag,
+[data-theme="light"] .hljs-template-variable,
+[data-theme="light"] .hljs-variable.language_ {
+  color: #cf222e !important;
+}
+
+[data-theme="light"] .hljs-title,
+[data-theme="light"] .hljs-title.class_,
+[data-theme="light"] .hljs-title.class_.inherited__,
+[data-theme="light"] .hljs-title.function_ {
+  color: #6f42c1 !important;
+}
+
+[data-theme="light"] .hljs-attr,
+[data-theme="light"] .hljs-attribute,
+[data-theme="light"] .hljs-literal,
+[data-theme="light"] .hljs-meta,
+[data-theme="light"] .hljs-number,
+[data-theme="light"] .hljs-operator,
+[data-theme="light"] .hljs-selector-attr,
+[data-theme="light"] .hljs-selector-class,
+[data-theme="light"] .hljs-selector-id,
+[data-theme="light"] .hljs-variable,
+[data-theme="light"] .hljs-section {
+  color: #005cc5 !important;
+}
+
+[data-theme="light"] .hljs-string,
+[data-theme="light"] .hljs-meta .hljs-string,
+[data-theme="light"] .hljs-regexp {
+  color: #032f62 !important;
+}
+
+[data-theme="light"] .hljs-built_in,
+[data-theme="light"] .hljs-symbol {
+  color: #bc4c00 !important;
+}
+
+[data-theme="light"] .hljs-code,
+[data-theme="light"] .hljs-comment,
+[data-theme="light"] .hljs-formula {
+  color: #6a737d !important;
+}
+
+[data-theme="light"] .hljs-name,
+[data-theme="light"] .hljs-quote,
+[data-theme="light"] .hljs-selector-pseudo,
+[data-theme="light"] .hljs-selector-tag {
+  color: #116329 !important;
+}
+
+[data-theme="light"] .hljs-subst,
+[data-theme="light"] .hljs-emphasis,
+[data-theme="light"] .hljs-strong {
+  color: #24292e !important;
+}
+
 .navigation {
   display: flex;
   flex-direction: row; 

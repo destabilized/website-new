@@ -1,6 +1,6 @@
 ---
 layout: layout-post.njk
-title: "senior week 2"
+title: "senior week 3"
 ---
 
 # senior week 9/22 - 9/25

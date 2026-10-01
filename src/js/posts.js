@@ -1,5 +1,19 @@
 window.blogPosts = [
-    {
+  {
+    title: "senior week 9/28 - 10/2",
+    date: "oct. 1st, 2026",
+    preview: "trademark printed and started with software side of things + task-leaderboard fix",
+    href: "/blogs/senior-blogs/4",
+    tags: ["trademark", "website", "html/css", "task leaderboard"]
+  },
+  {
+    title: "senior week 9/21 - 9/25",
+    date: "sep. 24th, 2026",
+    preview: "more sunk-robotics website fixes and redesigning the trademark",
+    href: "/blogs/senior-blogs/3",
+    tags: ["trademark", "website", "html/css", "sunk-robotics"]
+  },
+  {
     title: "senior week 9/15 - 9/18",
     date: "sep. 17th, 2026",
     preview: "fixing the sunk robotics website bc miles and ibrahim suck at actual coding",
