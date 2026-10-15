@@ -1,5 +1,12 @@
 window.blogPosts = [
   {
+    title: "senior week 10/13 - 10/16",
+    date: "oct. 16th, 2026",
+    preview: "remade the task leaderboard and started soldering the stoplight pcb",
+    href: "/blogs/senior-blogs/5",
+    tags: ["task leaderboard", "soldering", "stoplight"]
+  },
+  {
     title: "senior week 9/28 - 10/2",
     date: "oct. 1st, 2026",
     preview: "trademark printed and started with software side of things + task-leaderboard fix",

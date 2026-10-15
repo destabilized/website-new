@@ -141,7 +141,7 @@ also the task leaderboard broke so i fixed it. for some reason the new month bro
 
 <div class="navigation">
     <a href="/blogs" class="buttons">← back to all blogs </a>
-    <a href="/blogs/senior-blogs/2/" class="buttons"> last week's post →</a>
+    <a href="/blogs/senior-blogs/3/" class="buttons"> last week's post →</a>
 </div>
 
 
