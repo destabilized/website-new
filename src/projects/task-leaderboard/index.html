@@ -1,7 +1,7 @@
 ---
 layout: page-base.njk
-title: task-leaderboard — andrew huang
-description: a live, fully static task leaderboard for the mvths robotics shop that scores tasks from a google sheet in the browser.
+title: task leaderboard — andrew huang
+description: a live, fully static leaderboard for mvths robotics that scores tasks from a google sheet in the browser with claim/done/reclaim via google apps script.
 cssFile: project-detail.css
 jsFile: null
 ---
@@ -13,51 +13,62 @@ jsFile: null
     </div>
 
     <div class="detail-meta">
-        <h1>task-leaderboard</h1>
+        <h1>task leaderboard</h1>
         <span class="date">2025</span>
     </div>
 
     <div class="detail-tags">
-        <span>html/css/js</span><span>google sheets</span><span>csv extracting</span>
+        <span>html/css/js</span><span>google sheets</span><span>google apps script</span><span>csv</span>
     </div>
 
     <div class="detail-body">
         <p>
-            a live task leaderboard for the mvths robotics shop. completed tasks are tracked in a google sheet, scored by complexity, speed, and grade level, and displayed in everyone's browser in real time. it's a
-            <a href="https://destabilized.github.io/task-leaderboard/" target="_blank" rel="noopener noreferrer">fully static site</a>
-            with no server — the browser fetches the published sheet csv, computes all scores client-side, and re-polls every few seconds.
+            a live, fully static task leaderboard for the mvths robotics shop. completed tasks are tracked in a google sheet, scored on the fly, and displayed in real time. the whole thing runs in the browser — it fetches the published csv, computes all points client-side, and re-polls every 5 seconds with zero backend.
         </p>
+
+        <h2>what it does</h2>
+        <ul>
+            <li><strong>live leaderboard</strong> — ranks students by total points or by number of completed tasks</li>
+            <li><strong>time & grade filters</strong> — view 24h, 5d, 30d, or all time, filter by grade (10, 11, 12), and search by name</li>
+            <li><strong>task breakdowns</strong> — expand any row to see every completed task, dates, base points, grade bonus, and weighted points</li>
+            <li><strong>shop tasks board</strong> — a separate <code>/tasks/</code> page lists all tasks, lets people claim unclaimed tasks, mark claimed ones done, and reclaim tasks that have sat idle for more than 5 school days</li>
+            <li><strong>automatic updates</strong> — polls the sheet every 5 seconds, so scores refresh almost instantly after edits</li>
+            <li><strong>mobile friendly</strong> — responsive layout with tap-to-expand for details</li>
+        </ul>
 
         <h2>how scoring works</h2>
-        <ul>
-            <li><strong>complexity</strong> — task name matched against keyword tiers for 1, 3, or 5 base points</li>
-            <li><strong>speed</strong> — finished within a short window gets a bonus; over the lead time gets a per-day penalty</li>
-            <li><strong>grade bonus</strong> — gr 10 +0.2, gr 11 +0.1, gr 12 +0.0 (additive)</li>
-            <li><strong>floor</strong> — a task can never score below 0.5 points</li>
-        </ul>
         <p>
-            business days skip weekends and the school calendar stored in <code>EXCLUDED_DAYS</code>. scoring rules are plain objects at the top of <code>scoring.js</code>, so they can be tuned without touching the ui.
+            points are taken straight from the "Points" column of the sheet. if a task has multiple assignees, those points are divided evenly between everyone listed and rounded to the nearest 0.5 (ties round up). then a grade bonus is added: +0.2 for sophomores (gr 10), +0.1 for juniors (gr 11), +0.0 for seniors (gr 12).
+        </p>
+        <p>
+            the app tracks school days for the reclaim timer (skipping weekends) and respects an <code>EXCLUDED_DAYS</code> list for holidays/breaks in <code>src/js/scoring.js</code>.
         </p>
 
-        <h2>features</h2>
+        <h2>tech stack</h2>
         <ul>
-            <li>live updates — polls the published sheet every 5 seconds</li>
-            <li>rankings sorted by total points or completed tasks</li>
-            <li>filters for timeframe (24h / 5d / 30d / all time), grade, and name search</li>
-            <li>per-student breakdown — expand any row to see every task with dates and score details</li>
-            <li>justify sir L's exclusion — assigned work is scored only for students</li>
-            <li>mobile friendly with tap-to-expand</li>
+            <li><strong>vanilla js + css</strong> — no build step, no dependencies</li>
+            <li><strong>google sheets</strong> — data comes from a published csv export</li>
+            <li><strong>google apps script web app</strong> — handles claim/done/reclaim writes since the published sheet is read-only (deployed with <em>execute as me</em> and <em>anyone</em> access)</li>
+            <li><strong>client-side polling</strong> — 5s refresh for live, no backend/server required</li>
         </ul>
 
-        <h2>tech stack</h2>
+        <h2>implementation notes</h2>
+        <ul>
+            <li><strong>scoring engine</strong> (<code>src/js/scoring.js</code>) parses csvs, normalizes names, splits multiple assignees, computes per-task shares + bonuses, builds leaderboards, and lists all tasks for the tasks page</li>
+            <li><strong>leaderboard ui</strong> (<code>src/js/app.js</code>) renders rankings with range/grade/sort/search, expandable task breakdowns, and live status</li>
+            <li><strong>task board</strong> (<code>src/js/tasks.js</code>) lists active/completed tasks, confirms actions by re-reading the sheet after posting to the apps script (works with no-cors posts), and shows reclaim hints when a task's been claimed for >5 school days</li>
+            <li><strong>apps script backend</strong> (<code>apps-script/Code.gs</code>) finds the correct row, sets Name/Start Date/End Date atomically with a lock, and responds with json</li>
+        </ul>
+
+        <h2>live demo & source</h2>
         <p>
-            vanilla js + css, no build step, no dependencies. google sheets published csv export for data, and 5-second client-side polling instead of a backend.
+            live at <a href="https://destabilized.github.io/task-leaderboard/" target="_blank" rel="noopener noreferrer">destabilized.github.io/task-leaderboard</a> (or <a href="https://leaderboard.andrewhuang.cc" target="_blank" rel="noopener noreferrer">leaderboard.andrewhuang.cc</a> via CNAME). source on <a href="https://github.com/destabilized/task-leaderboard" target="_blank" rel="noopener noreferrer">github</a>.
         </p>
     </div>
 
     <div class="detail-actions">
         <a href="/projects" class="btn-primary">← back to projects</a>
-        <a href="https://destabilized.github.io/task-leaderboard/" target="_blank" rel="noopener noreferrer" class="btn-secondary">live demo</a>
+        <a href="https://leaderboard.andrewhuang.cc" target="_blank" rel="noopener noreferrer" class="btn-secondary">live demo</a>
         <a href="https://github.com/destabilized/task-leaderboard" target="_blank" rel="noopener noreferrer" class="btn-secondary">source</a>
     </div>
 
