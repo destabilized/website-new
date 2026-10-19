@@ -4,10 +4,8 @@ title: contact | andrew huang
 description: get in touch with andrew huang.
 cssFile: contact.css
 jsFile: null
+mainClass: container
 ---
-<main class="contact-container" id="main-content">
-    {% include "nav.njk" %}
-
     <section class="contact-section">
         <h1 class="page-title">pls contact me i need a job</h1>
 
@@ -19,23 +17,19 @@ jsFile: null
                 </div>
                 <div class="form-field">
                     <label for="email" class="sr-only">email</label>
-                    <input type="email" id="email" name="email" placeholder="email" required>
+                    <input type="email" id="email" name="your email" placeholder="email" required>
                 </div>
             </div>
 
             <div class="form-field">
                 <label for="message" class="sr-only">message</label>
-                <textarea id="message" name="message" placeholder="hire me pls!" rows="6" required></textarea>
+                <textarea id="message" name="message" placeholder="your msg (hiring email ideally)" rows="6" required></textarea>
             </div>
 
             <button type="submit" class="submit-btn">
                 send msg
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 3 3 9-3 9 19-9Z"></path><path d="M6 12h16"></path></svg>
             </button>
 
             <p class="form-disclaimer">or just email me directly at <a href="mailto:az42hu@gmail.com">az42hu@gmail.com</a></p>
         </form>
     </section>
-
-    {% include "footer.njk" %}
-</main>

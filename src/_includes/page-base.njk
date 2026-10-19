@@ -1,36 +1,9 @@
 ---
-cssFile: null
-jsFile: null
+layout: base.njk
+mainClass: null
 ---
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }}</title>
-    <meta name="description" content="{{ description or 'andrewhuang.cc - portfolio and blog of a robotics and engineering student.' }}">
-
-    <link rel="stylesheet" href="/css/global.css">
-    {% if cssFile %}<link rel="stylesheet" href="/css/{{ cssFile }}">{% endif %}
-
-    <script>
-        (function() {
-            const savedTheme = localStorage.getItem('theme') || 'dark';
-            document.documentElement.setAttribute('data-theme', savedTheme);
-        })();
-    </script>
-    <script>
-        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-        window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
-    </script>
-    <script defer src="/_vercel/insights/script.js"></script>
-    <script defer src="/_vercel/speed-insights/script.js"></script>
-    <script defer src="/js/theme.js"></script>
-    <script defer src="/js/lightbox.js"></script>
-    {% if jsFile %}<script defer src="/js/{{ jsFile }}"></script>{% endif %}
-</head>
-<body>
-    <a href="#main-content" class="skip-link">skip to content</a>
+<main{% if mainClass %} class="{{ mainClass }}"{% endif %} id="main-content">
+    {% include "nav.njk" %}
     {{ content | safe }}
-</body>
-</html>
+    {% include "footer.njk" %}
+</main>

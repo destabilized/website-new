@@ -2,27 +2,45 @@
 layout: page-base.njk
 title: my projects.
 description: andrew huang's projects - a task leaderboard, custom 60% keyboard, sumobot, and lightbox.
-cssFile: projects.css
-jsFile: null
+mainClass: container
 ---
-<main class="projects-container" id="main-content">
-    {% include "nav.njk" %}
-
-    <header class="projects-header">
-        <h1>my projects.</h1>
-    </header>
+    <h1 class="page-title">my projects.</h1>
 
     <section class="projects-grid">
+        <article class="project-card">
+            <div class="card-thumb">
+                <video autoplay loop muted playsinline>
+                    <source src="/static/vids/junior/3/loops/7seg-test.webm" type="video/webm">
+                    <source src="/static/vids/junior/3/loops/7seg-test.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="card-content">
+                <div class="title-row">
+                    <h3>accident counter sign</h3>
+                    <span class="date">2025</span>
+                </div>
+                <p class="description">
+                    retrofitted the shop's "days without an accident" sign with a 4-digit 7-segment display, a 74HC4511 driver, and an rtc so it counts itself instead of being updated by hand.
+                </p>
+                <div class="tags">
+                    <span>arduino</span><span>7-segment display</span><span>74hc4511</span><span>rtc</span><span>c++</span>
+                </div>
+                <div class="card-actions">
+                    <a href="/projects/accident-counter-sign" class="btn-primary">details</a>
+                </div>
+            </div>
+        </article>
+
         <article class="project-card">
             <div class="card-thumb">
                 <span class="thumb-placeholder">current project!</span>
             </div>
             <div class="card-content">
                 <div class="title-row">
-                    <h3>!keyboard</h3>
+                    <h3>keyboard</h3>
                     <span class="date">2025 - present</span>
                 </div>
-                <p class="description">a custom 60% keyboard that i created. fully custom - pcb, case, frictionpad, etc. only non custom things are the components.</p>
+                <p class="description">a custom 60% minimalistic keyboard created by me inspired by the tofu60 and optimum wooting</p>
                 <div class="tags">
                     <span>fusion360</span><span>micropython</span><span>cam</span><span>lasercutting</span><span>cnc machining</span><span>pcb designing</span>
                 </div>
@@ -39,10 +57,10 @@ jsFile: null
             <div class="card-content">
                 <div class="title-row">
                     <h3>task-leaderboard</h3>
-                    <span class="date">2025</span>
+                    <span class="date">2026</span>
                 </div>
                 <p class="description">
-                    a live, fully static leaderboard for mvths robotics. pulls task data from a google sheet, computes points (split evenly across assignees + grade bonuses) in the browser, and updates every 5s. includes a tasks board to claim/complete/reclaim work via a google apps script.
+                    a website leaderboard to gamify the tasks that robotics students can do.
                 </p>
                 <div class="tags">
                     <span>html/css/js</span><span>google sheets</span><span>google apps script</span><span>csv</span>
@@ -64,10 +82,10 @@ jsFile: null
                     <span class="date">2025</span>
                 </div>
                 <p class="description">
-                    a sumobot built by me,
+                    a mechanical approach sumobot built by me,
                     <a href="https://www.mileshilliard.com/" target="_blank" rel="noopener noreferrer">miles</a>,
                     and <a href="https://jonaswirz.wordpress.com/" target="_blank" rel="noopener noreferrer">jonas</a>.
-                    instead of using ir sensors, we took a mechanical approach with roller lever limit switches to tell when the bot was "out" of the arena.
+                    utilizes roller lever limit switches rather than traditional ir sensors
                 </p>
                 <div class="tags">
                     <span>arduino</span><span>fusion 360</span><span>tactile sensing</span><span>autonomous robots</span>
@@ -88,7 +106,7 @@ jsFile: null
                     <h3>lightbox</h3>
                     <span class="date">2025</span>
                 </div>
-                <p class="description">a lightbox built by me using an attiny84 and a temperature sensor to change the color (changing the shades of blue based on how hot / cold it is)</p>
+                <p class="description">a lightbox that changes color based on the temperature of the surronding room in increments of 20 degrees f</p>
                 <div class="tags">
                     <span>fusion360</span><span>arduino</span><span>microcontrollers</span><span>temperature sensors</span><span>lasercutting</span><span>inkscape</span>
                 </div>
@@ -98,6 +116,3 @@ jsFile: null
             </div>
         </article>
     </section>
-
-    {% include "footer.njk" %}
-</main>

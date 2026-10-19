@@ -1,16 +1,3 @@
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    max-width: 850px;
-    margin: 0 auto;
-    padding: 3rem 1.5rem;
-    gap: 1.5rem;
-}
-
-.top-bar {
-    grid-column: span 12;
-}
-
 .hero {
     grid-column: span 12;
     display: flex;
@@ -139,99 +126,74 @@
     display: none !important;
 }
 
-.timeline-item {
-    display: grid;
-    grid-template-columns: 40px 1fr;
+.posts-list {
     gap: 1.5rem;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
     margin-bottom: 2rem;
 }
 
 .org-logo {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
-    display: block;
-}
-
-.logo {
-    width: 40px;
-    height: 40px;
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: var(--card-bg);
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.item-header {
+.org-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.org-logo.placeholder {
+    color: var(--text-dim);
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.org-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+.org-info h3 {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.org-info .role {
+    color: var(--text-main);
+    font-size: 0.9rem;
+}
+
+.org-info .date {
+    color: var(--text-dim);
+    font-size: 0.85rem;
+}
+
+.section-title {
+    grid-column: span 12;
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    width: 100%;
+    margin-top: 3rem;
 }
 
-.item-header h3 {
-    margin: 0;
-    font-size: 1.2rem;
-}
-
-.item-header h4 {
-    margin-top: 0.25rem;
-    color: var(--text-dim);
-    font-weight: 500;
-}
-
-.achievements {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 16px 0;
-}
-
-.achievements li {
-    font-size: 0.9rem;
-    position: relative;
-    padding-left: 1.2rem;
-    margin-bottom: 4px;
-}
-
-.achievements li::before {
-    content: "\2022";
-    position: absolute;
-    left: 0;
-    color: var(--text-dim);
-}
-
-.project-links {
-    display: flex;
-    gap: 8px;
-}
-
-.mini-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background-color: var(--text-main);
-    color: var(--bg);
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    text-decoration: none;
-}
-
-.date {
-    color: var(--text-dim);
-    font-size: 0.85rem;
-}
-
-.contact-footer {
+.projects-grid {
     grid-column: span 12;
-}
-
-.posts-list {
-    grid-column: span 12;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
 }
 
 .post-item {
@@ -257,7 +219,6 @@
 }
 
 .post-header h3 {
-    font-size: 1.2rem;
     margin: 0 0 0.5rem 0;
 }
 
@@ -282,89 +243,9 @@
     font-size: 0.85rem;
 }
 
-.meta-item {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
 .dynamic-meta {
     display: flex;
     gap: 15px;
-}
-
-.meta-item svg {
-    width: 14px;
-    height: 14px;
-    opacity: 0.7;
-}
-
-.section-title {
-    grid-column: span 12;
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    margin-top: 3rem;
-}
-
-.projects-grid {
-    grid-column: span 12;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-}
-
-.project-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    overflow: hidden;
-}
-
-.card-thumb {
-    height: 160px;
-    background: var(--border);
-    overflow: hidden;
-}
-
-.card-thumb img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    display: block;
-    background-color: var(--bg-dark);
-    aspect-ratio: 280 / 216;
-}
-
-.card-content {
-    padding: 1.2rem;
-}
-
-.description {
-    color: var(--text-dim);
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin-bottom: 1rem;
-}
-
-.description a {
-    color: var(--text-main);
-    text-decoration: underline;
-}
-
-.tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-}
-
-.tags span {
-    font-size: 0.75rem;
-    background: var(--card-bg);
-    padding: 4px 10px;
-    border-radius: 6px;
-    color: var(--text-dim);
-    border: 1px solid var(--border);
 }
 
 .view-more-link {
@@ -410,9 +291,6 @@
     }
     .hero-visual {
         order: -1;
-    }
-    .projects-grid {
-        grid-template-columns: 1fr;
     }
     .post-item {
         grid-template-columns: 1fr;

@@ -1,7 +1,11 @@
 ---
 layout: base.njk
 cssFile: blog-posts.css
+codeStyles: true
 ---
-<main class="post-container">
-    {{ content | safe }}
+<main id="main-content" class="container post">
+    {% include "nav.njk" %}
+    <div class="yap">
+        {{ content | safe }}
+    </div>
 </main>

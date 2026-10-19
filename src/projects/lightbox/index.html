@@ -4,10 +4,8 @@ title: lightbox — andrew huang
 description: a temperature-reactive lightbox using an attiny84 microcontroller and temperature sensor.
 cssFile: project-detail.css
 jsFile: null
+mainClass: container
 ---
-<main class="detail-container" id="main-content">
-    {% include "nav.njk" %}
-
     <div class="detail-hero">
         <img src="/static/img/projects/lightbox.webp" alt="lightbox" fetchpriority="high">
     </div>
@@ -49,5 +47,3 @@ jsFile: null
         <a href="/projects" class="btn-primary">← back to projects</a>
     </div>
 
-    {% include "footer.njk" %}
-</main>

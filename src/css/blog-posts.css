@@ -1,178 +1,50 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;400;700&display=swap');
-
-:root {
-    --bg: hsl(0, 0%, 5%);
-    --card-bg: hsl(0, 0%, 10%);
-    --bg-dark: hsl(0, 0%, 0%);
-    --border: hsl(217, 33%, 17%);
-    --text-main: hsl(0, 0%, 95%);
-    --text-dim: hsl(0, 0%, 70%);
-    --accent: hsl(199, 95%, 61%);
-    --nav-gap: 2rem;
-}
-
-html[data-theme="light"] {
-    --bg: hsl(0, 0%, 100%);
-    --card-bg: hsl(0, 0%, 96%);
-    --bg-dark: hsl(0, 0%, 90%);
-    --border: hsl(214, 32%, 85%);
-    --text-main: hsl(0, 0%, 10%);
-    --text-dim: hsl(0, 0%, 40%);
-    --accent: hsl(199, 85%, 45%);
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  font-size: 12pt;
-  font-family: 'Outfit', sans-serif;
-  font-weight: 200;
-  scroll-behavior: smooth;
-}
-
-body {
-  background-color: var(--bg);
-  color: var(--text-main);
-  font-family: 'Outfit', sans-serif;
-  font-weight: 200;
-  transition: background 0.3s ease, color 0.3s ease;
-}
-
-.top-bar {
-  display: flex;
-  justify-content: space-between; 
-  align-items: center;          
-  width: 100%;
-  max-width: 750px;
-  margin-bottom: 4rem;
-}
-
-.main-nav {
-  display: flex;
-  gap: var(--nav-gap);
-}
-
-.main-nav a {
-  color: var(--text-dim);
-  text-decoration: none;
-  font-size: 0.95rem;
-  font-weight: 500;
-}
-
-.main-nav a:hover {
-  color: var(--text-main);
-}
-
-.theme-toggle-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 5px;
-  display: flex;
-  align-items: center; 
-  justify-content: center;
-  color: var(--text-main);
-  font-size: 1.2rem;
-  transition: transform 0.2s ease;
-}
-
-.theme-toggle-btn:hover {
-  transform: scale(1.1);
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 3rem 20px;
-}
-
 .yap {
-  max-width: 750px;
-  width: 100%;
-  margin-top: 0;
+    width: 100%;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 200;
 }
 
-@media (max-width: 400px) {
-  .main-nav {
-    gap: 1rem;
-  }
+.yap h1 {
+    font-weight: 600;
+    font-size: 4rem;
+    margin-bottom: 2rem;
 }
 
-h1, h2 {
-  color: var(--text-main);
+.yap h2 {
+    font-weight: 500;
+    font-size: 2rem;
+    margin-bottom: 1rem;
 }
 
-h1 {
-  font-weight: 600;
-  font-size: 4rem;
-  margin-bottom: 2rem;
+.yap p {
+    font-weight: 200;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    line-height: 1.6;
 }
 
-h2 {
-  font-weight: 500;
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-p {
-  font-weight: 200;
-  font-size: 1.3rem;
-  margin-bottom: 1rem;
-  line-height: 1.6;
-}
-
-a {
-  color: var(--accent);
-  transition: color 0.2s;
-}
-
-a:hover {
-  filter: brightness(1.2);
-}
-
-h6 {
-  font-size: 1.1rem;
-  font-weight: 100;
-  color: var(--text-dim);
-  margin-bottom: 1rem;
-}
-
-img, video {
-  max-width: 100%;   
-  max-height: 500px;
-  height: auto;     
-  display: block;    
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 1.2rem; 
-  border-radius: 8px;  
-  border: 1px solid var(--border);
-  object-fit: contain; 
+.yap h6 {
+    font-size: 1.1rem;
+    font-weight: 200;
+    color: var(--text-dim);
+    margin-bottom: 1rem;
 }
 
 pre {
-  margin: 0;      
-  padding: 0;     
-  margin-bottom: 1rem;
-  border: 1px solid var(--border);
-  border-radius: 4px;
+    margin: 0 0 1rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
 }
 
 code {
-  font-family: monospace;
+    font-family: monospace;
 }
 
 .hljs {
-  background: var(--card-bg) !important;
-  color: var(--text-main) !important;
-  padding: 1rem !important;
-  margin: 0;     
+    background: var(--card-bg) !important;
+    color: var(--text-main) !important;
+    padding: 1rem !important;
+    margin: 0;
 }
 
 /* The linked highlight.js theme (github-dark) hardcodes a dark token palette,
@@ -187,14 +59,14 @@ code {
 [data-theme="light"] .hljs-template-tag,
 [data-theme="light"] .hljs-template-variable,
 [data-theme="light"] .hljs-variable.language_ {
-  color: #cf222e !important;
+    color: #cf222e !important;
 }
 
 [data-theme="light"] .hljs-title,
 [data-theme="light"] .hljs-title.class_,
 [data-theme="light"] .hljs-title.class_.inherited__,
 [data-theme="light"] .hljs-title.function_ {
-  color: #6f42c1 !important;
+    color: #6f42c1 !important;
 }
 
 [data-theme="light"] .hljs-attr,
@@ -208,134 +80,131 @@ code {
 [data-theme="light"] .hljs-selector-id,
 [data-theme="light"] .hljs-variable,
 [data-theme="light"] .hljs-section {
-  color: #005cc5 !important;
+    color: #005cc5 !important;
 }
 
 [data-theme="light"] .hljs-string,
 [data-theme="light"] .hljs-meta .hljs-string,
 [data-theme="light"] .hljs-regexp {
-  color: #032f62 !important;
+    color: #032f62 !important;
 }
 
 [data-theme="light"] .hljs-built_in,
 [data-theme="light"] .hljs-symbol {
-  color: #bc4c00 !important;
+    color: #bc4c00 !important;
 }
 
 [data-theme="light"] .hljs-code,
 [data-theme="light"] .hljs-comment,
 [data-theme="light"] .hljs-formula {
-  color: #6a737d !important;
+    color: #6a737d !important;
 }
 
 [data-theme="light"] .hljs-name,
 [data-theme="light"] .hljs-quote,
 [data-theme="light"] .hljs-selector-pseudo,
 [data-theme="light"] .hljs-selector-tag {
-  color: #116329 !important;
+    color: #116329 !important;
 }
 
 [data-theme="light"] .hljs-subst,
 [data-theme="light"] .hljs-emphasis,
 [data-theme="light"] .hljs-strong {
-  color: #24292e !important;
+    color: #24292e !important;
 }
 
 .navigation {
-  display: flex;
-  flex-direction: row; 
-  justify-content: center;
-  align-items: center;
-  gap: 1rem; 
-  margin-top: 3rem;
-  width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 3rem;
+    width: 100%;
 }
 
 .buttons {
-  text-decoration: none;
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  color: var(--text-main);
-  padding: 10px 16px;
-  border-radius: 8px;
-  text-align: center;
-  transition: all 0.2s ease;
-  width: 50%;
-  font-weight: 400;
+    text-decoration: none;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    color: var(--text-main);
+    padding: 10px 16px;
+    border-radius: 8px;
+    text-align: center;
+    transition: all 0.2s ease;
+    width: 50%;
+    font-weight: 400;
 }
 
 #solo-button {
-  width: 100%;
+    width: 100%;
 }
 
 .buttons:hover {
-  background: var(--border);
-  border-color: var(--accent);
+    background: var(--border);
+    border-color: var(--accent);
 }
 
 .slideshow {
-  position: relative;
-  width: 100%;
-  margin-bottom: 1rem;
-  overflow: hidden;
-  border-radius: 8px;
-  border: 1px solid var(--border);
+    position: relative;
+    width: 100%;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    border-radius: 8px;
+    border: 1px solid var(--border);
 }
 
 .slideshow-track {
-  display: flex;
-  transition: transform 0.35s ease;
-  will-change: transform;
+    display: flex;
+    transition: transform 0.35s ease;
+    will-change: transform;
 }
 
 .slideshow-track img {
-  border: none;
-  min-width: 100%;
-  width: 100%;
-  height: 480px;
-  object-fit: contain;
-  background-color: var(--bg-dark);
-  margin-bottom: 0;
-  border-radius: 0;
-}
-
-@media (max-width: 600px) {
-  .slideshow-track img {
-    height: 300px;
-  }
+    border: none;
+    min-width: 100%;
+    width: 100%;
+    height: 480px;
+    object-fit: contain;
+    background-color: var(--bg-dark);
+    margin-bottom: 0;
+    border-radius: 0;
 }
 
 .slideshow-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 2;
-  border: none;
-  background: rgba(0, 0, 0, 0.45);
-  color: white;
-  width: 2.25rem;
-  height: 2.25rem;
-  border-radius: 999px;
-  cursor: pointer;
-  font-size: 1.5rem;
-  line-height: 1;
-  display: grid;
-  place-items: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    border: none;
+    background: rgba(0, 0, 0, 0.45);
+    color: white;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 999px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    line-height: 1;
+    display: grid;
+    place-items: center;
 }
 
 .slideshow-btn.next {
-  right: 0.5rem;
+    right: 0.5rem;
 }
+
 .slideshow-btn:hover {
-  opacity: 1;
-  background: var(--border);
+    opacity: 1;
+    background: var(--border);
 }
 
 @media (max-width: 600px) {
-  .yap {
-    max-width: 100%;
-  }
-  h1 {
-    font-size: 2.5rem;
-  }
+    .yap {
+        max-width: 100%;
+    }
+    .yap h1 {
+        font-size: 2.5rem;
+    }
+    .slideshow-track img {
+        height: 300px;
+    }
 }

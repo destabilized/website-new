@@ -1,0 +1,63 @@
+---
+layout: page-base.njk
+title: accident counter sign — andrew huang
+description: a shop "days without an accident" sign retrofitted with a 4-digit 7-segment display, a 74HC4511 driver, and an RTC so it counts itself.
+cssFile: project-detail.css
+jsFile: null
+mainClass: container
+---
+    <div class="detail-hero">
+        <img fetchpriority="high" src="/static/img/junior/1/sign.webp" alt="the shop days without an accident sign">
+    </div>
+
+    <div class="detail-meta">
+        <h1>accident counter sign</h1>
+        <span class="date">2025</span>
+    </div>
+
+    <div class="detail-tags">
+        <span>arduino</span><span>7-segment display</span><span>74hc4511</span><span>rtc</span><span>c++</span>
+    </div>
+
+    <div class="detail-body">
+        <p>
+            the shop has a "days without an accident" sign that miles, jonas, and i kept updating by hand. instead of doing that forever, we cut out the white hole in the sign and dropped in a 4-digit 7-segment display so it could count up on its own.
+        </p>
+
+        <h2>how it works</h2>
+        <p>
+            a 7-segment digit needs each of its seven bars driven individually, and a multi-digit display can only light one digit at a time. the code drives each digit fast enough that they all look lit at once, showing the running day count.
+        </p>
+        <p>
+            partway through, mr. christy suggested using a driver and miles suggested syncing over wifi, so i rebuilt around a 74HC4511 (a common-cathode 7-segment decoder/driver) wired with help from a japanese writeup i found, plus an rtc. that way the counter can pause on weekends instead of counting days the shop isn't open.
+        </p>
+
+        <h2>the build</h2>
+        <ul>
+            <li>cut the existing sign so the 7-segment display could drop into the white hole</li>
+            <li>first draft was direct-drive: digit pins + 7 bar pins, with a lookup table for 0-9</li>
+            <li>hit an int overflow once the count passed 33, fixed by moving the timer to <code>unsigned long</code></li>
+            <li>added all four digits and a "blank" entry to the lookup table so leading digits stay dark (and bright)</li>
+            <li>moved to a 74HC4511 decoder/driver to cut the pin count</li>
+            <li>added an rtc + wifi time sync to handle weekends and stop the counter at the right times</li>
+        </ul>
+
+        <h2>status</h2>
+        <p>
+            the driver + 7-segment wiring was proven working, and the code has been rewritten to drive each digit. hooking the time library up to the counter so it updates and pauses at the right times was the last step left.
+        </p>
+
+        <h2>it working</h2>
+        <video class="detail-video" autoplay loop muted playsinline>
+            <source src="/static/vids/junior/3/loops/7seg-test.webm" type="video/webm">
+            <source src="/static/vids/junior/3/loops/7seg-test.mp4" type="video/mp4">
+        </video>
+        <video class="detail-video" autoplay loop muted playsinline>
+            <source src="/static/vids/junior/3/loops/reset.webm" type="video/webm">
+            <source src="/static/vids/junior/3/loops/reset.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="detail-actions">
+        <a href="/projects" class="btn-primary">← back to projects</a>
+    </div>
