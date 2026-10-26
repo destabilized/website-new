@@ -1,0 +1,77 @@
+---
+layout: page-base.njk
+title: trademark — andrew huang
+description: a 3d-printed, esp32-cam-powered recreation of chamber's trademark from valorant.
+cssFile: project-detail.css
+jsFile: null
+mainClass: container
+---
+    <div class="detail-hero detail-hero--cover">
+        <img fetchpriority="high" src="/static/img/senior/4/full.webp" alt="3d printed trademark unpainted">
+    </div>
+
+    <div class="detail-meta">
+        <h1>trademark</h1>
+        <span class="date">2026 – present</span>
+    </div>
+
+    <div class="detail-tags">
+        <span>fusion 360</span><span>3d printing</span><span>esp32-cam</span><span>pcb design</span><span>pir sensor</span><span>ir leds</span><span>mosfets</span><span>wifi</span>
+    </div>
+
+    <div class="detail-body">
+        <p>
+            a 3d-printed recreation of chamber's trademark from valorant — a stationary trip designed to detect people and trigger when someone walks into it. the build combines a multi-part printed assembly, a hollow head for the electronics, and custom hardware running on an esp32-cam.
+        </p>
+
+        <h2>inspiration for the project</h2>
+        <p>i play a lot of valorant, and recently came across videos of people making raze's boombot and killjoy's turrent from valorant, so i wanted to do something similar. i figured chamber's trademark would be a fun idea, so i decided to use that and turn it into an ai security camera of some sorts.</p>
+
+        <h2>3d modeling process</h2>
+        <p>
+            everything was modeled in fusion 360. modeled mostly by feel and looks rather than dimensions.
+        </p>
+
+        <p>
+            the top half is built around a circular base with a back section that holds the "head," which is where the camera lives. the neck slots onto the base with enough clearance to rotate, and the head still needs a proper connection to the back — a snap fit is the plan, but that's one of the parts i'm still working out. the sphere was also hollowed out so an acrylic piece, the pcb, and a potential battery can fit inside.
+        </p>
+        <p>
+            the printed base and neck fit together correctly, and the head only needed a small extrusion fix before it printed properly. the whole thing has been sanded and prepared for paint, but the color scheme is still on hold.
+        </p>
+
+        <h2>electronics</h2>
+        <p>
+            the electronics plan uses an esp32-cam, a pir sensor, ir leds, and mosfets. i started the pcb early by building a schematic and a component library in fusion 360, partly so the board layout could inform the enclosure dimensions.
+        </p>
+        <p>
+            the first esp32-cam came from <a href="https://www.mileshilliard.com/" target="_blank" rel="noopener noreferrer">miles</a>, but i shorted its voltage regulator while trying to get it connected — so that one died before it ever made it into the build. while waiting on replacements and the rest of the parts, i tested the wireless side with a spare esp32: a button press posts to a small flask server on a laptop, which closes any open firefox windows and opens a new tab. the esp32-to-laptop connection worked, which proved out the network part of the trigger chain.
+        </p>
+
+        <h2>current plans / to be added</h2>
+        <ul>
+            <li><strong>finish the pcb</strong> — the board is still mostly a schematic and component library until the remaining parts arrive</li>
+            <li><strong>paint the enclosure</strong> — sanding is done, but the final color scheme still needs to be sprayed</li>
+            <li><strong>mount the acrylic and battery</strong> — the hollowed sphere has room for the lens piece, board, and a potential battery</li>
+            <li><strong>finish the head connection</strong> — work out a printable snap fit, and decide whether the head should rotate</li>
+            <li><strong>get detection working</strong> — wire up the pir sensor and ir leds so the trap can actually detect and trigger</li>
+            <li><strong>assemble and test</strong> — fit everything into the printed housing and run the full system end to end</li>
+        </ul>
+
+        <h2>the full build in 3d</h2>
+        <p>
+            orbit the current assembly below. drag to rotate, scroll or pinch to zoom.
+        </p>
+        {% if models.trademark.embed != blank %}
+        <div class="detail-model-embed">
+            <iframe src="{{ models.trademark.embed }}" title="3D model of the trademark" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+        {% else %}
+        <div class="detail-model-placeholder">
+            <p>interactive 3d model coming soon.</p>
+        </div>
+        {% endif %}
+    </div>
+
+    <div class="detail-actions">
+        <a href="/projects" class="btn-primary">← back to projects</a>
+    </div>

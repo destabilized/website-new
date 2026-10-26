@@ -1,0 +1,92 @@
+---
+layout: page-base.njk
+title: keyboard — andrew huang
+description: a fully custom 60% mechanical keyboard with a hand-routed pcb, resin-printed cherry keycaps, a polycarbonate plate, and a screwless case designed in fusion 360.
+cssFile: project-detail.css
+jsFile: null
+mainClass: container
+---
+    <div class="detail-hero detail-hero--cover">
+        <img fetchpriority="high" src="/static/img/projects/keyb.webp" alt="img of my keyboard">
+    </div>
+    <h6>congrats if you got catfished by the keyboard photo lol. it's lowk chopped cheese but it's cool... right?</h6>
+
+    <br>
+    <div class="detail-meta">
+        <h1>keyboard</h1>
+        <span class="date">2025 – present</span>
+    </div>
+
+    <div class="detail-tags">
+        <span>fusion 360</span><span>kicad</span><span>kb2040</span><span>kmk / circuitpython</span><span>pcb design</span><span>resin printing</span><span>waterjet</span><span>cnc machining</span>
+    </div>
+
+    <div class="detail-body">
+        <p>
+            a fully custom 60% mechanical keyboard built from scratch: a hand-designed double-sided pcb, resin-printed cherry-profile keycaps, a waterjet-cut polycarbonate plate, and a screwless case modeled in fusion 360. the design is inspired by the tofu60 and the wooting 60he — minimal, low-profile, and built around a kb2040 running kmk.
+        </p>
+        <p>
+            i started with a 2x4 macropad first to learn the whole workflow — schematic, pcb routing, milling, soldering, firmware, and macros — before committing to the full 60% board. that turned out to be a very good idea.
+        </p>
+
+        <h2>what it is</h2>
+
+        <p>60% layout - 5x13 matrix bc kb2040 doesn't have enough pins so <code>=</code> and <code>]</code> live on r1</p>
+        <p>custom pcb + case. double-sided board that matches the traditional 60% layout. powered by a kb2040 w/ per-key sod-123 diodes and keys</p>
+        <p>two layers to match the traditional 60% keyboard. has the base layers for letters plus an fn layers equiped with arrows, media controls, function keys, paging, etc. can be customized by editing the firmware.</p>
+        <p>friction fit design - screwless case where there's space to put eva foam to dampen the sound if you want</p>
+        <p>custom polycarbonate plate for sound dampening. </p>
+        <p>custom resin keycaps - custom cherry-profile keycaps modeled in fusion360 that were resin printed, sanded, and recoated remove imperfections.</p>
+
+        <h2>firmware</h2>
+        <p>
+            the board runs <a href="https://github.com/KMKfw/kmk_firmware" target="_blank" rel="noopener noreferrer">kmk</a> on circuitpython, chosen over qmk because i preferred python over c. the keymap defines the full 60% layout, a second fn layer, diode direction, and media keys. macros were tested on the macropad before the main board existed.
+        </p>
+
+        <h2>keycaps</h2>
+        <p>
+            the keycaps were modeled from cherry-profile reference drawings, then resin printed. getting a usable finish was the hardest part of the project: the resin printer failed batches repeatedly, supports left pockmarks, and sanding a full set was genuinely miserable. i eventually switched to scraping the tops with an x-acto knife and coating them with a thin layer of raw resin, which gave a much cleaner result. the spacebar still warped, so it went through multiple reprints.
+        </p>
+
+        <h2>case &amp; plate</h2>
+        <p>
+            the case went through several redesigns. the early version used silicone bowls like the tofu60, then moved to leaf springs and a top plate. after studying the wooting 60he's model, i slanted the internal floor downward instead of upward, which fixed the typing angle and the usb-c cutout. the final design uses a friction-fit pad and a polycarbonate plate, waterjet cut and then hand-trimmed near the spacebar so the stabilizer could move freely. i also tried casting the pad in silicone, but the mold came out too thin and brittle, so i fell back to a friction fit with electrical tape protecting the pcb.
+        </p>
+
+        <h2>aluminum case</h2>
+        <p>
+            the original plan was to machine the final case out of aluminum. i built the full cam setup in fusion 360, worked through toolpaths and feeds/speeds with help from adam, and faced the raw stock on the manual mill in metal fab. the case was cancelled by mr. christy before the cnc cut to avoid wasting the aluminum, so the aluminum version was never finished. the 3d-printed prototype is what the keyboard currently lives in.
+        </p>
+
+        <h2>tech stack</h2>
+        <ul>
+            <li><strong>fusion 360</strong> — case and keycap modeling, cam toolpaths, pcb designing, assembly</li>
+            <li><strong>adafruit kb2040 (rp2040)</strong> — the keyboard's microcontroller</li>
+            <li><strong>kmk firmware + circuitpython</strong> — keymap, layers, media keys, and macros</li>
+            <li><strong>cherry mx switches + sod-123 diodes</strong> — 5x13 matrix with col2row diodes</li>
+            <li><strong>resin 3d printing</strong> — custom cherry-profile keycaps</li>
+            <li><strong>polycarbonate + waterjet</strong> — switch plate, later trimmed by hand</li>
+            <li><strong>cnc + manual mill</strong> — aluminum case machining (cam completed, cut cancelled)</li>
+            <li><strong>silicone casting / tpu</strong> — friction-fit and gasket experiments</li>
+        </ul>
+
+        <h2>the full build in 3d</h2>
+        <p>
+            orbit the complete final assembly below. drag to rotate, scroll or pinch to zoom.
+        </p>
+        {% if models.keyboard.embed != blank %}
+        <div class="detail-model-embed">
+            <iframe src="{{ models.keyboard.embed }}" title="3D model of the finished custom 60% keyboard" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+        {% else %}
+        <div class="detail-model-placeholder">
+            <p>interactive 3d model coming soon.</p>
+        </div>
+        {% endif %}
+
+    </div>
+
+    <div class="detail-actions">
+        <a href="/projects" class="btn-primary">← back to projects</a>
+        <a href="" class="btn-secondary">source</a>
+    </div>

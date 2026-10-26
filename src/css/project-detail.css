@@ -16,6 +16,10 @@
     object-fit: contain;
 }
 
+.detail-hero--cover img {
+    object-fit: cover;
+}
+
 .detail-hero .thumb-placeholder {
     color: var(--text-dim);
     font-weight: 600;
@@ -94,6 +98,41 @@
     background: var(--bg-dark);
     margin: 1rem 0 0.5rem;
     display: block;
+}
+
+.detail-model-embed,
+.detail-model-placeholder {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--bg-dark);
+    margin: 1rem 0 2rem;
+}
+
+.detail-model-embed iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+}
+
+.detail-model-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-style: dashed;
+}
+
+.detail-model-placeholder p {
+    margin: 0;
+    padding: 1rem;
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
 }
 
 .detail-actions {

@@ -37,6 +37,20 @@ mainClass: container
             <li>front panel artwork created in inkscape</li>
         </ul>
 
+        <h2>the full build in 3d</h2>
+        <p>
+            orbit the complete final assembly below. drag to rotate, scroll or pinch to zoom.
+        </p>
+        {% if models.lightbox.embed != blank %}
+        <div class="detail-model-embed">
+            <iframe src="{{ models.lightbox.embed }}" title="3D model of the finished lightbox" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+        {% else %}
+        <div class="detail-model-placeholder">
+            <p>interactive 3d model coming soon.</p>
+        </div>
+        {% endif %}
+
         <h2>tech details</h2>
         <p>
             the attiny84 was programmed via arduino ide. the code maps the sensor's analog reading to a color range, applying a simple smoothing filter to avoid abrupt shifts. the whole circuit runs off a small usb power supply.

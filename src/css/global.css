@@ -324,6 +324,32 @@ video {
     background-color: var(--bg-dark);
 }
 
+.card-thumb--cover img {
+    object-fit: cover;
+}
+
+.card-thumb--trademark {
+    position: relative;
+    isolation: isolate;
+}
+
+.card-thumb--trademark::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("/static/img/senior/4/full.webp") center / cover no-repeat;
+    filter: blur(14px) brightness(0.5);
+    transform: scale(1.15);
+    z-index: -1;
+}
+
+.card-thumb--trademark img {
+    position: relative;
+    width: auto;
+    height: 100%;
+    max-width: 100%;
+}
+
 .card-thumb video {
     width: 100%;
     height: 100%;

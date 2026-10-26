@@ -2,7 +2,7 @@ window.blogPosts = [
   {
     title: "senior week 10/19 - 10/23",
     date: "oct. 22nd, 2026",
-    preview: "",
+    preview: "task leaderboard changes + finally got the stoplight pcb ",
     href: "/blogs/senior-blogs/6",
     tags: ["task leaderboard", "soldering", "stoplight", "website"]
   },

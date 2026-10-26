@@ -1,57 +1,34 @@
 ---
 layout: page-base.njk
 title: my projects.
-description: andrew huang's projects - a task leaderboard, custom 60% keyboard, sumobot, and lightbox.
+description: andrew huang's projects - a task leaderboard, custom 60% keyboard, trademark prop, sumobot, and lightbox.
 mainClass: container
 ---
     <h1 class="page-title">my projects.</h1>
 
     <section class="projects-grid">
+
         <article class="project-card">
             <div class="card-thumb">
-                <video autoplay loop muted playsinline>
-                    <source src="/static/vids/junior/3/loops/7seg-test.webm" type="video/webm">
-                    <source src="/static/vids/junior/3/loops/7seg-test.mp4" type="video/mp4">
-                </video>
+                <img fetchpriority="high" src="/static/img/senior/4/full.webp" alt="3d printed trademark unpainted">
             </div>
             <div class="card-content">
                 <div class="title-row">
-                    <h3>accident counter sign</h3>
-                    <span class="date">2025</span>
+                    <h3>trademark</h3>
+                    <span class="date">2026 - present</span>
                 </div>
-                <p class="description">
-                    retrofitted the shop's "days without an accident" sign with a 4-digit 7-segment display, a 74HC4511 driver, and an rtc so it counts itself instead of being updated by hand.
-                </p>
+                <p class="description">a 3d-printed recreation of chamber's trademark from valorant that detects people and triggers with a pir sensor and esp32-cam</p>
                 <div class="tags">
-                    <span>arduino</span><span>7-segment display</span><span>74hc4511</span><span>rtc</span><span>c++</span>
+                    <span>fusion360</span><span>3d printing</span><span>esp32-cam</span><span>pcb design</span><span>pir sensor</span><span>wifi</span>
                 </div>
                 <div class="card-actions">
-                    <a href="/projects/accident-counter-sign" class="btn-primary">details</a>
+                    <a href="/projects/trademark" class="btn-primary">details</a>
                 </div>
             </div>
         </article>
 
         <article class="project-card">
-            <div class="card-thumb">
-                <span class="thumb-placeholder">current project!</span>
-            </div>
-            <div class="card-content">
-                <div class="title-row">
-                    <h3>keyboard</h3>
-                    <span class="date">2025 - present</span>
-                </div>
-                <p class="description">a custom 60% minimalistic keyboard created by me inspired by the tofu60 and optimum wooting</p>
-                <div class="tags">
-                    <span>fusion360</span><span>micropython</span><span>cam</span><span>lasercutting</span><span>cnc machining</span><span>pcb designing</span>
-                </div>
-                <div class="card-actions">
-                    <a href="/blogs/senior-blogs/1" class="btn-primary">blog posts</a>
-                </div>
-            </div>
-        </article>
-
-        <article class="project-card">
-            <div class="card-thumb">
+            <div class="card-thumb card-thumb--cover">
                 <img fetchpriority="high" src="/static/img/projects/expansion.webp" alt="home page of task-leaderboard">
             </div>
             <div class="card-content">
@@ -68,6 +45,49 @@ mainClass: container
                 <div class="card-actions">
                     <a href="/projects/task-leaderboard" class="btn-primary">details</a>
                     <a href="https://leaderboard.andrewhuang.cc" target="_blank" rel="noopener noreferrer" class="btn-secondary">live demo</a>
+                </div>
+            </div>
+        </article>
+
+        <article class="project-card">
+            <div class="card-thumb card-thumb--cover">
+                <img fetchpriority="high" src="/static/img/projects/keyboard.webp" alt="totally real custom 60% keyboard with resin-printed keycaps">
+            </div>
+            <div class="card-content">
+                <div class="title-row">
+                    <h3>keyboard</h3>
+                    <span class="date">2025 - 2026</span>
+                </div>
+                <p class="description">a fully custom 60% mechanical keyboard built from scratch, inspired by the tofu60 and wooting 60he</p>
+                <div class="tags">
+                    <span>fusion360</span><span>pcb designing</span><span>kmk / circuitpython</span><span>resin printing</span><span>waterjet</span><span>cnc machining</span>
+                </div>
+                <div class="card-actions">
+                    <a href="/projects/keyboard" class="btn-primary">details</a>
+                </div>
+            </div>
+        </article>
+
+        <article class="project-card">
+            <div class="card-thumb">
+                <video autoplay loop muted playsinline>
+                    <source src="/static/vids/junior/3/loops/7seg-test.webm" type="video/webm">
+                    <source src="/static/vids/junior/3/loops/7seg-test.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="card-content">
+                <div class="title-row">
+                    <h3>accident counter sign</h3>
+                    <span class="date">2025</span>
+                </div>
+                <p class="description">
+                   turned our shops "days w/o accident" sign to "mins w/o accident" and added a seven seg to keep track of the minutes.
+                </p>
+                <div class="tags">
+                    <span>arduino</span><span>7-segment display</span><span>74hc4511</span><span>rtc</span><span>c++</span>
+                </div>
+                <div class="card-actions">
+                    <a href="/projects/accident-counter-sign" class="btn-primary">details</a>
                 </div>
             </div>
         </article>
