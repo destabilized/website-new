@@ -16,12 +16,12 @@ mainClass: container grid
                     <span class="resume-txt">resume</span>
                 </a>
 
-                <a href="https://github.com/destabilized" target="_blank" rel="noopener noreferrer" aria-label="my github" class="icon-link">
-                    {% include "icons/github.njk", size: 24 %}
-                </a>
-
                 <a href="https://www.linkedin.com/in/andrew-huang-52547637a/" target="_blank" rel="noopener noreferrer" aria-label="my linkedin" class="icon-link">
                     {% include "icons/linkedin.njk", size: 24 %}
+                </a>
+
+                <a href="https://github.com/destabilized" target="_blank" rel="noopener noreferrer" aria-label="my github" class="icon-link">
+                    {% include "icons/github.njk", size: 24 %}
                 </a>
 
                 <a href="mailto:az42hu@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="my gmail" class="icon-link">
@@ -72,44 +72,7 @@ mainClass: container grid
         </a>
     </div>
 
-    <section class="projects-grid">
-        <article class="project-card">
-            <div class="card-thumb">
-                <img src="/static/img/projects/sumobot.webp" alt="sumobot project">
-            </div>
-            <div class="card-content">
-                <div class="title-row">
-                    <h3>sumobot</h3>
-                    <span class="date">2025</span>
-                </div>
-                <p class="description">
-                    a sumobot built by me,
-                    <a class="view-more" href="https://www.mileshilliard.com/" target="_blank" rel="noopener noreferrer">miles</a>,
-                    and <a class="view-more" href="https://jonaswirz.wordpress.com/" target="_blank" rel="noopener noreferrer">jonas</a>.
-                    instead of using ir sensors, we took a mechanical approach with roller lever limit switches to tell when the bot was "out" of the arena.
-                </p>
-                <div class="tags">
-                    <span>arduino</span><span>fusion 360</span><span>tactile sensing</span><span>autonomous robots</span>
-                </div>
-            </div>
-        </article>
-
-        <article class="project-card">
-            <div class="card-thumb">
-                <img src="/static/img/projects/lightbox.webp" alt="lightbox project">
-            </div>
-            <div class="card-content">
-                <div class="title-row">
-                    <h3>lightbox</h3>
-                    <span class="date">2025</span>
-                </div>
-                <p class="description">a lightbox built by me using an attiny84 and a temperature sensor to change the color (changing the shades of blue based on how hot / cold it is)</p>
-                <div class="tags">
-                    <span>fusion360</span><span>arduino</span><span>microcontrollers</span><span>temperature sensors</span><span>lasercutting</span><span>inkscape</span>
-                </div>
-            </div>
-        </article>
-    </section>
+    <section class="projects-grid" aria-live="polite"></section>
 
     <div class="section-title">
         <h2>recent posts</h2>

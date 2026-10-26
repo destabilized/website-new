@@ -11,6 +11,36 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    const projectContainer = document.querySelector('.projects-grid');
+    if (projectContainer) {
+        fetch('/projects/')
+            .then(response => {
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                return response.text();
+            })
+            .then(html => {
+                const doc = new DOMParser().parseFromString(html, 'text/html');
+                const cards = Array.from(doc.querySelectorAll('.projects-grid .project-card'));
+                const keyboardCard = cards.find(card => card.querySelector('a[href="/projects/keyboard"]'));
+                const latestCard = cards.find(card => card !== keyboardCard);
+                const featured = [latestCard, keyboardCard].filter(Boolean);
+
+                projectContainer.innerHTML = '';
+                featured.forEach(card => {
+                    const clone = document.importNode(card, true);
+                    projectContainer.appendChild(clone);
+
+                    clone.querySelectorAll('video').forEach(video => {
+                        video.muted = true;
+                        video.play().catch(() => {});
+                    });
+                });
+            })
+            .catch(error => {
+                console.error('failed to load featured projects:', error);
+            });
+    }
+
     const postContainer = document.querySelector('.posts-list');
     if (!postContainer || typeof blogPosts === 'undefined') return;
 
