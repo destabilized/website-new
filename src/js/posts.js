@@ -1,5 +1,12 @@
 window.blogPosts = [
   {
+    title: "senior week 10/26 - 10/30",
+    date: "oct. 29th, 2026",
+    preview: "learning drone stuff + trademark project again yay",
+    href: "/blogs/senior-blogs/7",
+    tags: ["drone", "trademark", "stoplight", "soldering", "rpi", "ai-detection"]
+  },
+  {
     title: "senior week 10/19 - 10/23",
     date: "oct. 22nd, 2026",
     preview: "task leaderboard changes + finally got the stoplight pcb ",
