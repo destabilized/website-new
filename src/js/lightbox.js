@@ -1,5 +1,5 @@
 (function () {
-    const SELECTOR = '.card-thumb img, .detail-hero img, .yap img';
+    const SELECTOR = '.card-thumb img, .detail-hero img, .detail-body img, .yap img';
 
     function build() {
         const overlay = document.createElement('div');

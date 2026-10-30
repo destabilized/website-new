@@ -4,6 +4,7 @@ title: keyboard — andrew huang
 description: a fully custom 60% mechanical keyboard with a hand-routed pcb, resin-printed cherry keycaps, a polycarbonate plate, and a screwless case designed in fusion 360.
 cssFile: project-detail.css
 jsFile: null
+codeStyles: true
 mainClass: container
 ---
     <div class="detail-hero detail-hero--cover">
@@ -29,46 +30,173 @@ mainClass: container
             i started with a 2x4 macropad first to learn the whole workflow — schematic, pcb routing, milling, soldering, firmware, and macros — before committing to the full 60% board. that turned out to be a very good idea.
         </p>
 
-        <h2>what it is</h2>
+        <h2>start of a story</h2>
+        <p>so mr. christy during the start of my junior year, mr. christy notified me that he had a bunch of kb2040 microcontrollers which he gets when he orders from adafruit. he wasn't too sure what it was, but he told me that it could be used for keyboards or something like that, and as a keyboard fanatic, that's something i wanted to do.</p>
 
-        <p>60% layout - 5x13 matrix bc kb2040 doesn't have enough pins so <code>=</code> and <code>]</code> live on r1</p>
-        <p>custom pcb + case. double-sided board that matches the traditional 60% layout. powered by a kb2040 w/ per-key sod-123 diodes and keys</p>
-        <p>two layers to match the traditional 60% keyboard. has the base layers for letters plus an fn layers equiped with arrows, media controls, function keys, paging, etc. can be customized by editing the firmware.</p>
-        <p>friction fit design - screwless case where there's space to put eva foam to dampen the sound if you want</p>
-        <p>custom polycarbonate plate for sound dampening. </p>
-        <p>custom resin keycaps - custom cherry-profile keycaps modeled in fusion360 that were resin printed, sanded, and recoated remove imperfections.</p>
 
-        <h2>firmware</h2>
-        <p>
-            the board runs <a href="https://github.com/KMKfw/kmk_firmware" target="_blank" rel="noopener noreferrer">kmk</a> on circuitpython, chosen over qmk because i preferred python over c. the keymap defines the full 60% layout, a second fn layer, diode direction, and media keys. macros were tested on the macropad before the main board existed.
-        </p>
+        <h2>the process</h2>
+        <p>so, after a lot of research about how keyboards worked, i finally grapsed it.</p>
+        <p>you can target a specific key with a digital pin on any microcontroller, but obviously microcontrollers don't have 61 different pins to support each key</p>
+        <p>to counteract this, many keyboards use a 5x14 matrix (for standard 60% keyboards) where clicking a specific key would be mapped through the specific index on the column and row.</p>
+        <p>the problem, however, is that the kb2040 doesn't have enough pins so i opted for a 5x13 matrix where the <code>=</code> and <code>]</code> keys lie on r1. although this doesn't matter when it comes to the keyboard itself, it make wiring those two keys slightly harder</p>
+        <p>furthermore, diodes are also used to prevent ghosting in matricies (ghosting is when a electricity flows backwards and presses a key that i didn't actually press).</p>
+        <p>in the end, the bom was 61 switches (htx latte linear switches), 61 sod-123 diodes, 6 keyboard stabilizers, and a kb2040.</p>
+        <p>this is what the schematic and pcb looked like: </p>
+
+        <div class="slideshow">
+            <button class="slideshow-btn prev" type="button">‹</button>
+            <div class="slideshow-track">
+                <img src="/static/img/junior/13/schem.webp" alt="keyboard schematic">
+                <img src="/static/img/junior/13/pcb_finished.webp" alt="keyboard pcb">
+            </div>
+            <button class="slideshow-btn next" type="button">›</button>
+        </div>
+
+        <p>after converting to a 3d model, i realized i had most of the keys backwards, so i went back to clean up the wiring and fix most of the keys for the model. in the end, it looked like this:</p>
+        <div class="slideshow">
+            <button class="slideshow-btn prev" type="button">‹</button>
+            <div class="slideshow-track">
+                <img src="/static/img/junior/14/front.webp" alt="soldered front side of keyboard pcb">
+                <img src="/static/img/junior/14/back.webp" alt="soldered back side of keyboard pcb">
+            </div>
+            <button class="slideshow-btn next" type="button">›</button>
+        </div>
+
+        <p>as you can tell, there are a lot of other issues that i never fixed. more on that when the pcbs came in the mail and i realized my error</p>
+
+        <h2>pcb + soldering</h2>
+        <p>now that i have my experience, i know there's quite a few issues with the pcb</p>
+        <p>however, i didn't realize this when i was sending it out (also forgot screwholes) so therefore, it caused a lot of problems when it came to mounting it on the case but also soldering that one diode (as it is needed)</p>
+        <p>so i soldered everything like normal, and this was the final product</p>
+        <img src="/static/img/junior/16/full.webp" alt="fixed smd sod123 issue">
+
+        <p>for some reason decided to put smd diodes at the same location as an smd controller. while this could be fixed by using 90degree pin headers, it just felt weird, so i actually had to solder the diode elsewhere and wiring it to it's pads</p>
+        <img src="/static/img/junior/17/fix2.webp" alt="fixed smd sod123 issue">
+        <p>with this done, i tested the software i made prior and made sure everything worked</p>
+
+        <h2>software stuff</h2>
+        <p>the kb2040 is unique as it supports kmk and qmk (qmk is based in c, and kmk is based in circuitpython). since i trusted my python knowledge more than my c knowledge, i decided to code the entire thing using circuitpython</p>
+        <p>after flashing the kb2040 with circuitpython and looking at example code, i started working on the code for the keyboard, mapping each key out in a matrix and creating the fn layer as well</p>
+        <pre><code class="python">print("Starting")
+
+import board
+
+from kmk.kmk_keyboard import KMKKeyboard
+from kmk.keys import KC
+from kmk.scanners import DiodeOrientation
+from kmk.modules.layers import Layers
+from kmk.extensions.media_keys import MediaKeys
+
+keyboard = KMKKeyboard()
+
+keyboard.modules.append(Layers())
+keyboard.extensions.append(MediaKeys())
+
+keyboard.col_pins = (
+    board.D5, board.D6, board.D7, board.D8, board.D9, board.D10, board.MOSI,
+    board.MISO, board.SCK, board.A0, board.A1, board.A2, board.A3)
+
+    keyboard.row_pins = (board.D0, board.D1, board.D2, board.D3, board.D4)
+    keyboard.diode_orientation = DiodeOrientation.COL2ROW
+
+    keyboard.keymap = [
+        # base layer
+        [
+            KC.ESC, KC.N1, KC.N2, KC.N3, KC.N4, KC.N5, KC.N6, KC.N7, KC.N8, KC.N9, KC.N0, KC.MINS, KC.BSPC,
+            KC.TAB, KC.Q, KC.W, KC.E, KC.R, KC.T, KC.Y, KC.U, KC.I, KC.O, KC.P, KC.LBRC, KC.BSLS,
+            KC.CAPS, KC.A, KC.S, KC.D, KC.F, KC.G, KC.H, KC.J, KC.K, KC.L, KC.SCLN, KC.QUOT, KC.ENT,
+            KC.LSFT, KC.Z, KC.X, KC.C, KC.V, KC.B, KC.N, KC.M, KC.COMM, KC.DOT, KC.SLSH, KC.NO, KC.RSFT,
+            KC.LCTL, KC.LCMD, KC.LALT, KC.NO, KC.NO, KC.SPC, KC.EQL, KC.RBRC, KC.NO, KC.RALT, KC.RCMD, KC.MO(1), KC.RCTL
+
+        ],
+
+        # fn layer
+            [
+                KC.GRV, KC.F1, KC.F2, KC.F3, KC.F4, KC.F5, KC.F6, KC.F7, KC.F8, KC.F9, KC.F10, KC.F11, KC.DEL,
+                KC.TRNS, KC.TRNS, KC.TRNS, KC.TRNS, KC.TRNS, KC.TRNS, KC.TRNS, KC.TRNS, KC.UP, KC.TRNS, KC.TRNS, KC.TRNS, KC.TRNS,
+                KC.TRNS, KC.TRNS, KC.TRNS, KC.TRNS, KC.TRNS, KC.TRNS, KC.TRNS, KC.LEFT, KC.DOWN, KC.RGHT, KC.TRNS, KC.TRNS, KC.TRNS,
+                KC.TRNS, KC.TRNS, KC.TRNS, KC.TRNS, KC.TRNS, KC.TRNS, KC.TRNS, KC.MUTE, KC.VOLD, KC.VOLU, KC.TRNS, KC.TRNS, KC.TRNS,
+                KC.TRNS, KC.TRNS, KC.TRNS, KC.TRNS, KC.TRNS, KC.TRNS, KC.F12, KC.TRNS, KC.TRNS, KC.PGDN, KC.PGUP, KC.TRNS, KC.HOME
+            ]
+        ]
+
+if __name__ == "__main__":
+    keyboard.go() </code></pre>
+        <p>that was the entire code, and with the pcb done, i was able to test all the keys, which ended up working. </p>
 
         <h2>keycaps</h2>
-        <p>
-            the keycaps were modeled from cherry-profile reference drawings, then resin printed. getting a usable finish was the hardest part of the project: the resin printer failed batches repeatedly, supports left pockmarks, and sanding a full set was genuinely miserable. i eventually switched to scraping the tops with an x-acto knife and coating them with a thin layer of raw resin, which gave a much cleaner result. the spacebar still warped, so it went through multiple reprints.
-        </p>
+        <p>i was uncertain if i wanted to make keycaps or just buy them. however, i never realized that i oriented the "shift" key incorrectly. so although i intended to make it with standard keycaps, i had to end up making my own</p>
+        <p>because of this, a normal "shift" key wouldn't work so i would have to make my own keycaps</p>
+        <p>made a bunch of keycaps out of pla and eventually out of resin, but the resin printer had other ideas</p>
+        <p>i didn't want to orient the keycaps so it prints with the supports on the surface of the keycaps, but for some reason the resin printer would mess up something if it wasn't printed like that, so sadly they remained imperfect. even after lots of sanding and repainting over them, some imperfection / white spots remained on the keycaps</p>
 
-        <h2>case &amp; plate</h2>
-        <p>
-            the case went through several redesigns. the early version used silicone bowls like the tofu60, then moved to leaf springs and a top plate. after studying the wooting 60he's model, i slanted the internal floor downward instead of upward, which fixed the typing angle and the usb-c cutout. the final design uses a friction-fit pad and a polycarbonate plate, waterjet cut and then hand-trimmed near the spacebar so the stabilizer could move freely. i also tried casting the pad in silicone, but the mold came out too thin and brittle, so i fell back to a friction fit with electrical tape protecting the pcb.
-        </p>
+        <div class="slideshow">
+            <button class="slideshow-btn prev" type="button">‹</button>
+            <div class="slideshow-track">
+                <img src="/static/img/junior/22/keys.webp" alt="keycaps i resin printed">
+                <img src="/static/img/junior/18/batch2.webp" alt="more keycaps">
+                <img src="/static/img/junior/18/current_progress.webp" alt="top of keycaps after sanding">
 
-        <h2>aluminum case</h2>
-        <p>
-            the original plan was to machine the final case out of aluminum. i built the full cam setup in fusion 360, worked through toolpaths and feeds/speeds with help from adam, and faced the raw stock on the manual mill in metal fab. the case was cancelled by mr. christy before the cnc cut to avoid wasting the aluminum, so the aluminum version was never finished. the 3d-printed prototype is what the keyboard currently lives in.
-        </p>
+            </div>
+            <button class="slideshow-btn next" type="button">›</button>
+        </div>
 
-        <h2>tech stack</h2>
-        <ul>
-            <li><strong>fusion 360</strong> — case and keycap modeling, cam toolpaths, pcb designing, assembly</li>
-            <li><strong>adafruit kb2040 (rp2040)</strong> — the keyboard's microcontroller</li>
-            <li><strong>kmk firmware + circuitpython</strong> — keymap, layers, media keys, and macros</li>
-            <li><strong>cherry mx switches + sod-123 diodes</strong> — 5x13 matrix with col2row diodes</li>
-            <li><strong>resin 3d printing</strong> — custom cherry-profile keycaps</li>
-            <li><strong>polycarbonate + waterjet</strong> — switch plate, later trimmed by hand</li>
-            <li><strong>cnc + manual mill</strong> — aluminum case machining (cam completed, cut cancelled)</li>
-            <li><strong>silicone casting / tpu</strong> — friction-fit and gasket experiments</li>
-        </ul>
+        <h2>case design / mounting:</h2>
+        <p>so i got inspired by a lot of different cases. <a href="https://wooting.io/project-optimum" target="_blank"> optimum wooting</a> and also the <a href="https://kbdfans.com/collections/tofu60/products/tofu60-3-0?variant=45000121516171"> tofu60 v3</a> and tried implementing their mounting methods as well</p>
+
+
+        <div class="slideshow">
+            <button class="slideshow-btn prev" type="button">‹</button>
+            <div class="slideshow-track">
+                <img src="https://wooting.io/_next/image?url=https%3A%2F%2Fwooting-website.ams3.cdn.digitaloceanspaces.com%2F612ca8920bc3a648125ffac3%2F672367b6db6e569ac0fb0ab3_Optimum%2520Tech%2520case%25202.jpg&w=1200&q=90" alt="optimum wooting">
+                <img src="https://pub-242667de54c94d76bba9489c5f6fa7f3.r2.dev/reviews/kbdfans.myshopify.com/e76f4452-b736-46df-8451-15b641b39ce9/10fd5bbc-fbb5-47fa-82f7-ec5a2e4702d5" alt="tofu60 v3">
+            </div>
+            <button class="slideshow-btn next" type="button">›</button>
+        </div>
+        <h6>first image is the optimum wooting, second image is the tofu60</h6>
+        <br>
+
+        <p>my first case design was legit a rectangle with a hole for the usb-cable. nothing special as i tried implementing the gasket mounting that the tofu60 has. (i didn't want to use screws, and also forgot screw holes in the pcb)</p>
+        <p>so the goal was tho use silicone bowls that the tofu60 has to hold up the pcb. while we didn't have silicone, i was planning on printing them with tpu (or potentially buying them)</p>
+        <img src="/static/img/junior/15/bowls.webp" alt="silicone bowls on the tofu60">
+        <h6>gasket mounting on the tofu60 v2, as the v3 uses an improved method but also didn't come out when i was working on this at this time.</h6>
+        <br>
+        <p>evetnaully, i pivoted to a design with leaf springs and a top plate to hold the pcb together (an idea from <a href="https://timmy.greenlifestylelabs.com/" target="_blank">tim hunt</a> thought of) </p>
+        <div class="slideshow">
+            <button class="slideshow-btn prev" type="button">‹</button>
+            <div class="slideshow-track">
+                <img src="/static/img/junior/16/screw.webp" alt="screw case design">
+                <img src="/static/img/junior/17/case2.webp" alt="screw case design img 2">
+            </div>
+            <button class="slideshow-btn next" type="button">›</button>
+        </div>
+
+        <p>i figured this design was correct, but then i realized one day that my charging port was slanted (never occured to me that was abnormal for some reason) and i realized it was because i slanted the keyboard wrong. it shouldn't be slanted upwards, but rather downwards</p>
+        <div class="slideshow">
+            <button class="slideshow-btn prev" type="button">‹</button>
+            <div class="slideshow-track">
+                <img src="/static/img/junior/23/slant.webp" alt="correct slant that i didn't have">
+                <img src="/static/img/junior/23/incorrect_slant.webp" alt="incorrect keyboard caes slant that i had">
+            </div>
+            <button class="slideshow-btn next" type="button">›</button>
+        </div>
+        <h6>the first image demostraits the proper slant of a keyboard. the second image shows what i previously had</h6>
+        <br>
+        <p>because of this, i had to redesign my case. however, i started looking at using a silicone friction fit pad to hold the pcb in place of the keyboard (what the opimum wooting uses)</p>
+
+        <h2>silicone molding + pcb pad</h2>
+        <p>one of the old seniors <a href="https://mstricker2608.wixsite.com/mstricker" target="_blank"> matt </a> helped me by teaching me how to make the mold and also helped me make it. </p>
+        <p>even though we made the mold properly and everything, the design was too thin, so creating a silicone friction fit pad wouldn't work. i also tried printing it with tpu, but found similar results to the silicone</p>
+        <img src="/static/img/junior/31+32/mold2.webp" alt="failed silicone mold">
+
+        <p>in addition, i made a pcb pad to help dampen the sound. </p>
+        <p>i bought polycarbonate and created a simple sketch on fusion and exported it to inkscape to eventually waterjet it out. this was one of my first experiences using the waterjet, but it was fun</p>
+        <img src="/static/img/junior/25/dings.webp" alt="polycarbonate plate with dings.">
+        <p>they had these little strings hanging out, so i deburred all of it and that was the end of the plate</p>
+
+        <h2>cam + end of the project</h2>
+        <p>i spent quite a bit of time tinkering around in cam because i wanted to make it out of aluminum. i spent a lot of time cutting a piece of stock, facing it, and right when i had the stock prepared and all the cam setup, i was told to stop because it was too much waste of material. </p>
+        <p>while i am sad that i wasn't able to finish the keyboard and had to abandon the project when i was almost done, i am glad i got a working keyboard in the end. resin printer gave me so many issuse and it could've looked better, but i'm glad with the results.</p>
 
         <h2>the full build in 3d</h2>
         <p>
@@ -88,5 +216,5 @@ mainClass: container
 
     <div class="detail-actions">
         <a href="/projects" class="btn-primary">← back to projects</a>
-        <a href="" class="btn-secondary">source</a>
+        <a href="https://github.com/destabilized/keyboard" target="_blank" rel="noopener noreferrer" class="btn-secondary">source</a>
     </div>
