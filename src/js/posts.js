@@ -1,5 +1,19 @@
 window.blogPosts = [
   {
+    title: "senior week 11/9 - 11/13",
+    date: "nov. 12th, 2026",
+    preview: "got the entire circuit to work, moving it to a pcb.",
+    href: "/blogs/senior-blogs/9",
+    tags: ["trademark", "ai", "cad", "pcb making", "stoplight"]
+  },
+  {
+    title: "senior week 11/2 - 11/6",
+    date: "nov. 5th, 2026",
+    preview: "slow week for trademark project, but was fun getting things to work",
+    href: "/blogs/senior-blogs/8",
+    tags: ["trademark", "pir sensor", "ai"]
+  },
+  {
     title: "senior week 10/26 - 10/30",
     date: "oct. 29th, 2026",
     preview: "learning drone stuff + trademark project again yay",
