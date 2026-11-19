@@ -1,5 +1,12 @@
 window.blogPosts = [
   {
+    title: "senior week 11/16 - 11/19",
+    date: "nov. 19th, 2026",
+    preview: "trademark slowly getting finished. pcb finished + model finished",
+    href: "/blogs/senior-blogs/10",
+    tags: ["trademark", "pcb", "3d modeling"]
+  },
+  {
     title: "senior week 11/9 - 11/13",
     date: "nov. 12th, 2026",
     preview: "got the entire circuit to work, moving it to a pcb.",
