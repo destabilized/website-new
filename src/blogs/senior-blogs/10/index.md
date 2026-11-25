@@ -54,7 +54,7 @@ so i split the body in halves and it ended up printing perfectly. better yet, be
     <button class="slideshow-btn prev" type="button">‹</button>
     <div class="slideshow-track">
         <img src="/static/img/senior/10/fit.webp" alt="side profile of the entire head">
-        <img src="/static/img/senior/10/full.webp" alt="front view of the head + neck">
+        <img src="/static/img/senior/10/tophalf.webp" alt="front view of the head + neck">
     </div>
     <button class="slideshow-btn next" type="button">›</button>
 </div>
@@ -67,6 +67,17 @@ ran out of yellow paint midway throguh because there was barely anything when i 
 like i said, it's my second time spray painting ever so here's how it looks:
 
 ![all head parts](/static/img/senior/10/spray.webp)
+
+and here's it put togetherO
+
+<div class="slideshow">
+    <button class="slideshow-btn prev" type="button">‹</button>
+    <div class="slideshow-track">
+        <img src="/static/img/senior/10/full.webp" alt="full trademark (minus pcb)">
+        <img src="/static/img/senior/10/side.webp" alt="side view (minus pcb)">
+    </div>
+    <button class="slideshow-btn next" type="button">›</button>
+</div>
 
 hopefully when my pcb comes and the adafruit powerboost 1000c comes, everything works out flawlessly and i'm done with this project and can go back to my drone.
 

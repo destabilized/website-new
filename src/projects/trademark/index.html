@@ -16,51 +16,94 @@ mainClass: container
     </div>
 
     <div class="detail-tags">
-        <span>fusion 360</span><span>3d printing</span><span>esp32-cam</span><span>pcb design</span><span>pir sensor</span><span>ir leds</span><span>mosfets</span><span>wifi</span>
+        <span>esp32-cam</span><span>ai</span><span>3d modeling / printing</span><span>flask</span><span>micropython</span><span>pcb designing</span>
     </div>
 
     <div class="detail-body">
-        <p>
-            a 3d-printed recreation of chamber's trademark from valorant — a stationary trip designed to detect people and trigger when someone walks into it. the build combines a multi-part printed assembly, a hollow head for the electronics, and custom hardware running on an esp32-cam.
-        </p>
+        <p>a 3d-printed recreation of chamber's trademark from valorant — a stationary trip designed to detect people and trigger when someone walks into it. the build combines a multi-part printed assembly, a hollow head for the electronics, and custom hardware running on an esp32-cam.</p>
 
         <h2>inspiration for the project</h2>
         <p>i play a lot of valorant, and recently came across videos of people making raze's boombot and killjoy's turrent from valorant, so i wanted to do something similar. i figured chamber's trademark would be a fun idea, so i decided to use that and turn it into an ai security camera of some sorts.</p>
+        <p>although i originally wanted to make it like a security camera, i decided to change up the purpose and use an ai to scan for my mothers face, turning off my computer if found. this way, i would be able to play games and then pretend to be doing something else without getting caught</p>
+        <img src="https://fbi.cults3d.com/uploaders/21595173/illustration-file/43320c47-15f3-480f-b1b9-a08ab6b5e8dc/mqdefault.jpg" alt="chamber trademark image">
+        <h6>image of the chamber trademark in game</h6>
 
-        <h2>3d modeling process</h2>
-        <p>
-            i originally planned to start by making the electronics first then working on the 3d model. however, after i unfortunately shorted <a href="https://www.mileshilliard.com/" target="_blank" rel="noopener noreferrer">miles's</a> esp32-ai thinker, i decided to start with the hardware first then move onto the electronics
-        </p>
-            i went through multiple iterations of this before finally being satisified with what i wanted. my first iteration had huge legs that i wasn't a fan of and dimensions that felt disproportional.
-        <p>
-            the top half is built around a circular base with a back section that holds the "head," which is where the camera lives. the neck slots onto the base with enough clearance to rotate, and the head still needs a proper connection to the back — a snap fit is the plan, but that's one of the parts i'm still working out. the sphere was also hollowed out so an acrylic piece, the pcb, and a potential battery can fit inside.
-        </p>
-        <p>
-            the printed base and neck fit together correctly, and the head only needed a small extrusion fix before it printed properly. the whole thing has been sanded and prepared for paint, but the color scheme is still on hold.
-        </p>
-
+        <h2>start</h2>
+        <p>i originally planned to make the electronics first then work on the 3d model, but after i accidently shorted miles's esp-32cam ai thinker, i had no choice but to start 3d modeling as much as possible before working on the electronics.</p>
+        <div class="slideshow">
+            <button class="slideshow-btn prev" type="button">‹</button>
+            <div class="slideshow-track">
+                <img src="/static/img/senior/3/progress.webp" alt="base + neck of the trademark">
+                <img src="/static/img/senior/4/sphere.webp" alt="hollowed out trademark head">
+                <img src="/static/img/senior/4/base.webp" alt="3d printed trademark base">
+                <img src="/static/img/senior/4/neck.webp" alt="3d printed trademark neck">
+                <img src="/static/img/senior/4/base+neck.webp" alt="trademark base with the neck attached">
+                <img src="/static/img/senior/4/full.webp" alt="full model unpainted">
+            </div>
+            <button class="slideshow-btn next" type="button">›</button>
+        </div>
+        <p>at the same time, i was looking at parts and figuring out how plausable a project like this would be. after the 3d model was all done, i started experimenting with esp32's for the first time using an esp32-c3 to send a packet to a laptop running a flask server to run a command.</p>
+        <p>had lots of issues with the wifi because the school wifi that i was running it on does not support esp32's connecting for some reason. however, this took a while for me to figure out because i simply thought the wifi was too weak and was running it on the laptop's hotspot instead.</p>
+        <p>before my parts came, i made sure to test with a different type of esp32 just to familiarize myself with flask and also working with esps</p>
+        <video controls muted class="detail-video">
+            <source src="/static/vids/sen/4/things.webm" type="video/webm">
+        </video>
+        <h6>flask server that opens a tab after reading a request sent via button press</h6>
+        <p>eventually, my parts from aliexpress finally came after being delayed an extra two weeks, and i could start by getting everything to work on a breadboard</p>
         <h2>electronics</h2>
-        <p>
-            the electronics plan uses an esp32-cam, a pir sensor, ir leds, and mosfets. i started the pcb early by building a schematic and a component library in fusion 360, partly so the board layout could inform the enclosure dimensions.
-        </p>
-        <p>
-            the first esp32-cam came from <a href="https://www.mileshilliard.com/" target="_blank" rel="noopener noreferrer">miles</a>, but i shorted its voltage regulator while trying to get it connected — so that one died before it ever made it into the build. while waiting on replacements and the rest of the parts, i tested the wireless side with a spare esp32: a button press posts to a small flask server on a laptop, which closes any open firefox windows and opens a new tab. the esp32-to-laptop connection worked, which proved out the network part of the trigger chain.
-        </p>
+        <p>i started small by connected my new esp32-cam ai thinker to wifi then getting the "simple webserver" example working before doing anything with the esp32-cam. i also made sure to unplug everything everytime i took off the esp32 to prevent accidently shorting like i did last time</p>
+        <p>after that, i connected the pir sensor and some lights to the esp32, running some sample code which turned on the lights everytime the pir sensor got activated</p>
+        <video controls muted class="detail-video">
+            <source src="/static/vids/sen/8/pir.webm" type="video/webm">
+        </video>
+        <img src="/static/img/senior/9/full.webp" alt="trademark electronics setup on a breadboard">
+        <p>eventually, i switched to using a transistor to connect the lights to ground as i was running out of digital pins. at the same time, i spent some time looking up edgeimpulse, which would be used to run the ai locally on the esp32</p>
+        <p>i had lots of issues with the example code they gave me to take photos with my camera because the library doesn't support the ov5640 camera, which aliexpress shipped to me by accident. because of this, i decided to just give all the example code that takes photos for me via the esp32 camera to chat-gpt and had it create the same thing but making it work with my given hardware</p>
+        <img src="/static/img/senior/8/wat.webp" alt="broken esp32-cam feed from the unsupported camera library">
+        <p>although it wasn't perfect, i managed to get all my images and started training it on edgeimpulse before exporting it to my esp32 as a library (which is how the esp32 will run the ai)</p>
+        <video controls muted class="detail-video">
+            <source src="/static/vids/sen/8/ai.webm" type="video/webm">
+        </video>
 
-        <h2>current plans / to be added</h2>
-        <ul>
-            <li><strong>finish the pcb</strong> — the board is still mostly a schematic and component library until the remaining parts arrive</li>
-            <li><strong>paint the enclosure</strong> — sanding is done, but the final color scheme still needs to be sprayed</li>
-            <li><strong>mount the acrylic and battery</strong> — the hollowed sphere has room for the lens piece, board, and a potential battery</li>
-            <li><strong>finish the head connection</strong> — work out a printable snap fit, and decide whether the head should rotate</li>
-            <li><strong>get detection working</strong> — wire up the pir sensor and ir leds so the trap can actually detect and trigger</li>
-            <li><strong>assemble and test</strong> — fit everything into the printed housing and run the full system end to end</li>
-        </ul>
+        <h3>pcb + schematic</h3>
+        <p>with an entire proof of concept on my breadboard, i started collecting all the components and putting them into a library with 3d models attached to their footprints to check tolerances and other stuff</p>
+
+        <img src="/static/img/senior/9/issue.webp" alt="pir sensor model too close to the pcb">
+
+        <p>i found a model for practically everything besides the camera i was using for my esp32-cam and the pir sensor i was using, so i found the datasheet and gave it to claude to make (i got lazy)</p>
+        <p>it wasn't perfect because i'm broke and using the free plan on claude, but it had the general dimensions correct and i just fixed whatever was left and attached it to my footprints</p>
+        <p>additionally, because i don't have a wall outlet outside my room, i decided to make this battery powered. however, after doing some research by figuring out how much voltage and amps go through my circuit, i realized that i would want 5v rather than 3.3 and roughly 1A, as it would draw 900mA under peak load</p>
+        <p>with this in mind, i added the <a href="https://www.adafruit.com/product/2465" target="_blank" rel="noopener noreferrer">adafruit powerboost 1000c</a> and i'm planning on using the vape batteries that i helped desolder from their vapes last year</p>
+        <p>on my final check before it got shipped, i realized i had some issues with the schematic / pcb being wired incorrectly / not enough clearance on my components, so i fixed those and it was finally sent to jlcpcb where they will be making it</p>
+        <div class="slideshow">
+            <button class="slideshow-btn prev" type="button">‹</button>
+            <div class="slideshow-track">
+                <img src="/static/img/senior/10/schem.webp" alt="trademark schematic">
+                <img src="/static/img/senior/10/pcb.webp" alt="2d view of the trademark pcb">
+            </div>
+            <button class="slideshow-btn next" type="button">›</button>
+        </div>
+
+        <h2>final stretch</h2>
+        <p>while i waited for my pcb to come back, i started spray painting my parts. since the original trademark is a golden color, i opted for yellow and a blue-magenta-esque color for the colored pannels the trademark has on it's head</p>
+        <p>before i did that, however, i made the side pannel inserts that will be sprayed with the other color, opting for blue-purple spray paint for it</p>
+        <img src="/static/img/senior/10/head.webp" alt="all printed parts of the trademark head">
+        <p>and then i started spray painting</p>
+        <img src="/static/img/senior/10/spray.webp" alt="spray painted trademark parts">
+        <p>even though i'm a beginner at spray painting and it wasn't perfect, i got a result i was satisfied with started assembling things together.</p>
+        <div class="slideshow">
+            <button class="slideshow-btn prev" type="button">‹</button>
+            <div class="slideshow-track">
+                <img src="/static/img/senior/10/full.webp" alt="assembled trademark">
+                <img src="/static/img/senior/10/side.webp" alt="assembled trademark side profile">
+            </div>
+            <button class="slideshow-btn next" type="button">›</button>
+        </div>
+
+        <h2>present day / current progress</h2>
+        <p>as of now, the pcb is sent to jlcpcb to be made, so i'm just waiting for it to return so i can solder my components and test everything to see if it works.</p>
 
         <h2>the full build in 3d</h2>
-        <p>
-            orbit the current assembly below. drag to rotate, scroll or pinch to zoom.
-        </p>
         {% if models.trademark.embed != blank %}
         <div class="detail-model-embed">
             <iframe src="{{ models.trademark.embed }}" title="3D model of the trademark" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
